@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact &amp; Get a Quote | Shipmate Logistics</title>
+  <meta name="description"
+    content="Request a freight quote from Shipmate Logistics. Share your route, cargo and load type — our dispatch team responds within two working hours. Six regional hubs across India.">
+  <link rel="canonical" href="contact.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contact Shipmate Logistics">
+  <meta property="og:description" content="Let's plan your next shipment — request a quote in minutes.">
+  <meta property="og:image" content="assets/images/hero-poster.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+</head>
+
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="index.html" class="brand" aria-label="Shipmate Logistics home">
+        <span class="brand__mark" aria-hidden="true">
+          <img src="assets/images/logos/mainlogo.png" alt="Logo" class="brand__logo" />
+        </span>
+        <span class="brand__text">
+          <span class="brand__name">Shipmate</span>
+          <span class="brand__tagline">Logistics</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html">Home</a></li>
+          <li><a class="nav__link" href="about.html">About</a></li>
+          <li><a class="nav__link" href="services.html">Services</a></li>
+          <li><a class="nav__link" href="fleet.html">Fleet</a></li>
+          <li><a class="nav__link" href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="btn btn--primary btn--sm nav__cta">Get a Quote</a>
+      </nav>
+
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round">
+          <path d="M3 6h18M3 12h18M3 18h18" />
+        </svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round">
+          <path d="M6 6l12 12M18 6L6 18" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ PAGE HERO ============ -->
+    <section class="page-hero">
+      <div class="page-hero__route" aria-hidden="true"></div>
+      <div class="container page-hero__content">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a> / <span>Contact</span>
+        </nav>
+        <p class="eyebrow" data-content="contact.hero.eyebrow">Get in touch</p>
+        <h1 data-content="contact.hero.title">Let's plan your next shipment.</h1>
+        <p class="lede" data-content="contact.hero.subtitle">Share your route and cargo details, and our dispatch team
+          will get back to you with a quote within one working hours.</p>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT LAYOUT ============ -->
+    <section class="section bg-cream">
+      <div class="container contact-layout">
+        <div class="form-card">
+          <h2 data-content="contact.form.title">Request a quote</h2>
+          <p class="lede" data-content="contact.form.subtitle">Fields marked with * are required.</p>
+
+          <form class="form-grid" id="quoteForm" novalidate>
+            <div class="field field--required">
+              <label for="name" data-content="contact.form.fields.name">Full name</label>
+              <input type="text" id="name" name="name" required autocomplete="name">
+            </div>
+
+            <div class="field">
+              <label for="company" data-content="contact.form.fields.company">Company name</label>
+              <input type="text" id="company" name="company" autocomplete="organization">
+            </div>
+
+            <div class="field field--required">
+              <label for="email" data-content="contact.form.fields.email">Email address</label>
+              <input type="email" id="email" name="email" required autocomplete="email">
+            </div>
+
+            <div class="field field--required">
+              <label for="phone" data-content="contact.form.fields.phone">Phone number</label>
+              <input type="tel" id="phone" name="phone" required autocomplete="tel">
+            </div>
+
+            <div class="field field--required">
+              <label for="origin" data-content="contact.form.fields.origin">Pickup city</label>
+              <input type="text" id="origin" name="origin" required>
+            </div>
+
+            <div class="field field--required">
+              <label for="destination" data-content="contact.form.fields.destination">Delivery city</label>
+              <input type="text" id="destination" name="destination" required>
+            </div>
+
+            <div class="field field--required field--full">
+              <label for="loadType" data-content="contact.form.fields.loadType">Load type</label>
+              <select id="loadType" name="loadType" required></select>
+            </div>
+
+            <div class="field field--full">
+              <label for="message" data-content="contact.form.fields.message">Shipment details</label>
+              <textarea id="message" name="message" rows="4"></textarea>
+            </div>
+
+            <div class="field field--full">
+              <button type="submit" class="btn btn--primary btn--block" data-content="contact.form.submitLabel">Send
+                Request</button>
+              <div class="form-message" id="formMessage" role="status" aria-live="polite"></div>
+            </div>
+          </form>
+        </div>
+
+        <div class="info-card">
+          <h3 data-content="contact.info.title">Reach our dispatch desk</h3>
+          <div id="contactInfoItems"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ REGIONAL HUBS ============ -->
+    <section class="section bg-navy on-dark">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow" data-content="contact.hubs.eyebrow">Regional hubs</p>
+          <h2 data-content="contact.hubs.title">Six hubs, one network</h2>
+        </div>
+        <div class="hubs-grid" id="hubsGrid"></div>
+      </div>
+      <div class="route-divider" aria-hidden="true"></div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__top">
+      <div class="footer__brand">
+        <a href="index.html" class="brand" aria-label="Shipmate Logistics home">
+          <span class="brand__mark" aria-hidden="true">
+            <img src="assets/images/logos/mainlogo.png" alt="Shipmate Logo" class="brand__logo" />
+          </span>
+          <span class="brand__text">
+            <span class="brand__name">Shipmate</span>
+            <span class="brand__tagline">Logistics</span>
+          </span>
+        </a>
+        <p class="footer__about" data-content="footer.about">Shipmate Logistics is a pan-India freight network
+          connecting 35+ cities through six regional hubs, with a fleet of 1000+ GPS-tracked vehicles.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.1c.5-1 1.8-2 3.7-2 3.9 0 4.4 2.6 4.4 6V21h-4v-5.3c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21h-4V9z" />
+            </svg></a>
+          <a href="#" aria-label="Twitter / X"><svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.9 3H22l-7.1 8.1L23 21h-6.3l-4.9-6.4L6 21H2.9l7.6-8.7L2 3h6.4l4.5 5.9L18.9 3z" />
+            </svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="5" />
+              <circle cx="12" cy="12" r="3.5" />
+              <circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" />
+            </svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M13.5 21v-7h2.4l.4-3h-2.8V9.2c0-.9.3-1.5 1.6-1.5h1.4V5c-.7-.1-1.5-.2-2.4-.2-2.5 0-4.2 1.5-4.2 4.2V11H7.5v3H10v7h3.5z" />
+            </svg></a>
+        </div>
+      </div>
+
+      <div>
+        <p class="footer__heading" data-content="footer.linksTitle">Quick links</p>
+        <ul class="footer__links" id="footerNavLinks"></ul>
+      </div>
+
+      <div>
+        <p class="footer__heading" data-content="footer.servicesTitle">Services</p>
+        <ul class="footer__links" id="footerServiceLinks"></ul>
+      </div>
+
+      <div>
+        <p class="footer__heading" data-content="footer.contactTitle">Contact</p>
+        <div class="footer__contact-item">
+          <div class="footer__contact-label">Head office</div>
+          <div class="footer__contact-value" data-content="site.address">Plot 14, Transport Nagar, Sector 28, Gurugram,
+            Haryana 122001</div>
+        </div>
+        <div class="footer__contact-item">
+          <div class="footer__contact-label">Dispatch line</div>
+          <div class="footer__contact-value" data-content="site.phone">+91 98765 43210</div>
+        </div>
+        <div class="footer__contact-item">
+          <div class="footer__contact-label">Email</div>
+          <div class="footer__contact-value" data-content="site.email">operations@Shipmatelogistics.in</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <p data-content="footer.copyright">© 2026 Shipmate Logistics. All rights reserved.</p>
+      <div class="footer__bottom-links">
+        <a href="#main">Back to top</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ WHATSAPP FAB ============ -->
+  <a class="whatsapp-fab" href="#" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp"
+    data-whatsapp-link></a>
+
+  <!-- ============ KRISHNA BUTTON ============ -->
+  <div class="krishna-float" title="Jai Shri Krishna">
+    <img src="assets/images/krishna.png" alt="Jai Shri Krishna" />
+  </div>
+
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
