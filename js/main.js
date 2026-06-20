@@ -546,7 +546,7 @@
       if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = "Sending…"; }
 
       try {
-        const res = await fetch("https://formspree.io/f/mykalzow", {
+        const res = await fetch("https://formspree.io/f/mnjyeevd", {
           method: "POST",
           headers: { "Accept": "application/json" },
           body: new FormData(form)
@@ -594,16 +594,7 @@
     const wrap = $("#trustRow");
     if (!wrap || !data) return;
     const logos = getPath(data, "home.trustStrip.logos") || [];
-    const items = logos.map((l) => {
-      if (l.image) {
-        return `<span class="trust__item trust__item--logo">
-          <img src="${l.image}" alt="${l.name}" loading="lazy" />
-        </span>`;
-      }
-      return `<span class="trust__item">${l.name}</span>`;
-    }).join("");
-    // Duplicate for seamless infinite marquee
-    wrap.innerHTML = items + items;
+    wrap.innerHTML = logos.map((l) => `<span class="trust__item">${l.name}</span>`).join("");
   }
 
   function renderTimeline(data) {

@@ -228,14 +228,30 @@
       "subtitle": "Shipmate Logistics is a pan-India freight network with a fleet of 1000+ vehicles across six regional hubs. We move cargo with discipline, transparency, and a relentless focus on on-time delivery."
     },
     "story": {
-      "eyebrow": "Our approach",
-      "title": "Built for reliability, from the ground up",
+      "eyebrow": "Our story",
+      "title": "Connecting Possibilities. Delivering Excellence.",
       "paragraphs": [
-        "Shipmate Logistics was created to bring a new standard of reliability to Indian freight. From day one, our operations have been built around one principle: cargo arrives when we say it will, not when it happens to get there.",
-        "We designed a hub-and-spoke network that reduces transit times and increases route density, while our preventive maintenance program ensures every vehicle is road-ready before each trip. Technology is not an afterthought—live GPS tracking, temperature logs, and digital proof of delivery are standard on every shipment.",
-        "Our team of experienced operations planners and trained drivers works together to anticipate challenges before they become delays. The result is a logistics service that clients trust for consistency, transparency, and accountability."
+        "At Shipmate Logistics Private Limited, we believe logistics is not just about transporting goods—it's about delivering trust, enabling business growth, and building lasting partnerships. Every shipment we handle represents a promise of reliability, precision, and excellence.",
+        "Established with a vision to redefine logistics through transparency, efficiency, and customer-centric service, Shipmate Logistics is dedicated to providing seamless transportation solutions that businesses can depend on. From full truckload (FTL) and part-load (PTL) services to customized logistics solutions, we combine operational expertise with meticulous planning to ensure every consignment reaches its destination safely, securely, and on time.",
+        "What sets us apart is our leadership-driven approach. Backed by years of practical industry experience, our team possesses in-depth expertise in transportation management, freight operations, supply chain coordination, and customer relationship management. We understand that every business has unique logistics requirements, which is why we deliver tailored solutions designed to optimize efficiency, reduce transportation costs, and ensure uninterrupted supply chain performance.",
+        "At Shipmate Logistics, we measure our success by the success of our customers. Through proactive planning, transparent communication, and a commitment to operational excellence, we strive to eliminate common logistics challenges such as shipment delays, coordination gaps, and service uncertainty. Our goal is to provide complete peace of mind by ensuring every shipment is managed with professionalism, accountability, and unwavering attention to detail.",
+        "As we continue to grow, our ambition remains clear—to become one of India's most trusted and respected logistics partners by delivering innovative, dependable, and value-driven transportation solutions. Guided by our commitment to Connecting Possibilities. Delivering Excellence., we are dedicated to building long-term relationships and supporting the continued growth of businesses across the nation."
       ],
       "image": "assets/images/about-story.jpg"
+    },
+    "leadership": {
+      "eyebrow": "Solving logistics challenges with experience",
+      "title": "Leadership built on real industry experience",
+      "intro": "Delayed shipments, poor communication, and inefficient transportation planning are among the biggest challenges businesses face today. At Shipmate Logistics, our experienced leadership team is committed to overcoming these challenges through proactive planning, efficient coordination, and transparent communication.",
+      "names": "Mr. Mohit Sharma and Mr. Rahul Indora",
+      "outro": "Our goal is simple—to provide dependable logistics services that keep your business moving with confidence.",
+      "points": [
+        "On-time and reliable deliveries",
+        "Optimized transportation planning",
+        "Quick resolution of operational challenges",
+        "Transparent shipment updates",
+        "Cost-effective logistics solutions"
+      ]
     },
     "mission": {
       "eyebrow": "Why we operate",

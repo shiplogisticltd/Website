@@ -4,163 +4,142 @@ A premium, fully responsive logistics company website built with plain HTML5, CS
 
 ---
 
+## What changed in this version
+
+- **Color palette** — replaced the orange/amber/yellow theme with a navy + teal palette (`--amber`, `--amber-light`, `--amber-dark`, `--route` tokens in `css/style.css`). All buttons, eyebrows, route lines, stat numbers, tags and the CTA banner update automatically since they reference these tokens.
+- **Mobile hero fix** — on screens ≤768px, the dark overlay over the homepage video was reduced so the video shows through properly, and the hero text/buttons are now centered and stacked correctly.
+
+---
+
 ## Folder structure
 
 ```
-Shipmate-logistics/
-├── index.html              Home page
-├── about.html              About Us page
-├── services.html           Services page
-├── fleet.html              Fleet page
-├── contact.html            Contact / Get a Quote page
-├── content.json            ALL editable text & data for the whole site
+shipmate/
+├── index.html
+├── about.html
+├── services.html
+├── fleet.html
+├── contact.html
+├── content.json          ALL editable text & data for the whole site
 ├── css/
-│   ├── style.css           Core styling
-│   └── css-additions.css   Extended styles (FABs, mobile nav, hero tweaks)
+│   └── style.css         Core + mobile + color styling (single file)
 ├── js/
-│   └── main.js             All interactivity — nav, animations, forms, FABs
-└── assets/
-    ├── images/             Photos, icons, logos
-    │   ├── logos/          Brand logo (mainlogo.png) + trust strip logos
-    │   ├── fleet/          Fleet vehicle images
-    │   ├── services/       Service card images
-    │   ├── testimonials/   Client headshot images
-    │   ├── whatsapp.png    (legacy — replaced by inline SVG at runtime)
-    │   └── krishna.png     Krishna floating button image
+│   └── main.js           All interactivity — nav, animations, forms, FABs
+└── assets/                (add your own — see note below)
+    ├── images/
     ├── sounds/
-    │   └── krishna.mp3     Music played by the Krishna button
     └── videos/
-        └── hero-loop.mp4   Homepage hero background video
 ```
+
+> **Note:** the `assets/` folder (images, hero video, logo, Krishna sound) is **not included** in this export. Copy your existing `assets/` folder from your current live site into this new folder before uploading, keeping the same file names referenced in `content.json`.
 
 ---
 
 ## How to update text and data
 
-Almost every piece of visible text — headlines, descriptions, stats, service details, fleet specs, testimonials, contact info, hub addresses, footer links — comes from **`content.json`**. Open it in any text editor, find the relevant key, and edit the value between quotation marks. Save the file and refresh the browser. No build step needed.
-
-Tips:
-- Keep the quotation marks `" "` around every text value.
-- Do not remove commas `,` between items, or square brackets `[ ]` / curly braces `{ }` — these define the data structure.
-- Before making large edits, save a backup copy of `content.json` so you can restore it if something breaks.
-
----
-
-## How to replace images and video
-
-All media lives inside `assets/`. To swap a file, replace it with a new one using **the exact same filename and folder path**. Paths are case-sensitive.
-
-| File | Suggested size | Purpose |
-|---|---|---|
-| `assets/videos/hero-loop.mp4` | 1920×1080, 10–20 s, muted, looping | Homepage hero background |
-| `assets/images/hero-poster.jpg` | 1920×1080 | Hero fallback before video loads |
-| `assets/images/about-story.jpg` | 1200×1500 (portrait) | About page story section |
-| `assets/images/services/service-*.jpg` (×6) | 1200×900 | Service cards |
-| `assets/images/fleet/fleet-*.jpg` (×6) | 1200×900 | Fleet vehicle cards |
-| `assets/images/testimonials/testimonial-*.jpg` (×3) | 400×400 (square) | Client headshots |
-| `assets/images/logos/mainlogo.png` | any, max 200px tall | Header & footer brand logo |
-| `assets/images/logos/logo-*.svg` (×5) | 160×48 | Trust strip partner logos |
-| `assets/images/krishna.png` | 200×200 (square) | Krishna floating button |
-| `assets/sounds/krishna.mp3` | any | Music toggled by the Krishna button |
-
-If you rename a file or add new images, update the matching path in `content.json` to reflect the change.
+Almost all visible text comes from `content.json`. Open it in any text editor, edit the value between quotes, save, and refresh. Keep quotation marks, commas, and brackets intact.
 
 ---
 
 ## Running the site locally
 
-The site loads `content.json` via `fetch()`, so opening `index.html` directly from disk (`file://`) will be blocked by most browsers. Run a local server instead:
-
 ```bash
-# Python 3 (recommended)
 python3 -m http.server 8000
 ```
-
-Then open `http://localhost:8000` in your browser.
-
----
-
-## Deploying
-
-This is a fully static site. Upload the entire project folder — including `content.json`, `css/`, `js/`, and `assets/` — to any static host:
-
-- **Netlify** — drag-and-drop the folder at netlify.com/drop
-- **Vercel** — `vercel deploy` from the project directory
-- **GitHub Pages** — push to a repo and enable Pages in Settings
-- **AWS S3** — enable Static Website Hosting on the bucket
-- **Any standard web server** — copy files to the `public_html` or `www` root
-
-No build step, no compilation, no dependencies to install.
+Then open `http://localhost:8000`.
 
 ---
 
-## Contact / quote form
+## Uploading the latest version to GitHub
 
-The quote form on `contact.html` performs client-side validation only. To make submissions actually send data, connect it to a form service and update `setupContactForm()` in `js/main.js`:
+### Option A — You already have a GitHub repo for this site
+1. Open a terminal in this project folder.
+2. Pull the latest remote state (avoids conflicts):
+   ```bash
+   git pull origin main
+   ```
+3. Copy/replace these updated files into your repo folder, overwriting the old ones:
+   - `css/style.css`
+   - `index.html`, `about.html`, `services.html`, `fleet.html`, `contact.html`
+   - `js/main.js`
+   - `content.json`
+4. Stage, commit, and push:
+   ```bash
+   git add .
+   git commit -m "Update color palette and mobile hero fix"
+   git push origin main
+   ```
+5. If you host via **GitHub Pages**, the live site updates automatically within a minute or two of the push. If you host via **Netlify/Vercel** connected to this repo, they will auto-deploy on push too.
 
-**Formspree (simplest option)**
-1. Create a free form at [formspree.io](https://formspree.io).
-2. Copy your form endpoint URL (e.g. `https://formspree.io/f/abcxyz`).
-3. In `main.js`, find `setupContactForm()` and replace the placeholder endpoint with your Formspree URL.
-
-**Netlify Forms**
-Add `data-netlify="true"` to the `<form>` tag and deploy via Netlify — submissions are captured automatically with no code changes.
+### Option B — You don't have a repo yet (first-time setup)
+1. Go to [github.com/new](https://github.com/new), create a repository (e.g. `shipmate-website`), keep it **Public** (required for free GitHub Pages) or **Private** if you'll use Netlify/Vercel instead.
+2. In your local project folder:
+   ```bash
+   git init
+   git add .
+   git commit -m "Initial commit — Shipmate Logistics website"
+   git branch -M main
+   git remote add origin https://github.com/<your-username>/shipmate-website.git
+   git push -u origin main
+   ```
+3. Continue to the hosting steps below.
 
 ---
 
-## WhatsApp floating button
+## Connecting GitHub to your main domain
 
-The WhatsApp FAB (bottom-right corner) builds its link from two fields in `content.json`:
+You have two common paths. **GitHub Pages** is free and simplest if you're fine with a static site host. **Netlify/Vercel** are also free, slightly more flexible (better redirects, instant deploy previews) and recommended if you already use Formspree-style integrations.
 
-```json
-"site": {
-  "whatsappNumber": "919876543210",
-  "whatsappMessage": "Hello, I'd like a freight quote."
-}
+### Path 1 — GitHub Pages (free, built into GitHub)
+1. In your repo, go to **Settings → Pages**.
+2. Under "Build and deployment", set **Source** to `Deploy from a branch`, branch `main`, folder `/ (root)`. Save.
+3. GitHub gives you a URL like `https://<your-username>.github.io/shipmate-website/`. Confirm it loads correctly.
+4. **Connect your domain:**
+   - In the same **Settings → Pages** screen, enter your domain (e.g. `www.shipmatelogistics.in`) under "Custom domain" and save. GitHub will create a `CNAME` file in your repo automatically.
+   - Go to your domain registrar / DNS provider (GoDaddy, Namecheap, Cloudflare, etc.) and add these records:
+     - For an **apex domain** (`shipmatelogistics.in`): add four `A` records pointing to:
+       ```
+       185.199.108.153
+       185.199.109.153
+       185.199.110.153
+       185.199.111.153
+       ```
+     - For a **subdomain** (`www.shipmatelogistics.in`): add a `CNAME` record pointing to `<your-username>.github.io`.
+   - Wait for DNS to propagate (a few minutes to a few hours).
+   - Back in **Settings → Pages**, tick **Enforce HTTPS** once it becomes available (GitHub auto-issues an SSL certificate).
+
+### Path 2 — Netlify (free, more control, recommended)
+1. Go to [app.netlify.com](https://app.netlify.com) → **Add new site → Import an existing project**.
+2. Connect your GitHub account and select the `shipmate-website` repo.
+3. Build settings: leave **Build command** empty and **Publish directory** as `/` (root), since this is a static site with no build step.
+4. Deploy — Netlify gives you a `https://random-name.netlify.app` URL.
+5. **Connect your domain:**
+   - Go to **Site settings → Domain management → Add custom domain**, enter your domain.
+   - Netlify shows you the DNS records to add (usually a `CNAME` for `www` pointing to your Netlify subdomain, and an `A` record or Netlify DNS for the apex domain).
+   - Update those records at your domain registrar.
+   - Netlify auto-issues a free SSL certificate once DNS resolves.
+6. From now on, every `git push` to `main` auto-deploys the live site — no manual upload needed.
+
+---
+
+## Quick reference — every future update
+
+```bash
+# after editing files locally
+git add .
+git commit -m "describe your change"
+git push
 ```
-
-Update `whatsappNumber` (country code + number, no `+` or spaces) and `whatsappMessage` (the pre-filled text the user sees when WhatsApp opens). The button SVG icon is injected automatically by `main.js` at runtime — no image file required.
-
----
-
-## Krishna floating button
-
-The Krishna button sits just above the WhatsApp button. Tapping it plays `assets/sounds/krishna.mp3`. Tapping again stops and resets the music. While playing, the button shows a golden glow pulse animation. To change the sound, replace `krishna.mp3` with any audio file of the same name. To change the image, replace `assets/images/krishna.png`.
+That's it — GitHub Pages or Netlify picks up the change automatically.
 
 ---
 
-## CSS files
+## Contact form
 
-The stylesheet is split into two files, both must be in `css/`:
-
-| File | Purpose |
-|---|---|
-| `style.css` | Core design system — typography, layout, components, colours |
-| `css-additions.css` | Additions and overrides — brand logo sizing, mobile nav overlay, hero opacity, WhatsApp/Krishna FABs, mobile breakpoints |
-
-Both are loaded via `<link>` tags in every HTML page. Changes to either file take effect immediately on refresh — no compilation needed.
-
----
-
-## JavaScript
-
-All interactivity lives in `js/main.js`. Key functions:
-
-| Function | What it does |
-|---|---|
-| `loadContent()` | Fetches `content.json` |
-| `applyTextBindings()` | Fills `data-content` elements with JSON values |
-| `setupHeader()` | Scroll state, mobile nav toggle, active link |
-| `setupReveal()` | IntersectionObserver scroll-reveal animations |
-| `renderStats()` | Animated number counters |
-| `renderTestimonials()` | Touch/click carousel with dots |
-| `renderFleetFull()` | Fleet grid with category filter buttons |
-| `setupContactForm()` | Client-side form validation |
-| `setupWhatsAppFAB()` | Injects WhatsApp SVG and sets href from content.json |
-| `setupKrishnaFAB()` | Play/stop toggle for Krishna music with glow state |
+Submissions go to Formspree: `https://formspree.io/f/mnjyeevd` (set in both `contact.html` and `js/main.js`'s `setupContactForm()`). To change the destination, update the URL in both places and check your Formspree dashboard to confirm the form ID is active.
 
 ---
 
 ## Browser support
 
-The site targets all modern browsers (Chrome, Safari, Firefox, Edge) on both desktop and mobile. Internet Explorer is not supported.
+Targets all modern browsers (Chrome, Safari, Firefox, Edge) on desktop and mobile. Internet Explorer is not supported.

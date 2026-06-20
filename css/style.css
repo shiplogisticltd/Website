@@ -12,20 +12,20 @@
 :root {
   /* Color */
   --navy-950: #ffffff;
-  --navy-900: #0a1726;
-  --navy-800: #0e2238;
-  --navy-700: #16314f;
-  --navy-600: #1f4068;
-  --cream: #f7f4ee;
-  --cream-dim: #ece7db;
-  --ink: #11202f;
-  --slate: #5c6b7a;
-  --slate-light: #8c9aa8;
-  --amber: #f2a93b;
-  --amber-light: #ffd166;
-  --amber-dark: #d6892a;
-  --route: #ffd166;
-  --line-light: rgba(11, 27, 46, 0.1);
+  --navy-900: #0f2942;
+  --navy-800: #1a3a5c;
+  --navy-700: #25496e;
+  --navy-600: #355e87;
+  --cream: #f5f7f9;
+  --cream-dim: #e9edf1;
+  --ink: #101b27;
+  --slate: #56636f;
+  --slate-light: #8a96a1;
+  --amber: #1aa68c;
+  --amber-light: #4fd1b8;
+  --amber-dark: #128a73;
+  --route: #2dd9bc;
+  --line-light: rgba(15, 41, 66, 0.1);
   --line-dark: rgba(255, 255, 255, 0.12);
   --white: #ffffff;
 
@@ -103,7 +103,7 @@ h4 {
   font-weight: 700;
   line-height: 1.15;
   margin: 0;
-  color: var(--navy-950);
+  color: #6b96d6;
   letter-spacing: -0.01em;
 }
 
@@ -200,7 +200,7 @@ h3 {
 
 .lede {
   font-size: 1.15rem;
-  color: var(--slate);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .on-dark,
@@ -239,11 +239,11 @@ h3 {
 }
 
 .bg-cream {
-  background: #e2891b;
+  background: var(--cream);
 }
 
 .bg-cream-dim {
-  background: #d8b45e;
+  background: var(--cream-dim);
 }
 
 .grid {
@@ -306,7 +306,7 @@ h3 {
 }
 
 .btn--primary {
-  background: linear-gradient(135deg, #f2a93b 0%, #e8952a 100%);
+  background: linear-gradient(135deg, #1aa68c 0%, #128a73 100%);
   color: var(--navy-900);
   box-shadow: 0 10px 30px -8px rgba(242, 169, 59, 0.5);
 }
@@ -571,7 +571,7 @@ h3 {
   }
 
   .nav__link:hover {
-    color: #ffd166;
+    color: #2dd9bc;
   }
 
   .nav__cta {
@@ -608,12 +608,12 @@ h3 {
   z-index: 1;
   background:
     linear-gradient(180deg,
-      rgba(10, 23, 38, 0.7) 0%,
-      rgba(10, 23, 38, 0.5) 40%,
-      rgba(10, 23, 38, 0.8) 100%),
+      rgba(22, 49, 79, 0.45) 0%,
+      rgba(22, 49, 79, 0.25) 40%,
+      rgba(22, 49, 79, 0.55) 100%),
     linear-gradient(90deg,
-      rgba(10, 23, 38, 0.85) 0%,
-      rgba(10, 23, 38, 0.2) 70%);
+      rgba(22, 49, 79, 0.6) 0%,
+      rgba(22, 49, 79, 0.1) 70%);
   opacity: 1;
 }
 
@@ -636,7 +636,7 @@ h3 {
 }
 
 .hero__content .eyebrow {
-  color: #ffd166;
+  color: #2dd9bc;
   background: rgba(10, 23, 38, 0.7);
   padding: 0.4rem 1.2rem;
   border-radius: 999px;
@@ -854,7 +854,7 @@ h3 {
   display: flex;
   align-items: baseline;
   gap: 4px;
-  background: linear-gradient(135deg, #ffd166 0%, #f2a93b 100%);
+  background: linear-gradient(135deg, #2dd9bc 0%, #1aa68c 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -862,7 +862,7 @@ h3 {
 
 .stat__suffix {
   font-size: 0.55em;
-  -webkit-text-fill-color: #f2a93b;
+  -webkit-text-fill-color: #1aa68c;
 }
 
 .stat__label {
@@ -994,7 +994,7 @@ h3 {
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 0.92rem;
-  color: #d6892a;
+  color: #128a73;
   padding-top: 6px;
 }
 
@@ -1267,7 +1267,7 @@ h3 {
   font-family: var(--font-display);
   font-size: 3.5rem;
   line-height: 1;
-  color: #f2a93b;
+  color: #1aa68c;
 }
 
 .testimonial__quote {
@@ -1407,7 +1407,7 @@ h3 {
 .cta-banner__action {
   position: relative;
   z-index: 1;
-  background: linear-gradient(135deg, #f2a93b 0%, #e8952a 100%);
+  background: linear-gradient(135deg, #1aa68c 0%, #128a73 100%);
   padding: 0.8rem 2.4rem;
   font-weight: 700;
   border-radius: 999px;
@@ -1481,7 +1481,7 @@ h3 {
   font-size: 0.75rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #ffd166;
+  color: #2dd9bc;
   margin-bottom: 20px;
   font-weight: 600;
 }
@@ -1506,7 +1506,7 @@ h3 {
   left: -20px;
   opacity: 0;
   transition: all 0.3s ease;
-  color: #f2a93b;
+  color: #1aa68c;
 }
 
 .footer__links a:hover {
@@ -1641,6 +1641,18 @@ h3 {
     width: 30px;
     height: 30px;
   }
+
+  .krishna-float {
+    width: 48px;
+    height: 48px;
+    right: 16px;
+    bottom: 76px;
+  }
+
+  .krishna-float img {
+    width: 48px;
+    height: 48px;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -1696,7 +1708,7 @@ h3 {
 }
 
 .breadcrumb a:hover {
-  color: #ffd166;
+  color: #2dd9bc;
 }
 
 /* --------------------------------------------------------------------------
@@ -2149,7 +2161,7 @@ h3 {
 
 .hub-card p {
   font-size: 0.9rem;
-  color: var(--slate);
+  color: #8a949c;
 }
 
 /* --------------------------------------------------------------------------
@@ -2288,15 +2300,15 @@ h3 {
 
 /* --- Krishna Button Styles --- */
 .krishna-float {
-  position: absolute;
-  bottom: 85px;
-  right: 11px;
-  z-index: 1000;
+  position: fixed;
+  bottom: 90px;
+  right: 22px;
+  z-index: 950;
   width: 56px;
   height: 56px;
   cursor: pointer;
   border-radius: 50%;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .krishna-float img {
@@ -2354,4 +2366,405 @@ h3 {
 
 .krishna-float.is-playing {
   animation: krishnaFloat 2s ease-in-out infinite, krishnaPulse 1.2s ease-in-out infinite;
+}
+
+/* ===== css-additions.css merged in (css-additions.css was not linked in HTML) ===== */
+/* ============================================================
+   ADD THESE STYLES TO THE BOTTOM OF YOUR css/style.css FILE
+   ============================================================ */
+
+/* --- Brand logo image --- */
+.brand__logo {
+  height: 40px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* ============================================================
+   HEADER ALIGNMENT FIX (mobile)
+   ============================================================ */
+.header__inner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.brand__mark {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.brand__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+/* Spacing between logo name and tagline (Pan-India) */
+.brand__name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.brand__tagline {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+/* ============================================================
+   MOBILE NAV — center menu items
+   ============================================================ */
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: var(--navy-950, #0a1726);
+    z-index: 999;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .nav.is-open {
+    display: flex;
+  }
+
+  .nav__list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav__link {
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+
+  .nav__cta {
+    margin-top: 0.5rem;
+  }
+}
+
+/* ============================================================
+   HERO VIDEO — make it more visible
+   ============================================================ */
+.hero__media {
+  opacity: 0.85 !important;
+}
+
+.hero__overlay {
+  opacity: 0.3 !important;
+}
+
+/* Spacing between hero eyebrow and heading */
+.hero__content .eyebrow {
+  margin-bottom: 1rem;
+}
+
+/* ============================================================
+   TRUST STRIP — infinite scroll marquee
+   ============================================================ */
+
+/* Outer wrapper clips overflow and fades edges */
+.trust__row-wrap {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  margin-top: 1rem;
+}
+
+/* The scrolling row — JS duplicates items for seamless loop */
+.trust__row {
+  display: flex;
+  gap: 0;
+  width: max-content;
+  animation: trustMarquee 32s linear infinite;
+  will-change: transform;
+}
+
+.trust:hover .trust__row,
+.trust:focus-within .trust__row {
+  animation-play-state: paused;
+}
+
+@keyframes trustMarquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.trust__item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  opacity: 0.72;
+  white-space: nowrap;
+  padding: 0.45rem 1.1rem;
+  margin: 0 0.45rem;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  flex-shrink: 0;
+}
+
+.trust__item--logo {
+  padding: 0.3rem 0.9rem;
+  background: #fff;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+.trust__item--logo img {
+  height: 28px;
+  width: auto;
+  max-width: 120px;
+  object-fit: contain;
+  display: block;
+}
+
+/* ============================================================
+   MOBILE — global smoothness improvements
+   ============================================================ */
+
+/* Momentum scrolling */
+html,
+body {
+  -webkit-overflow-scrolling: touch;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Remove tap highlight */
+a,
+button,
+[role="button"] {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Minimum touch target size */
+.btn,
+.nav__link,
+.nav__cta,
+.nav-toggle,
+.testimonials__arrow,
+.fleet-filters button {
+  min-height: 44px;
+}
+
+/* Prevent horizontal overflow */
+body {
+  overflow-x: hidden;
+}
+
+/* ============================================================
+   SMOOTHNESS / MOBILE PERFORMANCE
+   ============================================================ */
+.reveal,
+.reveal-stagger>* {
+  will-change: transform, opacity;
+}
+
+.header,
+.nav,
+.krishna-float,
+.whatsapp-fab {
+  will-change: transform;
+}
+
+@media (max-width: 768px) {
+
+  .header.is-scrolled,
+  .header.is-solid,
+  .nav,
+  .breadcrumb,
+  .hero__content .eyebrow,
+  .hero__content .lede {
+    backdrop-filter: blur(6px) !important;
+  }
+
+  .trust__row {
+    animation-duration: 22s;
+  }
+
+  .reveal,
+  .reveal-stagger>* {
+    transition-duration: 0.45s !important;
+  }
+}
+
+/* ============================================================
+   SERVICES & FLEET GRID — mobile symmetry
+   ============================================================ */
+@media (max-width: 640px) {
+  .grid-3 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .grid-4 {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .fleet-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .section {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  .hero__content h1 {
+    font-size: clamp(1.6rem, 6vw, 2.4rem);
+  }
+
+  .hero__content .lede {
+    font-size: 0.95rem;
+  }
+
+  .page-hero__content h1 {
+    font-size: clamp(1.5rem, 5.5vw, 2.2rem);
+  }
+
+  .cta-banner {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .cta-banner__action {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr !important;
+  }
+
+  .story {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hubs-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ============================================================
+   WHATSAPP FAB — green circle with official icon
+   ============================================================ */
+.whatsapp-fab {
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.45);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: transparent;
+}
+
+.whatsapp-fab:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.6);
+}
+
+.whatsapp-fab svg {
+  width: 56px;
+  height: 56px;
+}
+
+/* ============================================================
+   KRISHNA FLOATING BUTTON (above WhatsApp)
+   ============================================================ */
+/* Krishna float positioning lives in style.css (single source of truth) */
+.krishna-float {
+  animation: krishnaFloat 3s ease-in-out infinite;
+}
+
+@keyframes krishnaFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* ============================================================
+   HERO — mobile alignment + lighter overlay (video visible)
+   ============================================================ */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100svh;
+  }
+
+  .hero__overlay {
+    opacity: 0.35 !important;
+  }
+
+  .hero__media {
+    opacity: 0.7 !important;
+  }
+
+  .hero__content {
+    text-align: center;
+    margin-inline: auto;
+    padding-top: 0;
+  }
+
+  .hero__content .eyebrow,
+  .hero__actions {
+    justify-content: center;
+  }
+
+  .hero__content .lede {
+    margin-inline: auto;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+  }
 }
