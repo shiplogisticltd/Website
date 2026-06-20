@@ -36,11 +36,14 @@
      ------------------------------------------------------------------ */
   async function loadContent() {
     try {
-      const res = await fetch("content.json", { cache: "no-store" });
+      // Let the browser/CDN cache this normally (was "no-store" before,
+      // which forced a fresh download of content.json on every single
+      // page load and made every page feel slow on first paint).
+      const res = await fetch("content.json");
       if (!res.ok) throw new Error("content.json not found");
       return await res.json();
     } catch (err) {
-      console.warn("MARG: could not load content.json — static fallback content will remain.", err);
+      console.warn("Shipmate: could not load content.json — static fallback content will remain.", err);
       return null;
     }
   }
@@ -122,8 +125,19 @@
   }
 
   /* ------------------------------------------------------------------
-     Decorative route-line SVGs
+     WhatsApp floating button — injects the official-style icon
      ------------------------------------------------------------------ */
+  function setupWhatsAppFAB() {
+    $$(".whatsapp-fab").forEach((fab) => {
+      if (fab.querySelector("svg")) return; // already injected
+      fab.innerHTML =
+        `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true">
+          <path fill="#ffffff" d="M12.04 2.1c-5.46 0-9.9 4.43-9.9 9.9 0 1.74.46 3.44 1.33 4.93L2 22l5.2-1.36a9.86 9.86 0 0 0 4.84 1.24h.01c5.46 0 9.9-4.43 9.9-9.9 0-2.64-1.03-5.13-2.9-7-1.87-1.87-4.35-2.9-7.01-2.9Zm0 18.1h-.01a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.09.81.83-3.01-.2-.31a8.2 8.2 0 0 1-1.27-4.37c0-4.54 3.7-8.24 8.24-8.24a8.2 8.2 0 0 1 5.83 2.42 8.18 8.18 0 0 1 2.41 5.82c0 4.55-3.7 8.2-8.26 8.2Zm4.51-6.17c-.25-.12-1.46-.72-1.68-.8-.23-.08-.39-.12-.56.13-.16.24-.63.8-.78.96-.14.16-.29.18-.53.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.13-.56-1.33-.76-1.83-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.25-.86.85-.86 2.08s.88 2.41 1 2.58c.13.16 1.76 2.69 4.27 3.77.6.26 1.06.41 1.43.53.6.19 1.14.16 1.57.1.48-.07 1.46-.59 1.66-1.17.21-.57.21-1.06.15-1.17-.06-.1-.23-.17-.48-.29Z"/>
+        </svg>`;
+    });
+  }
+
+
   function routeSVG({ withDot = false, viewBox = "0 0 1440 300", path, dotPath } = {}) {
     const d = path || "M-50,180 C 250,40 450,260 750,150 C 1050,40 1250,240 1500,120";
     const dot = dotPath ? `<circle class="route-dot" r="5"><animateMotion dur="18s" repeatCount="indefinite" path="${dotPath}" rotate="auto"/></circle>` : "";
@@ -546,7 +560,7 @@
       if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = "Sending…"; }
 
       try {
-        const res = await fetch("https://formspree.io/f/mnjyeevd", {
+        const res = await fetch(form.action, {
           method: "POST",
           headers: { "Accept": "application/json" },
           body: new FormData(form)
@@ -594,7 +608,11 @@
     const wrap = $("#trustRow");
     if (!wrap || !data) return;
     const logos = getPath(data, "home.trustStrip.logos") || [];
-    wrap.innerHTML = logos.map((l) => `<span class="trust__item">${l.name}</span>`).join("");
+    const itemsHTML = logos.map((l) => `<span class="trust__item">${l.name}</span>`).join("");
+    // The marquee animation translates the track by -50%, so the track
+    // needs two identical copies of the items back-to-back for the loop
+    // to look seamless instead of jumping/blank-flashing halfway through.
+    wrap.innerHTML = itemsHTML + itemsHTML;
   }
 
   function renderTimeline(data) {
@@ -668,6 +686,7 @@
      ------------------------------------------------------------------ */
   document.addEventListener("DOMContentLoaded", async () => {
     injectRouteSVGs();
+    setupWhatsAppFAB();
 
     const data = await loadContent();
 
