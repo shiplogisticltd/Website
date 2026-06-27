@@ -11,7 +11,7 @@
    -------------------------------------------------------------------------- */
 :root {
   /* Color */
-  --navy-950: #ffffff;
+  --navy-950: #0a1726;
   --navy-900: #041629;
   --navy-800: #1f4068;
   --navy-700: #2a4f7a;
@@ -258,11 +258,11 @@ h3 {
 }
 
 .bg-cream {
-  background: #e69d18;
+  background: #f7f4ee;
 }
 
 .bg-cream-dim {
-  background: #4e7c2a;
+  background: #ece7db;
 }
 
 .grid {
@@ -416,14 +416,15 @@ h3 {
 }
 
 .brand__mark {
-  width: 100px;
-  height: 52px;
-  border-radius: 20px;
+  width: 80px;
+  height: 48px;
+  border-radius: 12px;
   background: #ffffff;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   flex: none;
+  overflow: hidden;
 }
 
 .brand__mark svg {
@@ -506,7 +507,7 @@ h3 {
 
 .nav-toggle {
   position: relative;
-  z-index: 1001;
+  z-index: 1002;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -550,10 +551,13 @@ h3 {
   .nav {
     display: none;
     position: fixed;
-    inset: 01;
+    inset: 0;
     top: 0;
-    z-index: 999;
-    background: rgb(4 22 41 / 35%);
+    left: 0;
+    width: 100vw;
+    height: 100dvh;
+    z-index: 1001;
+    background: rgb(4 22 41 / 92%);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
     flex-direction: column;
@@ -659,8 +663,7 @@ h3 {
   position: relative;
   z-index: 5;
   max-width: 740px;
-  padding-top: var(--header-h);
-  padding: 2rem 0;
+  padding: calc(var(--header-h) + 2rem) 0 2rem;
 }
 
 .hero__content .eyebrow {
@@ -1540,28 +1543,32 @@ h3 {
 .footer__links a {
   color: rgba(255, 255, 255, 0.7);
   font-size: 0.95rem;
-  transition: all var(--t-fast) var(--ease);
+  transition: color var(--t-fast) var(--ease), transform var(--t-fast) var(--ease);
   position: relative;
-  padding-left: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
 }
 
 .footer__links a::before {
   content: "→";
-  position: absolute;
-  left: -20px;
   opacity: 0;
-  transition: all 0.3s ease;
+  transform: translateX(-8px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
   color: #f2a93b;
+  margin-right: 0;
+  display: inline-block;
+  width: 0;
+  overflow: hidden;
 }
 
 .footer__links a:hover {
-  padding-left: 20px;
   color: #ffffff;
+  transform: translateX(6px);
 }
 
 .footer__links a:hover::before {
   opacity: 1;
-  left: 0;
 }
 
 .footer__contact-item {
@@ -1823,7 +1830,7 @@ h3 {
 
 .story__text p {
   margin-bottom: 1.1rem;
-  color: var(--slate);
+  color: var(--navy-900);
 }
 
 .story__text p:last-child {
@@ -1845,7 +1852,7 @@ h3 {
   background: var(--white);
   border: 1px solid var(--line-light);
   border-radius: var(--radius-md);
-  padding: 28px;
+  padding: 24px;
   transition: border-color var(--t-fast) var(--ease), transform var(--t-fast) var(--ease);
 }
 
@@ -1866,7 +1873,7 @@ h3 {
 
 .value-card {
   text-align: left;
-  padding: 28px;
+  padding: 18px;
   border-radius: var(--radius-md);
   background: var(--navy-800);
   border: 1px solid var(--line-dark);
@@ -2078,7 +2085,7 @@ h3 {
   grid-column: 1 / -1;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 580px) {
   .form-grid {
     grid-template-columns: 1fr;
   }
@@ -2248,7 +2255,7 @@ h3 {
 
 .hub-card p {
   font-size: 0.9rem;
-  color: #f6c94b;
+  color: var(--slate);
 }
 
 /* --------------------------------------------------------------------------
