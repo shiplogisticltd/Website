@@ -830,13 +830,8 @@ h3 {
 }
 
 @keyframes trustMarquee {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 .trust__item {
@@ -1675,20 +1670,9 @@ h3 {
 }
 
 @keyframes pulse-ring {
-  0% {
-    transform: scale(1);
-    opacity: 0.8;
-  }
-
-  70% {
-    transform: scale(1.18);
-    opacity: 0;
-  }
-
-  100% {
-    transform: scale(1.22);
-    opacity: 0;
-  }
+  0% { transform: scale(1); opacity: 0.8; }
+  70% { transform: scale(1.18); opacity: 0; }
+  100% { transform: scale(1.22); opacity: 0; }
 }
 
 @media (max-width: 480px) {
@@ -1696,27 +1680,21 @@ h3 {
     right: 14px;
     bottom: 14px;
   }
-
   .krishna-float {
     right: 14px;
     bottom: 70px;
   }
-
   .fab-stack {
     right: 14px;
     bottom: 14px;
     gap: 14px;
     padding: 8px;
   }
-
-  .whatsapp-fab,
-  .krishna-float {
+  .whatsapp-fab, .krishna-float {
     width: 48px;
     height: 48px;
   }
-
-  .whatsapp-fab img,
-  .krishna-float img {
+  .whatsapp-fab img, .krishna-float img {
     width: 28px;
     height: 28px;
   }
