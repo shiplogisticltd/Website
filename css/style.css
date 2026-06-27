@@ -12,7 +12,7 @@
 :root {
   /* Color */
   --navy-950: #ffffff;
-  --navy-900: #16314f;
+  --navy-900: #041629;
   --navy-800: #1f4068;
   --navy-700: #2a4f7a;
   --navy-600: #3a6394;
@@ -71,6 +71,19 @@ body {
   background: var(--cream);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  opacity: 1;
+  transition: opacity 0.22s ease;
+}
+
+/* Page-transition fade: JS adds .is-leaving just before navigating away
+   so the old page fades to the brand navy instead of staying frozen
+   on screen during the load of the next page. */
+body.is-leaving {
+  opacity: 0;
+}
+
+body.is-entering {
+  opacity: 0;
 }
 
 img,
@@ -239,11 +252,11 @@ h3 {
 }
 
 .bg-cream {
-  background: var(--cream);
+  background: #e69d18;
 }
 
 .bg-cream-dim {
-  background: var(--cream-dim);
+  background: #4e7c2a;
 }
 
 .grid {
@@ -486,6 +499,8 @@ h3 {
 }
 
 .nav-toggle {
+  position: relative;
+  z-index: 1001;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -526,44 +541,37 @@ h3 {
   }
 
   .nav {
+    display: none;
     position: fixed;
-    inset: 72px 0 0 0;
-    top: var(--header-h);
+    inset: 0;
+    top: 0;
+    z-index: 999;
     background: rgba(10, 23, 38, 0.98);
     backdrop-filter: blur(20px);
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
     padding: 32px 24px;
-    gap: 24px;
-    transform: translateY(-12px);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity var(--t-med) var(--ease), transform var(--t-med) var(--ease), visibility var(--t-med);
-    border-top: 1px solid var(--line-dark);
-  }
-
-  .header.is-solid .nav,
-  .header.is-scrolled .nav {
-    top: 72px;
+    overflow-y: auto;
   }
 
   .nav.is-open {
     display: flex;
-    transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
   }
 
   .nav__list {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    align-items: center;
+    gap: 22px;
     width: 100%;
+    text-align: center;
+    margin-bottom: 28px;
   }
 
   .nav__link {
-    font-size: 1.6rem;
-    padding: 0.5rem 0;
+    font-size: 1.5rem;
+    padding: 0.4rem 0;
   }
 
   .nav__link::after {
@@ -721,7 +729,7 @@ h3 {
   }
 
   .hero__content .lede {
-    background: rgba(10, 23, 38, 0.5);
+    background: rgb(51 54 58 / 13%);
     backdrop-filter: blur(8px);
     padding: 0.8rem;
   }
@@ -808,10 +816,27 @@ h3 {
 
 .trust__row {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-wrap: nowrap;
+  width: max-content;
   gap: 0.75rem 1.5rem;
   margin-top: 1rem;
+  animation: trustMarquee 32s linear infinite;
+  will-change: transform;
+}
+
+.trust:hover .trust__row,
+.trust:focus-within .trust__row {
+  animation-play-state: paused;
+}
+
+@keyframes trustMarquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .trust__item {
@@ -1568,22 +1593,64 @@ h3 {
 }
 
 /* --------------------------------------------------------------------------
-   16. WhatsApp floating button
+   16. Floating buttons — WhatsApp + Krishna
+   Each button is fixed-positioned on its own (works even if JS hasn't
+   run yet / fails). JS additionally wraps them in .fab-stack for a
+   shared outer "pill" padding — when present, .fab-stack takes over
+   positioning and the buttons become relative children inside it.
    -------------------------------------------------------------------------- */
+
 .whatsapp-fab {
   position: fixed;
-  right: 22px;
-  bottom: 22px;
+  right: 20px;
+  bottom: 20px;
   z-index: 900;
-  width: 60px;
-  height: 60px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   background: #25d366;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 14px 30px -10px rgba(37, 211, 102, 0.6);
+  box-shadow: 0 10px 24px -8px rgba(37, 211, 102, 0.6);
   transition: transform var(--t-fast) var(--ease);
+}
+
+.krishna-float {
+  position: fixed;
+  right: 20px;
+  bottom: 90px;
+  z-index: 900;
+  width: 56px;
+  height: 56px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* When JS has wrapped both buttons in .fab-stack, the stack becomes
+   the single fixed/positioned element and the buttons sit inside it
+   normally (no longer individually fixed). */
+.fab-stack {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 900;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+  border-radius: 999px;
+  background: rgba(10, 23, 38, 0.18);
+  backdrop-filter: blur(6px);
+}
+
+.fab-stack .whatsapp-fab,
+.fab-stack .krishna-float {
+  position: relative;
+  right: auto;
+  bottom: auto;
 }
 
 .whatsapp-fab:hover {
@@ -1591,21 +1658,17 @@ h3 {
 }
 
 .whatsapp-fab img {
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 34px;
   display: block;
   object-fit: contain;
-  border-radius: 0;
-  /* if your PNG already has rounded corners, keep as is */
 }
 
-/* Pulse ring animation (optional but nice) */
 .whatsapp-fab::before {
   content: "";
   position: absolute;
-  inset: -6px;
+  inset: -4px;
   border-radius: 50%;
-  background: transparent;
   border: 2px solid #25d366;
   animation: pulse-ring 2.4s ease-out infinite;
   pointer-events: none;
@@ -1618,40 +1681,44 @@ h3 {
   }
 
   70% {
-    transform: scale(1.3);
+    transform: scale(1.18);
     opacity: 0;
   }
 
   100% {
-    transform: scale(1.4);
+    transform: scale(1.22);
     opacity: 0;
   }
 }
 
-/* Mobile responsiveness */
 @media (max-width: 480px) {
   .whatsapp-fab {
-    width: 52px;
-    height: 52px;
-    right: 16px;
-    bottom: 16px;
-  }
-
-  .whatsapp-fab img {
-    width: 30px;
-    height: 30px;
+    right: 14px;
+    bottom: 14px;
   }
 
   .krishna-float {
-    width: 48px;
-    height: 48px;
-    right: 11.8px;
-    bottom: 80px;
+    right: 14px;
+    bottom: 70px;
   }
 
-  .krishna-float img {
+  .fab-stack {
+    right: 14px;
+    bottom: 14px;
+    gap: 14px;
+    padding: 8px;
+  }
+
+  .whatsapp-fab,
+  .krishna-float {
     width: 48px;
     height: 48px;
+  }
+
+  .whatsapp-fab img,
+  .krishna-float img {
+    width: 28px;
+    height: 28px;
   }
 }
 
@@ -2161,7 +2228,7 @@ h3 {
 
 .hub-card p {
   font-size: 0.9rem;
-  color: var(--slate);
+  color: #f6c94b;
 }
 
 /* --------------------------------------------------------------------------
@@ -2258,59 +2325,14 @@ h3 {
   object-fit: contain;
 }
 
-/* --- Mobile nav centered --- */
+/* --- Mobile nav: handled in section 6 (single source of truth) --- */
 @media (max-width: 768px) {
-  .nav {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(10, 23, 38, 0.98);
-    z-index: 999;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-    backdrop-filter: blur(20px);
-  }
-
-  .nav.is-open {
-    display: flex;
-  }
-
-  .nav__list {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 2rem 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-    text-align: center;
-  }
-
-  .nav__link {
-    font-size: 1.4rem;
-    font-weight: 600;
-  }
-
   .grid-3 {
     grid-template-columns: 1fr !important;
   }
 }
 
-/* --- Krishna Button Styles --- */
-.krishna-float {
-  position: fixed;
-  bottom: 90px;
-  right: 22px;
-  z-index: 950;
-  width: 56px;
-  height: 56px;
-  cursor: pointer;
-  border-radius: 50%;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
+/* --- Krishna Button visuals (position handled in section 16) --- */
 .krishna-float img {
   width: 56px;
   height: 56px;
@@ -2325,12 +2347,8 @@ h3 {
   transform: scale(1.1);
 }
 
-.krishna-float.is-playing {
-  animation: krishnaPulse 1s ease-in-out infinite;
-}
-
 .krishna-float.is-playing img {
-  box-shadow: 0 0 30px rgba(255, 180, 0, 0.8), 0 0 60px rgba(255, 180, 0, 0.4);
+  box-shadow: 0 0 14px rgba(255, 180, 0, 0.8), 0 0 24px rgba(255, 180, 0, 0.4);
   border-color: #ffd700;
 }
 
@@ -2365,7 +2383,7 @@ h3 {
 }
 
 .krishna-float.is-playing {
-  animation: krishnaFloat 2s ease-in-out infinite, krishnaPulse 1.2s ease-in-out infinite;
+  animation: krishnaPulse 1.2s ease-in-out infinite;
 }
 
 /* ==========================================================================

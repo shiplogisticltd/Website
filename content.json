@@ -58,24 +58,24 @@
       "label": "Trusted by manufacturers, retailers & pharma majors across India",
       "logos": [
         {
-          "name": "Neema Soap",
-          "image": ""
+          "name": "ANUSPA",
+          "image": "assets/images/logos/logo-1.svg"
         },
         {
           "name": "Labguard India Pvt. Ltd.",
-          "image": ""
+          "image": "assets/images/logos/logo-2.svg"
         },
         {
           "name": "NewAge Fire Protection Pvt. Ltd.",
-          "image": ""
+          "image": "assets/images/logos/logo-3.svg"
         },
         {
           "name": "Charotar Cosmetics",
-          "image": ""
+          "image": "assets/images/logos/logo-4.svg"
         },
         {
           "name": "Jay Patidar Safety Nets",
-          "image": ""
+          "image": "assets/images/logos/logo-5.svg"
         },
         {
           "name": "Malhar Safety Net Udyog",
@@ -83,15 +83,15 @@
         },
         {
           "name": "Thermax",
-          "image": ""
+          "image": "assets/images/logos/logo-6.svg"
         },
         {
           "name": "Wärtsilä",
-          "image": ""
+          "image": "assets/images/logos/logo-7.svg"
         },
         {
           "name": "D-Mart",
-          "image": ""
+          "image": "assets/images/logos/logo-8.svg"
         }
       ]
     },

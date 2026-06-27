@@ -9,7 +9,7 @@
    - fleet filters
    - coverage / network map rendering
    - contact form validation (client-side only)
-   - WhatsApp floating button
+   - WhatsApp + Krishna floating buttons (shared stack, audio toggle)
    - decorative "route line" SVG injection
    ========================================================================== */
 
@@ -36,9 +36,6 @@
      ------------------------------------------------------------------ */
   async function loadContent() {
     try {
-      // Let the browser/CDN cache this normally (was "no-store" before,
-      // which forced a fresh download of content.json on every single
-      // page load and made every page feel slow on first paint).
       const res = await fetch("content.json");
       if (!res.ok) throw new Error("content.json not found");
       return await res.json();
@@ -62,13 +59,45 @@
       }
     });
 
-    // Attribute bindings: data-content-attr="attrName:path.to.value"
     $$("[data-content-attr]").forEach((el) => {
       el.getAttribute("data-content-attr").split(";").forEach((pair) => {
         const [attr, path] = pair.split(":").map((s) => s.trim());
         const value = getPath(data, path);
         if (value !== undefined && value !== null) el.setAttribute(attr, value);
       });
+    });
+  }
+
+  /* ------------------------------------------------------------------
+     Page-transition fade — avoids the jarring "frozen old page" look
+     during full-page navigation between pages on slower connections.
+     ------------------------------------------------------------------ */
+  function setupPageTransitions() {
+    // Fade the incoming page in.
+    document.body.classList.add("is-entering");
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => document.body.classList.remove("is-entering"));
+    });
+
+    // Fade out before leaving, for same-site, non-special links.
+    document.addEventListener("click", (e) => {
+      const link = e.target.closest("a[href]");
+      if (!link) return;
+      const href = link.getAttribute("href");
+      if (
+        !href ||
+        href.startsWith("#") ||
+        href.startsWith("http") ||
+        href.startsWith("mailto:") ||
+        href.startsWith("tel:") ||
+        link.target === "_blank" ||
+        e.metaKey || e.ctrlKey || e.shiftKey
+      ) {
+        return;
+      }
+      e.preventDefault();
+      document.body.classList.add("is-leaving");
+      setTimeout(() => { window.location.href = href; }, 200);
     });
   }
 
@@ -104,7 +133,6 @@
       });
     }
 
-    // Mark active nav link
     const page = currentPage();
     $$(".nav__link").forEach((link) => {
       const href = link.getAttribute("href");
@@ -113,7 +141,6 @@
       }
     });
 
-    // WhatsApp CTA hrefs (header buttons, if any)
     if (data) {
       $$("[data-whatsapp-link]").forEach((el) => {
         el.setAttribute(
@@ -125,19 +152,48 @@
   }
 
   /* ------------------------------------------------------------------
-     WhatsApp floating button — injects the official-style icon
+     Floating buttons: wrap WhatsApp + Krishna in one shared "stack"
+     container (single outer padding, two inner paddings already
+     handled by CSS), inject WhatsApp icon, wire Krishna click-to-play
+     audio toggle.
      ------------------------------------------------------------------ */
-  function setupWhatsAppFAB() {
-    $$(".whatsapp-fab").forEach((fab) => {
-      if (fab.querySelector("svg")) return; // already injected
-      fab.innerHTML =
+  function setupFloatingButtons() {
+    const whatsapp = $(".whatsapp-fab");
+    const krishna = $(".krishna-float");
+    if (whatsapp || krishna) {
+      const stack = document.createElement("div");
+      stack.className = "fab-stack";
+      const parent = (whatsapp || krishna).parentNode;
+      parent.insertBefore(stack, whatsapp || krishna);
+      if (krishna) stack.appendChild(krishna);
+      if (whatsapp) stack.appendChild(whatsapp);
+    }
+
+    if (whatsapp && !whatsapp.querySelector("svg")) {
+      whatsapp.innerHTML =
         `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true">
           <path fill="#ffffff" d="M12.04 2.1c-5.46 0-9.9 4.43-9.9 9.9 0 1.74.46 3.44 1.33 4.93L2 22l5.2-1.36a9.86 9.86 0 0 0 4.84 1.24h.01c5.46 0 9.9-4.43 9.9-9.9 0-2.64-1.03-5.13-2.9-7-1.87-1.87-4.35-2.9-7.01-2.9Zm0 18.1h-.01a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.09.81.83-3.01-.2-.31a8.2 8.2 0 0 1-1.27-4.37c0-4.54 3.7-8.24 8.24-8.24a8.2 8.2 0 0 1 5.83 2.42 8.18 8.18 0 0 1 2.41 5.82c0 4.55-3.7 8.2-8.26 8.2Zm4.51-6.17c-.25-.12-1.46-.72-1.68-.8-.23-.08-.39-.12-.56.13-.16.24-.63.8-.78.96-.14.16-.29.18-.53.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.13-.56-1.33-.76-1.83-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.65.31-.23.25-.86.85-.86 2.08s.88 2.41 1 2.58c.13.16 1.76 2.69 4.27 3.77.6.26 1.06.41 1.43.53.6.19 1.14.16 1.57.1.48-.07 1.46-.59 1.66-1.17.21-.57.21-1.06.15-1.17-.06-.1-.23-.17-.48-.29Z"/>
         </svg>`;
-    });
+    }
+
+    if (krishna) {
+      const audio = new Audio("assets/audio/krishna.mp3");
+      audio.loop = true;
+      krishna.addEventListener("click", () => {
+        if (audio.paused) {
+          audio.play().catch(() => {});
+          krishna.classList.add("is-playing");
+        } else {
+          audio.pause();
+          krishna.classList.remove("is-playing");
+        }
+      });
+    }
   }
 
-
+  /* ------------------------------------------------------------------
+     Decorative route-line SVGs
+     ------------------------------------------------------------------ */
   function routeSVG({ withDot = false, viewBox = "0 0 1440 300", path, dotPath } = {}) {
     const d = path || "M-50,180 C 250,40 450,260 750,150 C 1050,40 1250,240 1500,120";
     const dot = dotPath ? `<circle class="route-dot" r="5"><animateMotion dur="18s" repeatCount="indefinite" path="${dotPath}" rotate="auto"/></circle>` : "";
@@ -242,7 +298,7 @@
 
       function tick(now) {
         const progress = Math.min((now - start) / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+        const eased = 1 - Math.pow(1 - progress, 3);
         const value = target * eased;
         numEl.textContent = isDecimal ? value.toFixed(1) : Math.round(value).toLocaleString("en-IN");
         if (progress < 1) requestAnimationFrame(tick);
@@ -468,7 +524,6 @@
       });
     }
 
-    // Auto-rotate
     let timer = setInterval(() => go(1), 7000);
     const viewport = $("#testimonialsViewport");
     if (viewport) {
@@ -555,7 +610,6 @@
         return;
       }
 
-      // Submit to Formspree
       const submitBtn = form.querySelector("[type=submit]");
       if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = "Sending…"; }
 
@@ -595,7 +649,6 @@
       }
     });
 
-    // Live-clear invalid state on input
     $$("input, select, textarea", form).forEach((field) => {
       field.addEventListener("input", () => field.classList.remove("is-invalid"));
     });
@@ -609,9 +662,9 @@
     if (!wrap || !data) return;
     const logos = getPath(data, "home.trustStrip.logos") || [];
     const itemsHTML = logos.map((l) => `<span class="trust__item">${l.name}</span>`).join("");
-    // The marquee animation translates the track by -50%, so the track
-    // needs two identical copies of the items back-to-back for the loop
-    // to look seamless instead of jumping/blank-flashing halfway through.
+    // Marquee translates the track by -50%; two identical copies back
+    // to back are required for a seamless loop. This is NOT duplicate
+    // content — content.json itself has no repeated names.
     wrap.innerHTML = itemsHTML + itemsHTML;
   }
 
@@ -686,7 +739,8 @@
      ------------------------------------------------------------------ */
   document.addEventListener("DOMContentLoaded", async () => {
     injectRouteSVGs();
-    setupWhatsAppFAB();
+    setupFloatingButtons();
+    setupPageTransitions();
 
     const data = await loadContent();
 
