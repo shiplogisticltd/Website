@@ -196,26 +196,6 @@ The `CNAME` file at the root sets the custom domain for GitHub Pages. For Netlif
 
 ---
 
-## 🐛 Bugs Fixed (June 2026)
-
-| # | Bug | Fix |
-|---|-----|-----|
-| 1 | `--navy-950` token was `#ffffff` — headings invisible | Changed to `#0a1726` |
-| 2 | `.bg-cream` was orange `#e69d18` | Restored to `#f7f4ee` |
-| 3 | `.bg-cream-dim` was green `#4e7c2a` | Restored to `#ece7db` |
-| 4 | Mobile nav only showing at top of screen | Fixed `inset: 01` typo → `inset: 0` |
-| 5 | Mobile nav clipped by header (z-index) | Nav z-index 1001, toggle 1002 |
-| 6 | `css-additions.css` conflicting/duplicate rules | Cleared file; all styles in style.css |
-| 7 | Trust strip marquee visible jump at loop end | JS now duplicates items for seamless loop |
-| 8 | WhatsApp FAB showing blank green circle | SVG icon injected by JS |
-| 9 | Hub card text yellow `#f6c94b` on white bg | Changed to `var(--slate)` |
-| 10 | `.pillar` cards had only `10px` padding | Changed to `24px` |
-| 11 | Hero text hidden behind fixed header on mobile | `padding-top: calc(var(--header-h) + 2rem)` |
-| 12 | Footer link hover caused layout reflow | Replaced `padding-left` with `transform: translateX` |
-| 13 | Form inputs too narrow on 320px phones | Breakpoint changed `640px` → `580px` |
-| 14 | `brand__mark` 100px wide squeezing nav on mobile | Reduced to `80px` with `overflow: hidden` |
-
----
 
 ## 🛠️ Tech Stack
 
