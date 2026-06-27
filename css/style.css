@@ -1645,8 +1645,8 @@ h3 {
   .krishna-float {
     width: 48px;
     height: 48px;
-    right: 16px;
-    bottom: 76px;
+    right: 11.8px;
+    bottom: 80px;
   }
 
   .krishna-float img {
@@ -2378,8 +2378,13 @@ h3 {
 /* Slightly brighten the hero video without fully reverting the dark
    overlay (kept as a single, intentional rule instead of two fighting
    copies). */
-.hero__media { opacity: 0.85; }
-.hero__overlay { opacity: 0.55; }
+.hero__media {
+  opacity: 0.85;
+}
+
+.hero__overlay {
+  opacity: 0.55;
+}
 
 /* WhatsApp icon, injected by js/main.js at runtime */
 .whatsapp-fab svg {
@@ -2411,38 +2416,68 @@ h3 {
 }
 
 /* Touch & scroll smoothness on mobile */
-html, body {
+html,
+body {
   -webkit-overflow-scrolling: touch;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   overflow-x: hidden;
 }
 
-a, button, [role="button"] {
+a,
+button,
+[role="button"] {
   -webkit-tap-highlight-color: transparent;
 }
 
-.btn, .nav__link, .nav__cta, .nav-toggle,
-.testimonials__arrow, .fleet-filters button {
+.btn,
+.nav__link,
+.nav__cta,
+.nav-toggle,
+.testimonials__arrow,
+.fleet-filters button {
   min-height: 44px;
 }
 
 /* Compositor hints — keeps scroll-reveal & floating buttons off the main
    thread so scrolling feels smooth instead of janky on lower-end phones */
-.reveal, .reveal-stagger > * { will-change: transform, opacity; }
-.header, .nav, .krishna-float, .whatsapp-fab { will-change: transform; }
+.reveal,
+.reveal-stagger>* {
+  will-change: transform, opacity;
+}
+
+.header,
+.nav,
+.krishna-float,
+.whatsapp-fab {
+  will-change: transform;
+}
 
 @media (max-width: 768px) {
-  .header.is-scrolled, .header.is-solid,
-  .nav, .breadcrumb, .hero__content .eyebrow, .hero__content .lede {
+
+  .header.is-scrolled,
+  .header.is-solid,
+  .nav,
+  .breadcrumb,
+  .hero__content .eyebrow,
+  .hero__content .lede {
     backdrop-filter: blur(6px) !important;
   }
-  .trust__row { animation-duration: 22s; }
-  .reveal, .reveal-stagger > * { transition-duration: 0.45s !important; }
+
+  .trust__row {
+    animation-duration: 22s;
+  }
+
+  .reveal,
+  .reveal-stagger>* {
+    transition-duration: 0.45s !important;
+  }
 }
 
 @media (max-width: 640px) {
-  .grid-4 { grid-template-columns: 1fr 1fr !important; }
+  .grid-4 {
+    grid-template-columns: 1fr 1fr !important;
+  }
 
   .fleet-filters {
     display: flex;
