@@ -36,7 +36,7 @@
      ------------------------------------------------------------------ */
   async function loadContent() {
     try {
-      const res = await fetch("content.json", { cache: "no-store" });
+      const res = await fetch("content.json");
       if (!res.ok) throw new Error("content.json not found");
       return await res.json();
     } catch (err) {
@@ -169,26 +169,39 @@
   }
 
   /* ------------------------------------------------------------------
-     Scroll reveal animations
+     Scroll reveal animations — single shared observer
      ------------------------------------------------------------------ */
-  function setupReveal() {
-    const targets = $$(".reveal, .reveal-stagger");
-    if (!("IntersectionObserver" in window) || targets.length === 0) {
-      targets.forEach((t) => t.classList.add("is-visible"));
-      return;
-    }
-    const observer = new IntersectionObserver(
+  let _revealObserver = null;
+
+  function getRevealObserver() {
+    if (_revealObserver) return _revealObserver;
+    if (!("IntersectionObserver" in window)) return null;
+    _revealObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
+            _revealObserver.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.15, rootMargin: "0px 0px -60px 0px" }
+      { threshold: 0.12, rootMargin: "0px 0px -48px 0px" }
     );
-    targets.forEach((t) => observer.observe(t));
+    return _revealObserver;
+  }
+
+  function setupReveal() {
+    const targets = $$(".reveal, .reveal-stagger");
+    const observer = getRevealObserver();
+    targets.forEach((t) => {
+      if (!t.classList.contains("is-visible")) {
+        if (observer) {
+          observer.observe(t);
+        } else {
+          t.classList.add("is-visible");
+        }
+      }
+    });
   }
 
   /* ------------------------------------------------------------------

@@ -30,8 +30,8 @@
   --white: #ffffff;
 
   /* Type */
-  --font-display: "Space Grotesk", "Roboto", "Inter", Arial, sans-serif;
-  --font-body: "Inter", Arial, sans-serif;
+  --font-display: "Space Grotesk", "Inter", system-ui, Arial, sans-serif;
+  --font-body: "Inter", system-ui, Arial, sans-serif;
   --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
 
   /* Layout */
@@ -2484,17 +2484,13 @@ button,
   min-height: 44px;
 }
 
-/* Compositor hints — keeps scroll-reveal & floating buttons off the main
-   thread so scrolling feels smooth instead of janky on lower-end phones */
+/* Compositor hints — only for continuously animating elements */
 .reveal,
-.reveal-stagger>* {
+.reveal-stagger > * {
   will-change: transform, opacity;
 }
 
-.header,
-.nav,
-.krishna-float,
-.whatsapp-fab {
+.header {
   will-change: transform;
 }
 

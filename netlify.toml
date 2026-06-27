@@ -6,32 +6,34 @@
   for = "/*.html"
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
 
-# content.json — short cache so text edits show up quickly without forcing
-# a full network fetch on every single page load (the old "no-store" did)
+# content.json — 5-minute cache (edits visible quickly, not re-fetched every load)
 [[headers]]
   for = "/content.json"
   [headers.values]
-    Cache-Control = "public, max-age=300, must-revalidate"
+    Cache-Control = "public, max-age=300, stale-while-revalidate=60"
 
-# CSS / JS — cache for a day; bump the filename or query string if you
-# need to force an instant refresh for returning visitors
+# CSS / JS — 1-year immutable cache (hash or rename to bust)
 [[headers]]
   for = "/css/*"
   [headers.values]
-    Cache-Control = "public, max-age=86400"
+    Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
   for = "/js/*"
   [headers.values]
-    Cache-Control = "public, max-age=86400"
+    Cache-Control = "public, max-age=31536000, immutable"
 
-# Images, video, fonts, icons — cache hard, these rarely change
+# Images & video — 1-year immutable
 [[headers]]
   for = "/assets/*"
   [headers.values]
-    Cache-Control = "public, max-age=604800, immutable"
+    Cache-Control = "public, max-age=31536000, immutable"
 
+# Favicons — 1 week
 [[headers]]
   for = "/*.ico"
   [headers.values]

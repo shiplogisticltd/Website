@@ -19,11 +19,15 @@
   <meta property="og:image" content="assets/images/hero-poster.jpg">
 
   <!-- Fonts -->
+  <!-- Fonts: preconnect first, then load async to avoid render-blocking -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
-    rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
+
+  <!-- Preload LCP image (hero poster) and critical logo -->
+  <link rel="preload" href="assets/images/hero-poster.jpg" as="image" fetchpriority="high">
+  <link rel="preload" href="assets/images/logos/mainlogo.png" as="image">
 
   <link rel="stylesheet" href="css/style.css">
 
@@ -101,7 +105,7 @@
   <main id="main">
     <!-- ============ HERO ============ -->
     <section class="hero">
-      <video class="hero__media" autoplay muted loop playsinline poster="assets/images/hero-poster.jpg"
+      <video class="hero__media" autoplay muted loop playsinline preload="none" poster="assets/images/hero-poster.jpg"
         data-content-attr="poster:home.hero.videoPoster">
         <source src="assets/videos/hero-loop.mp4" type="video/mp4">
       </video>
@@ -308,7 +312,7 @@
     <img src="assets/images/krishna.png" alt="Jai Shri Krishna" />
   </div>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
 
 </body>
 
