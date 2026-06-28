@@ -2548,3 +2548,414 @@ button,
     justify-content: center;
   }
 }
+/* ==========================================================================
+   PAGE HERO — VIDEO BACKGROUND (all sub-pages)
+   ========================================================================== */
+.page-hero--video {
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero__video-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.page-hero__video-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.page-hero__video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(4,22,41,0.82) 0%, rgba(4,22,41,0.65) 100%);
+}
+
+.page-hero--video .page-hero__route,
+.page-hero--video .page-hero__content {
+  position: relative;
+  z-index: 1;
+}
+
+/* ==========================================================================
+   INDIA ANIMATED MAP — About page
+   ========================================================================== */
+.india-map-wrap {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(4,22,41,0.4);
+}
+
+.india-map-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.india-outline {
+  transition: fill 0.3s;
+}
+
+.state-region {
+  transition: opacity 0.3s;
+  animation: regionPulse 4s ease-in-out infinite alternate;
+}
+
+.state-maha { animation-delay: 0s; }
+.state-raj { animation-delay: 0.8s; }
+.state-up { animation-delay: 1.6s; }
+.state-guj { animation-delay: 2.4s; }
+.state-karn { animation-delay: 3.2s; }
+
+@keyframes regionPulse {
+  0% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+.city-dot .city-pulse {
+  animation: cityGlow 2.5s ease-in-out infinite;
+}
+
+@keyframes cityGlow {
+  0%, 100% { r: 6; opacity: 0.8; }
+  50% { r: 9; opacity: 1; }
+}
+
+.city-label {
+  font-size: 9px;
+  fill: rgba(255,255,255,0.85);
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+}
+
+.map-title {
+  font-size: 11px;
+  fill: rgba(242,169,59,0.8);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-anchor: middle;
+  text-transform: uppercase;
+}
+
+.map-stat-label {
+  font-size: 9px;
+  fill: rgba(255,255,255,0.6);
+  font-family: 'Inter', sans-serif;
+  text-anchor: middle;
+}
+
+.map-stat-value {
+  font-size: 18px;
+  fill: #f2a93b;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  text-anchor: middle;
+}
+
+.route-lines path {
+  stroke-dashoffset: 0;
+  animation: dashFlow 3s linear infinite;
+}
+
+@keyframes dashFlow {
+  to { stroke-dashoffset: -28; }
+}
+
+/* ==========================================================================
+   WHATSAPP POPUP — call / chat options
+   ========================================================================== */
+.fab-stack {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+
+.wa-popup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  opacity: 0;
+  transform: translateY(12px) scale(0.95);
+  pointer-events: none;
+  transition: opacity 0.22s ease, transform 0.22s ease;
+  transform-origin: bottom right;
+}
+
+.wa-popup.is-open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.wa-popup__option {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.65rem 1.1rem;
+  background: #ffffff;
+  color: #041629;
+  border-radius: 50px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+  white-space: nowrap;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.wa-popup__option:hover {
+  transform: translateX(-4px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.22);
+}
+
+.wa-popup__call { border-left: 3px solid #0d3357; }
+.wa-popup__chat { border-left: 3px solid #25d366; }
+
+.wa-popup__icon {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+/* ==========================================================================
+   TEAM CARDS — Leadership photo cards (About page)
+   ========================================================================== */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  margin: 2.5rem 0 2rem;
+}
+
+.team-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.team-card:hover {
+  background: rgba(255,255,255,0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+}
+
+.team-card__photo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 3px solid rgba(242,169,59,0.5);
+  background: rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-card__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-card__avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.35);
+  background: rgba(255,255,255,0.06);
+}
+
+.team-card__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.team-card__name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 0.25rem;
+}
+
+.team-card__title {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.6);
+  margin: 0 0 0.75rem;
+}
+
+.team-card__cta {
+  font-size: 0.78rem;
+  color: #f2a93b;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: letter-spacing 0.2s;
+}
+
+.team-card:hover .team-card__cta {
+  letter-spacing: 0.06em;
+}
+
+/* ==========================================================================
+   TEAM BIO MODAL
+   ========================================================================== */
+.team-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.team-modal.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.team-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(4,22,41,0.85);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.team-modal__box {
+  position: relative;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 2.5rem;
+  max-width: 520px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.35);
+  transform: translateY(20px) scale(0.96);
+  transition: transform 0.25s ease;
+}
+
+.team-modal.is-open .team-modal__box {
+  transform: translateY(0) scale(1);
+}
+
+.team-modal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  line-height: 1;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.team-modal__close:hover { color: #041629; }
+
+.team-modal__photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 1.25rem;
+  border: 4px solid #f2a93b;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-modal__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-modal__placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+}
+
+.team-modal__name {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #041629;
+  margin: 0 0 0.25rem;
+}
+
+.team-modal__position {
+  font-size: 0.88rem;
+  color: #f2a93b;
+  font-weight: 600;
+  margin: 0 0 1.25rem;
+}
+
+.team-modal__bio {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #4a5568;
+  text-align: left;
+  margin: 0;
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVE — new components
+   ========================================================================== */
+@media (max-width: 768px) {
+  .india-map-wrap { max-width: 100%; }
+
+  .team-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .team-modal__box {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .wa-popup__option {
+    font-size: 0.82rem;
+    padding: 0.55rem 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .story__media .india-map-wrap {
+    max-width: 320px;
+  }
+}

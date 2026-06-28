@@ -67,8 +67,14 @@
   </header>
 
   <main id="main">
-    <!-- ============ PAGE HERO ============ -->
-    <section class="page-hero">
+    <!-- ============ PAGE HERO with VIDEO ============ -->
+    <section class="page-hero page-hero--video">
+      <div class="page-hero__video-bg" aria-hidden="true">
+        <video autoplay muted loop playsinline preload="none" poster="assets/images/hero-poster.jpg">
+          <source src="assets/videos/hero-loop.mp4" type="video/mp4">
+        </video>
+        <div class="page-hero__video-overlay"></div>
+      </div>
       <div class="page-hero__route" aria-hidden="true"></div>
       <div class="container page-hero__content">
         <nav class="breadcrumb" aria-label="Breadcrumb">

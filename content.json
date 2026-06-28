@@ -3,7 +3,7 @@
     "name": "Shipmate Logistics",
     "tagline": "Every Mile, Mastered.",
     "phone": "+91 73571 77827 / +91 77278 06089",
-    "phoneHref": "+91 77278 06089",
+    "phoneHref": "+917357177827",
     "email": "contact@shipmatelogistics.in",
     "whatsappNumber": "917357177827",
     "whatsappMessage": "Hello Shipmate Logistics, I'd like to get a freight quote.",
@@ -16,26 +16,11 @@
       "facebook": "#"
     },
     "nav": [
-      {
-        "label": "Home",
-        "href": "index.html"
-      },
-      {
-        "label": "About",
-        "href": "about.html"
-      },
-      {
-        "label": "Services",
-        "href": "services.html"
-      },
-      {
-        "label": "Fleet",
-        "href": "fleet.html"
-      },
-      {
-        "label": "Contact",
-        "href": "contact.html"
-      }
+      { "label": "Home", "href": "index.html" },
+      { "label": "About", "href": "about.html" },
+      { "label": "Services", "href": "services.html" },
+      { "label": "Fleet", "href": "fleet.html" },
+      { "label": "Contact", "href": "contact.html" }
     ]
   },
   "home": {
@@ -43,82 +28,32 @@
       "eyebrow": "Pan-India Freight Network",
       "title": "Freight that arrives on schedule, every time.",
       "subtitle": "Shipmate Logistics moves full truckloads, part loads and temperature-controlled cargo across 650+ Pincode Served — tracked end-to-end, backed by a 99% on-time record.",
-      "ctaPrimary": {
-        "label": "Get a Freight Quote",
-        "href": "contact.html"
-      },
-      "ctaSecondary": {
-        "label": "Explore Our Fleet",
-        "href": "fleet.html"
-      },
+      "ctaPrimary": { "label": "Get a Freight Quote", "href": "contact.html" },
+      "ctaSecondary": { "label": "Explore Our Fleet", "href": "fleet.html" },
       "videoPoster": "assets/images/hero-poster.jpg",
       "video": "assets/videos/hero-loop.mp4"
     },
     "trustStrip": {
       "label": "Trusted by manufacturers, retailers & pharma majors across India",
       "logos": [
-        {
-          "name": "ANUSPA",
-          "image": "assets/images/logos/logo-1.svg"
-        },
-        {
-          "name": "Labguard India Pvt. Ltd.",
-          "image": "assets/images/logos/logo-2.svg"
-        },
-        {
-          "name": "NewAge Fire Protection Pvt. Ltd.",
-          "image": "assets/images/logos/logo-3.svg"
-        },
-        {
-          "name": "Charotar Cosmetics",
-          "image": "assets/images/logos/logo-4.svg"
-        },
-        {
-          "name": "Jay Patidar Safety Nets",
-          "image": "assets/images/logos/logo-5.svg"
-        },
-        {
-          "name": "Malhar Safety Net Udyog",
-          "image": ""
-        },
-        {
-          "name": "Thermax",
-          "image": "assets/images/logos/logo-6.svg"
-        },
-        {
-          "name": "Wärtsilä",
-          "image": "assets/images/logos/logo-7.svg"
-        },
-        {
-          "name": "D-Mart",
-          "image": "assets/images/logos/logo-8.svg"
-        }
+        { "name": "ANUSPA", "image": "assets/images/logos/logo-1.svg" },
+        { "name": "Labguard India Pvt. Ltd.", "image": "assets/images/logos/logo-2.svg" },
+        { "name": "NewAge Fire Protection Pvt. Ltd.", "image": "assets/images/logos/logo-3.svg" },
+        { "name": "Charotar Cosmetics", "image": "assets/images/logos/logo-4.svg" },
+        { "name": "Jay Patidar Safety Nets", "image": "assets/images/logos/logo-5.svg" },
+        { "name": "Malhar Safety Net Udyog", "image": "" },
+        { "name": "Thermax", "image": "assets/images/logos/logo-6.svg" },
+        { "name": "Wärtsilä", "image": "assets/images/logos/logo-7.svg" },
+        { "name": "D-Mart", "image": "assets/images/logos/logo-8.svg" }
       ]
     },
     "stats": {
       "title": "The network, by the numbers",
       "items": [
-        {
-          "value": 420,
-          "suffix": "+",
-          "label": "Vehicles in fleet"
-        },
-        {
-          "value": 650,
-          "suffix": "+",
-          "label": "Pincode"
-        },
-        {
-          "value": 99,
-          "suffix": "%",
-          "label": "On-time delivery rate",
-          "decimal": false
-        },
-        {
-          "value": 24,
-          "suffix": "/7",
-          "label": "Dispatch desk support"
-        }
+        { "value": 420, "suffix": "+", "label": "Vehicles in fleet" },
+        { "value": 650, "suffix": "+", "label": "Pincode" },
+        { "value": 99, "suffix": "%", "label": "On-time delivery rate", "decimal": false },
+        { "value": 24, "suffix": "/7", "label": "Dispatch desk support" }
       ]
     },
     "servicesPreview": {
@@ -126,68 +61,22 @@
       "title": "Built for every kind of cargo",
       "subtitle": "From single pallets to factory-scale truckloads, choose the service tier that matches your shipment.",
       "linkLabel": "View all services",
-      "linkHref": "services.html"
-    },
-    "fleetPreview": {
-      "eyebrow": "What we drive",
-      "title": "A fleet maintained like it matters",
-      "subtitle": "Every vehicle is GPS-tracked, serviced on a fixed schedule, and driven by verified, trained operators.",
-      "linkLabel": "View the full fleet",
-      "linkHref": "fleet.html"
+      "linkHref": "services.html",
+      "previewCodes": ["FTL", "CNT", "LTC"]
     },
     "coverage": {
       "eyebrow": "Where we operate",
       "title": "A route for almost everywhere",
       "subtitle": "Our hub-and-spoke network connects six regional hubs to over 250 delivery destinations across India.",
       "hubs": [
-        {
-          "name": "Delhi NCR",
-          "role": "North Hub",
-          "x": "46%",
-          "y": "24%"
-        },
-        {
-          "name": "Mumbai",
-          "role": "West Hub",
-          "x": "28%",
-          "y": "52%"
-        },
-        {
-          "name": "Ahmedabad",
-          "role": "West Spoke",
-          "x": "30%",
-          "y": "40%"
-        },
-        {
-          "name": "Bengaluru",
-          "role": "South Hub",
-          "x": "44%",
-          "y": "76%"
-        },
-        {
-          "name": "Chennai",
-          "role": "South Spoke",
-          "x": "53%",
-          "y": "78%"
-        },
-        {
-          "name": "Kolkata",
-          "role": "East Hub",
-          "x": "68%",
-          "y": "44%"
-        },
-        {
-          "name": "Hyderabad",
-          "role": "Central Spoke",
-          "x": "47%",
-          "y": "60%"
-        },
-        {
-          "name": "Pune",
-          "role": "West Spoke",
-          "x": "33%",
-          "y": "58%"
-        }
+        { "name": "Delhi NCR", "role": "North Hub", "x": "46%", "y": "24%" },
+        { "name": "Mumbai", "role": "West Hub", "x": "28%", "y": "52%" },
+        { "name": "Ahmedabad", "role": "West Spoke", "x": "30%", "y": "40%" },
+        { "name": "Bengaluru", "role": "South Hub", "x": "44%", "y": "76%" },
+        { "name": "Chennai", "role": "South Spoke", "x": "53%", "y": "78%" },
+        { "name": "Kolkata", "role": "East Hub", "x": "68%", "y": "44%" },
+        { "name": "Hyderabad", "role": "Central Spoke", "x": "47%", "y": "60%" },
+        { "name": "Pune", "role": "West Spoke", "x": "33%", "y": "58%" }
       ]
     },
     "testimonials": {
@@ -233,9 +122,9 @@
       "paragraphs": [
         "At Shipmate Logistics Private Limited, we believe logistics is not just about transporting goods—it's about delivering trust, enabling business growth, and building lasting partnerships. Every shipment we handle represents a promise of reliability, precision, and excellence.",
         "Established with a vision to redefine logistics through transparency, efficiency, and customer-centric service, Shipmate Logistics is dedicated to providing seamless transportation solutions that businesses can depend on. From full truckload (FTL) and part-load (PTL) services to customized logistics solutions, we combine operational expertise with meticulous planning to ensure every consignment reaches its destination safely, securely, and on time.",
-        "What sets us apart is our leadership-driven approach. Backed by years of practical industry experience, our team possesses in-depth expertise in transportation management, freight operations, supply chain coordination, and customer relationship management. We understand that every business has unique logistics requirements, which is why we deliver tailored solutions designed to optimize efficiency, reduce transportation costs, and ensure uninterrupted supply chain performance.",
-        "At Shipmate Logistics, we measure our success by the success of our customers. Through proactive planning, transparent communication, and a commitment to operational excellence, we strive to eliminate common logistics challenges such as shipment delays, coordination gaps, and service uncertainty. Our goal is to provide complete peace of mind by ensuring every shipment is managed with professionalism, accountability, and unwavering attention to detail.",
-        "As we continue to grow, our ambition remains clear—to become one of India's most trusted and respected logistics partners by delivering innovative, dependable, and value-driven transportation solutions. Guided by our commitment to Connecting Possibilities. Delivering Excellence., we are dedicated to building long-term relationships and supporting the continued growth of businesses across the nation."
+        "What sets us apart is our leadership-driven approach. Backed by years of practical industry experience, our team possesses in-depth expertise in transportation management, freight operations, supply chain coordination, and customer relationship management.",
+        "At Shipmate Logistics, we measure our success by the success of our customers. Through proactive planning, transparent communication, and a commitment to operational excellence, we strive to eliminate common logistics challenges such as shipment delays, coordination gaps, and service uncertainty.",
+        "As we continue to grow, our ambition remains clear—to become one of India's most trusted and respected logistics partners by delivering innovative, dependable, and value-driven transportation solutions."
       ],
       "image": "assets/images/about-story.jpg"
     },
@@ -243,7 +132,6 @@
       "eyebrow": "Solving logistics challenges with experience",
       "title": "Leadership built on real industry experience",
       "intro": "Delayed shipments, poor communication, and inefficient transportation planning are among the biggest challenges businesses face today. At Shipmate Logistics, our experienced leadership team is committed to overcoming these challenges through proactive planning, efficient coordination, and transparent communication.",
-      "names": "Mr. Mohit Sharma and Mr. Rahul Indora",
       "outro": "Our goal is simple—to provide dependable logistics services that keep your business moving with confidence.",
       "points": [
         "On-time and reliable deliveries",
@@ -251,6 +139,20 @@
         "Quick resolution of operational challenges",
         "Transparent shipment updates",
         "Cost-effective logistics solutions"
+      ],
+      "members": [
+        {
+          "name": "Mr. Mohit Sharma",
+          "title": "Co-Founder & Managing Director",
+          "photo": "assets/images/team/mohit-sharma.jpg",
+          "bio": "With extensive experience in freight operations and logistics management, Mr. Mohit Sharma co-founded Shipmate Logistics with a vision to transform Indian freight through reliability and transparency. His hands-on approach to operations planning and client relationships has been instrumental in establishing Shipmate as a trusted logistics partner across pan-India corridors. Under his leadership, Shipmate has grown from a regional transporter to a full-scale national freight network serving 650+ pincodes."
+        },
+        {
+          "name": "Mr. Rahul Indora",
+          "title": "Co-Founder & Operations Director",
+          "photo": "assets/images/team/rahul-indora.jpg",
+          "bio": "Mr. Rahul Indora brings deep expertise in supply chain coordination, fleet management, and transportation strategy. As Operations Director, he oversees day-to-day logistics execution, ensuring every vehicle in the Shipmate fleet meets the highest standards of safety, compliance, and on-time performance. His meticulous approach to route planning and driver training has been a cornerstone of Shipmate's 99% on-time delivery record."
+        }
       ]
     },
     "mission": {
@@ -258,44 +160,20 @@
       "title": "Reliability is a design choice, not an accident",
       "subtitle": "Every process at Shipmate — from route planning to driver training — is built around one outcome: cargo that arrives when we said it would.",
       "pillars": [
-        {
-          "title": "Plan the route before the load",
-          "text": "Routes are mapped, timed and checked against live traffic and weather data before a truck ever leaves the yard."
-        },
-        {
-          "title": "Maintain before it fails",
-          "text": "Every vehicle follows a fixed preventive maintenance calendar — not a reactive repair schedule."
-        },
-        {
-          "title": "Train the driver, not just license them",
-          "text": "All drivers complete a defensive-driving and cargo-handling program before their first solo run."
-        },
-        {
-          "title": "Track everything, hide nothing",
-          "text": "Live GPS, e-PODs and temperature logs are shared with clients in real time — not on request."
-        }
+        { "title": "Plan the route before the load", "text": "Routes are mapped, timed and checked against live traffic and weather data before a truck ever leaves the yard." },
+        { "title": "Maintain before it fails", "text": "Every vehicle follows a fixed preventive maintenance calendar — not a reactive repair schedule." },
+        { "title": "Train the driver, not just license them", "text": "All drivers complete a defensive-driving and cargo-handling program before their first solo run." },
+        { "title": "Track everything, hide nothing", "text": "Live GPS, e-PODs and temperature logs are shared with clients in real time — not on request." }
       ]
     },
     "values": {
       "eyebrow": "What we stand for",
       "title": "The principles behind the schedule",
       "items": [
-        {
-          "title": "Punctuality",
-          "text": "We treat delivery windows as commitments, not estimates."
-        },
-        {
-          "title": "Transparency",
-          "text": "Clients see what we see — live location, ETAs and exceptions."
-        },
-        {
-          "title": "Safety",
-          "text": "Zero-tolerance policies on driver fatigue, vehicle defects and overloading."
-        },
-        {
-          "title": "Accountability",
-          "text": "Every shipment has a named operations owner from pickup to delivery."
-        }
+        { "title": "Punctuality", "text": "We treat delivery windows as commitments, not estimates." },
+        { "title": "Transparency", "text": "Clients see what we see — live location, ETAs and exceptions." },
+        { "title": "Safety", "text": "Zero-tolerance policies on driver fatigue, vehicle defects and overloading." },
+        { "title": "Accountability", "text": "Every shipment has a named operations owner from pickup to delivery." }
       ]
     }
   },
@@ -318,8 +196,41 @@
         "image": "assets/images/services/service-ftl.jpg"
       },
       {
-        "code": "LTL",
-        "title": "Part Truckload (LTL)",
+        "code": "FBT",
+        "title": "Flatbed Transport (FBT)",
+        "summary": "Open flatbed trailers for heavy, wide or irregularly shaped cargo that cannot be enclosed.",
+        "points": [
+          "Standard and extendable flatbed platforms",
+          "Suitable for steel coils, pipes, machinery and fabricated structures",
+          "Lashing, strapping and load-securing included"
+        ],
+        "image": "assets/images/services/service-project.jpg"
+      },
+      {
+        "code": "ODC",
+        "title": "Over Dimensional Cargo (ODC)",
+        "summary": "Specialised movement for oversized, overweight or non-standard industrial loads requiring permits.",
+        "points": [
+          "Low-bed and multi-axle trailers for heavy lifts",
+          "Route surveys, police escort coordination and permits",
+          "Dedicated project manager assigned per movement"
+        ],
+        "image": "assets/images/services/service-multiaxle.jpg"
+      },
+      {
+        "code": "MAV",
+        "title": "Multi-Axle Vehicle Reefer (MAVREFER)",
+        "summary": "Temperature-controlled multi-axle vehicles for bulk pharma, perishable and cold chain shipments.",
+        "points": [
+          "Reefer fleet maintaining -20°C to +25°C ranges",
+          "Continuous temperature logging with client access",
+          "High-capacity multi-axle for large cold-chain volumes"
+        ],
+        "image": "assets/images/services/service-coldchain.jpg"
+      },
+      {
+        "code": "LTC",
+        "title": "Part Truckload (LTC)",
         "summary": "Cost-efficient shared-vehicle shipping for smaller consignments without compromising on schedule.",
         "points": [
           "Consolidated loads on fixed-frequency routes",
@@ -327,50 +238,6 @@
           "Daily departures on major industrial corridors"
         ],
         "image": "assets/images/services/service-ltl.jpg"
-      },
-      {
-        "code": "CNT",
-        "title": "Container Movement",
-        "summary": "Full container loads moved on dedicated container trucks across major trade lanes.",
-        "points": [
-          "20ft and 40ft ISO container movement",
-          "Port to warehouse and factory to port routes",
-          "Suitable for export-ready and import cargo"
-        ],
-        "image": "assets/images/services/service-container.jpg"
-      },
-      {
-        "code": "MAV",
-        "title": "Multi-Axle Vehicle (MAV)",
-        "summary": "High-capacity multi-axle trucks for heavy, bulk or long-distance full loads.",
-        "points": [
-          "Up to 25 tonnes payload capacity",
-          "Long-haul inter-state corridors",
-          "Ideal for steel, cement, machinery and bulk goods"
-        ],
-        "image": "assets/images/services/service-multiaxle.jpg"
-      },
-      {
-        "code": "SAV",
-        "title": "Single-Axle Vehicle (SAV)",
-        "summary": "Nimble single-axle trucks for medium loads and routes where large vehicles cannot operate.",
-        "points": [
-          "Up to 9 tonnes payload capacity",
-          "Access to narrow industrial zones and smaller towns",
-          "Cost-effective for regional and short-haul trips"
-        ],
-        "image": "assets/images/services/service-singleaxle.jpg"
-      },
-      {
-        "code": "CCL",
-        "title": "Cold Chain Logistics",
-        "summary": "Temperature-controlled transport for pharmaceuticals, perishables and fresh produce.",
-        "points": [
-          "Reefer fleet maintaining -20°C to +25°C ranges",
-          "Continuous temperature logging with client access",
-          "Trained handlers for regulated and perishable goods"
-        ],
-        "image": "assets/images/services/service-coldchain.jpg"
       },
       {
         "code": "EXP",
@@ -384,41 +251,26 @@
         "image": "assets/images/services/service-express.jpg"
       },
       {
-        "code": "PMS",
-        "title": "Project & Heavy Cargo Movement",
-        "summary": "Planning and execution for oversized, overweight or non-standard industrial loads.",
+        "code": "CNT",
+        "title": "Container Movement",
+        "summary": "Full container loads moved on dedicated container trucks across major trade lanes.",
         "points": [
-          "Flatbed and low-bed trailers for heavy machinery",
-          "Route surveys, permits and escort coordination",
-          "Dedicated project manager for each movement"
+          "20ft and 40ft ISO container movement",
+          "Port to warehouse and factory to port routes",
+          "Suitable for export-ready and import cargo"
         ],
-        "image": "assets/images/services/service-project.jpg"
+        "image": "assets/images/services/service-container.jpg"
       }
     ],
     "process": {
       "eyebrow": "How it works",
       "title": "From quote to delivery in five steps",
       "steps": [
-        {
-          "title": "Share your shipment details",
-          "text": "Tell us your origin, destination, load type and timeline through our contact form or dispatch line."
-        },
-        {
-          "title": "Receive a quote",
-          "text": "Our team responds with a rate and vehicle recommendation, usually within two working hours."
-        },
-        {
-          "title": "Confirm and schedule",
-          "text": "Once confirmed, we assign a vehicle and driver and share the pickup window."
-        },
-        {
-          "title": "Track in real time",
-          "text": "Follow your shipment's live location and status from pickup to delivery."
-        },
-        {
-          "title": "Receive e-POD",
-          "text": "A digital proof of delivery is shared the moment your cargo is signed for."
-        }
+        { "title": "Share your shipment details", "text": "Tell us your origin, destination, load type and timeline through our contact form or dispatch line." },
+        { "title": "Receive a quote", "text": "Our team responds with a rate and vehicle recommendation, usually within two working hours." },
+        { "title": "Confirm and schedule", "text": "Once confirmed, we assign a vehicle and driver and share the pickup window." },
+        { "title": "Track in real time", "text": "Follow your shipment's live location and status from pickup to delivery." },
+        { "title": "Receive e-POD", "text": "A digital proof of delivery is shared the moment your cargo is signed for." }
       ]
     }
   },
@@ -432,15 +284,31 @@
       {
         "code": "AWB-101",
         "name": "32ft Single-Axle Container",
-        "category": "Container Truck",
+        "category": "FTL",
         "capacity": "9 tonnes / 680 cu.ft",
         "useCase": "FMCG, retail distribution, palletised cargo",
         "image": "assets/images/fleet/fleet-container-32.jpg"
       },
       {
+        "code": "AWB-105",
+        "name": "Flatbed Trailer",
+        "category": "FTL",
+        "capacity": "25 tonnes",
+        "useCase": "Machinery, steel coils, oversized loads",
+        "image": "assets/images/fleet/fleet-flatbed.jpg"
+      },
+      {
+        "code": "AWB-107",
+        "name": "ODC Low-bed Trailer",
+        "category": "FTL",
+        "capacity": "40+ tonnes",
+        "useCase": "Over-dimensional cargo, heavy machinery, project lifts",
+        "image": "assets/images/fleet/fleet-flatbed.jpg"
+      },
+      {
         "code": "AWB-102",
         "name": "40ft Multi-Axle Container",
-        "category": "Container Truck",
+        "category": "FTL",
         "capacity": "21 tonnes / 2,300 cu.ft",
         "useCase": "Bulk FTL, factory-to-warehouse transfers",
         "image": "assets/images/fleet/fleet-container-40.jpg"
@@ -456,48 +324,20 @@
       {
         "code": "AWB-104",
         "name": "19ft LCV Box Truck",
-        "category": "Light Commercial",
+        "category": "LCV",
         "capacity": "3.5 tonnes / 350 cu.ft",
         "useCase": "Intra-city distribution, last-mile delivery",
         "image": "assets/images/fleet/fleet-lcv.jpg"
-      },
-      {
-        "code": "AWB-105",
-        "name": "Flatbed Trailer",
-        "category": "Project Cargo",
-        "capacity": "25 tonnes",
-        "useCase": "Machinery, steel coils, oversized loads",
-        "image": "assets/images/fleet/fleet-flatbed.jpg"
-      },
-      {
-        "code": "AWB-106",
-        "name": "14ft Mini Truck",
-        "category": "Light Commercial",
-        "capacity": "1.5 tonnes / 180 cu.ft",
-        "useCase": "Small-batch delivery, e-commerce fulfilment",
-        "image": "assets/images/fleet/fleet-mini.jpg"
       }
     ],
     "standards": {
       "eyebrow": "Fleet standards",
       "title": "What every vehicle includes as standard",
       "items": [
-        {
-          "title": "Live GPS tracking",
-          "text": "Real-time location shared with clients via tracking link."
-        },
-        {
-          "title": "Pre-trip inspection",
-          "text": "40-point safety and roadworthiness check before every dispatch."
-        },
-        {
-          "title": "Verified drivers",
-          "text": "Background-checked, license-verified and defensive-driving trained."
-        },
-        {
-          "title": "Scheduled maintenance",
-          "text": "Fixed-interval servicing, not run-to-failure repairs."
-        }
+        { "title": "Live GPS tracking", "text": "Real-time location shared with clients via tracking link." },
+        { "title": "Pre-trip inspection", "text": "40-point safety and roadworthiness check before every dispatch." },
+        { "title": "Verified drivers", "text": "Background-checked, license-verified and defensive-driving trained." },
+        { "title": "Scheduled maintenance", "text": "Fixed-interval servicing, not run-to-failure repairs." }
       ]
     }
   },
@@ -520,13 +360,12 @@
         "loadType": "Load type",
         "loadTypeOptions": [
           "Full Truckload (FTL)",
-          "Part Truckload (LTL)",
-          "Container Movement",
-          "Multi-Axle Vehicle (MAV)",
-          "Single-Axle Vehicle (SAV)",
-          "Cold Chain",
+          "Flatbed Transport (FBT)",
+          "Over Dimensional Cargo (ODC)",
+          "Multi-Axle Vehicle Reefer (MAVREFER)",
+          "Part Truckload (LTC)",
           "Express Delivery",
-          "Project Cargo"
+          "Container Movement"
         ],
         "message": "Shipment details"
       },
@@ -537,52 +376,23 @@
     "info": {
       "title": "Reach our dispatch desk",
       "items": [
-        {
-          "label": "Head office",
-          "value": "Arihant Arshiya, B-17, Flat no. 102, Paliphata, Dahiwali village, Khopoli - Pen Rd, Khalapur, Maharashtra 410203"
-        },
-        {
-          "label": "Dispatch line",
-          "value": "+91 73571 77827 / +91 77278 06089"
-        },
-        {
-          "label": "Email",
-          "value": "contact@shipmatelogistics.in"
-        },
-        {
-          "label": "Hours",
-          "value": "Mon - Sat: 9:00 AM - 7:00 PM | Dispatch desk: 24/7"
-        }
+        { "label": "Head office", "value": "Arihant Arshiya, B-17, Flat no. 102, Paliphata, Dahiwali village, Khopoli - Pen Rd, Khalapur, Maharashtra 410203" },
+        { "label": "Dispatch line", "value": "+91 73571 77827 / +91 77278 06089" },
+        { "label": "Email", "value": "contact@shipmatelogistics.in" },
+        { "label": "Hours", "value": "Mon - Sat: 9:00 AM - 7:00 PM | Dispatch desk: 24/7" }
       ]
     },
     "hubs": {
       "eyebrow": "Pan-India coverage",
       "title": "Our Network Cities",
       "items": [
-        {
-          "city": "Maharashtra",
-          "address": "Khopoli, Mumbai, Pune, Nashik"
-        },
-        {
-          "city": "Gujarat",
-          "address": "Ahmedabad, Vadodara, Mundra, Mehsana, Ankleshwar, Kheda, Anand, Sanand"
-        },
-        {
-          "city": "North India",
-          "address": "Delhi, Gurgaon, Jhajjar, Noida, Jaipur, Faridabad, Rohtak, Bikaner, Chandigarh, Rae Bareli, Varanasi"
-        },
-        {
-          "city": "South India",
-          "address": "Bangalore, Vijayawada, Coimbatore, Chennai, Kochi, Hyderabad, Visakhapatnam, Mysore"
-        },
-        {
-          "city": "East India",
-          "address": "Kolkata, Assam, Odisha, Raipur"
-        },
-        {
-          "city": "West India",
-          "address": "Mundra, Ahmedabad, Vadodara"
-        }
+        { "city": "Maharashtra", "address": "Khopoli, Mumbai, Pune, Nashik, Aurangabad, Taloja" },
+        { "city": "Gujarat", "address": "Ahmedabad, Vadodara, Mundra, Mehsana, Ankleshwar, Kheda, Anand, Sanand" },
+        { "city": "North India", "address": "Delhi, Gurgaon, Jhajjar, Noida, Jaipur, Faridabad, Rohtak, Bikaner, Chandigarh, Rae Bareli, Varanasi" },
+        { "city": "South India", "address": "Bangalore, Vijayawada, Coimbatore, Chennai, Kochi, Hyderabad, Visakhapatnam, Mysore" },
+        { "city": "East India", "address": "Kolkata, Assam, Odisha, Raipur" },
+        { "city": "West India", "address": "Mundra, Ahmedabad, Vadodara, Goa, Jamnagar" },
+        { "city": "North-East India", "address": "Arunachal Pradesh, Guwahati, Shillong" }
       ]
     }
   },
@@ -592,30 +402,12 @@
     "servicesTitle": "Services",
     "contactTitle": "Contact",
     "servicesLinks": [
-      {
-        "label": "Full Truckload",
-        "href": "services.html#ftl"
-      },
-      {
-        "label": "Part Truckload",
-        "href": "services.html#ltl"
-      },
-      {
-        "label": "Cold Chain",
-        "href": "services.html#ccl"
-      },
-      {
-        "label": "Container Movement",
-        "href": "services.html#cnt"
-      },
-      {
-        "label": "Multi-Axle Vehicle",
-        "href": "services.html#mav"
-      },
-      {
-        "label": "Single-Axle Vehicle",
-        "href": "services.html#sav"
-      }
+      { "label": "Full Truckload (FTL)", "href": "services.html#ftl" },
+      { "label": "Flatbed Transport", "href": "services.html#fbt" },
+      { "label": "ODC Movement", "href": "services.html#odc" },
+      { "label": "MAVREFER Cold Chain", "href": "services.html#mav" },
+      { "label": "Part Truckload (LTC)", "href": "services.html#ltc" },
+      { "label": "Container Movement", "href": "services.html#cnt" }
     ],
     "copyright": "© 2026 Shipmate Logistics. All rights reserved."
   }
