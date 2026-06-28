@@ -1,0 +1,21 @@
+{
+  "name": "Shipmate Logistics",
+  "short_name": "Shipmate",
+  "description": "Pan-India freight connecting 250+ cities through 1000+ GPS-tracked vehicles.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#041629",
+  "theme_color": "#f2a93b",
+  "icons": [
+    {
+      "src": "android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
