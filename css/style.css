@@ -247,10 +247,14 @@ h3 {
 
 .section {
   padding-block: clamp(56px, 9vw, 120px);
+  content-visibility: auto;
+  contain-intrinsic-size: 0 600px;
 }
 
 .section--tight {
   padding-block: clamp(40px, 6vw, 80px);
+  content-visibility: auto;
+  contain-intrinsic-size: 0 400px;
 }
 
 .bg-navy {
