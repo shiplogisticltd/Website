@@ -1664,13 +1664,13 @@ h3 {
    normally (no longer individually fixed). */
 .fab-stack {
   position: fixed;
-  right: 20px;
+  right: 10px;
   bottom: 20px;
   z-index: 9999;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
 }
 
 .fab-stack .whatsapp-fab,
@@ -1720,20 +1720,19 @@ h3 {
 
 @media (max-width: 480px) {
   .whatsapp-fab {
-    right: 14px;
-    bottom: 14px;
+    right: 8px;
+    bottom: 8px;
   }
 
   .krishna-float {
-    right: 14px;
-    bottom: 70px;
+    right: 8px;
+    bottom: 64px;
   }
 
   .fab-stack {
-    right: 14px;
-    bottom: 14px;
-    gap: 14px;
-    padding: 8px;
+    right: 8px;
+    bottom: 8px;
+    gap: 10px;
   }
 
   .whatsapp-fab,
