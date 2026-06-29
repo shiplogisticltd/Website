@@ -127,13 +127,13 @@
           <svg class="india-map-svg" viewBox="0 0 612 696" xmlns="http://www.w3.org/2000/svg" aria-label="Accurate map of India showing Shipmate network">
                 <style>
                   .india-map-svg {
-                    background: #ffffff;
-                    border: 1px solid #e2e8f0;
+                    background: #f8fafc;
+                    border: 1px solid #cbd5e1;
                     display: block;
                   }
                   .state-path {
-                    fill: #f8fafc;
-                    stroke: #cbd5e1;
+                    fill: #ffffff;
+                    stroke: #94a3b8;
                     stroke-width: 0.8px;
                     transition: fill 0.25s ease, stroke 0.25s ease;
                   }
@@ -143,12 +143,12 @@
                     stroke-width: 1.1px;
                   }
                   .state-highlight {
-                    fill: #eff6ff;
-                    stroke: #93c5fd;
+                    fill: #dbeafe;
+                    stroke: #3b82f6;
                     stroke-width: 1px;
                   }
                   .state-highlight:hover {
-                    fill: #dbeafe;
+                    fill: #bfdbfe;
                     stroke: #f2a93b;
                   }
                   .city-label {
@@ -183,7 +183,7 @@
                 <defs>
                   <radialGradient id="mapGlow" cx="50%" cy="50%" r="50%">
                     <stop offset="0%" stop-color="#f2a93b" stop-opacity="0.08"/>
-                    <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+                    <stop offset="100%" stop-color="#f8fafc" stop-opacity="0"/>
                   </radialGradient>
                   <filter id="glow">
                     <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
@@ -195,7 +195,7 @@
                 </defs>
 
                 <!-- Background -->
-                <rect width="612" height="696" fill="#ffffff" rx="16"/>
+                <rect width="612" height="696" fill="#f8fafc" rx="16"/>
                 <ellipse cx="306" cy="348" rx="280" ry="320" fill="url(#mapGlow)"/>
 
                 <!-- Accurate India State Paths -->
