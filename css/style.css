@@ -1755,8 +1755,8 @@ h3 {
   position: relative;
   background: var(--navy-900);
   color: var(--white);
-  padding-top: calc(var(--header-h) + 64px);
-  padding-bottom: 80px;
+  padding-top: calc(var(--header-h) + 16px);
+  padding-bottom: 36px;
   overflow: hidden;
 }
 
