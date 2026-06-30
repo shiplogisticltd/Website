@@ -834,4 +834,90 @@
     }
   });
 
+  // ------------------------------------------------------------------
+  // Global Image & Video Poster Extension Fallbacks
+  // Supports dynamic uploads of webp, png, jpg, jpeg, etc.
+  // ------------------------------------------------------------------
+  document.addEventListener("error", (e) => {
+    if (!e.target || e.target.tagName !== "IMG") return;
+    const img = e.target;
+    if (img.dataset.triedFallback) return;
+
+    const src = img.getAttribute("src");
+    if (!src || src.startsWith("data:") || src.startsWith("blob:")) return;
+
+    const lastDot = src.lastIndexOf(".");
+    if (lastDot === -1) return;
+
+    const basePath = src.substring(0, lastDot);
+    const currentExt = src.substring(lastDot).toLowerCase();
+    const exts = [".webp", ".png", ".jpg", ".jpeg"];
+    let nextIndex = 0;
+
+    const tryNext = () => {
+      if (nextIndex >= exts.length) {
+        img.dataset.triedFallback = "true";
+        return;
+      }
+      const nextExt = exts[nextIndex++];
+      if (nextExt === currentExt) {
+        tryNext();
+        return;
+      }
+
+      const tempImg = new Image();
+      tempImg.src = basePath + nextExt;
+      tempImg.onload = () => {
+        img.src = basePath + nextExt;
+      };
+      tempImg.onerror = tryNext;
+    };
+
+    tryNext();
+  }, true);
+
+  // Fallback for video poster images
+  const fallbackVideoPosters = () => {
+    document.querySelectorAll("video[poster]").forEach((video) => {
+      const poster = video.getAttribute("poster");
+      if (!poster || poster.startsWith("data:")) return;
+
+      const tempImg = new Image();
+      tempImg.src = poster;
+      tempImg.onerror = () => {
+        const lastDot = poster.lastIndexOf(".");
+        if (lastDot === -1) return;
+
+        const basePath = poster.substring(0, lastDot);
+        const currentExt = poster.substring(lastDot).toLowerCase();
+        const exts = [".webp", ".png", ".jpg", ".jpeg"];
+        let nextIndex = 0;
+
+        const tryNext = () => {
+          if (nextIndex >= exts.length) return;
+          const nextExt = exts[nextIndex++];
+          if (nextExt === currentExt) {
+            tryNext();
+            return;
+          }
+
+          const testImg = new Image();
+          testImg.src = basePath + nextExt;
+          testImg.onload = () => {
+            video.setAttribute("poster", basePath + nextExt);
+          };
+          testImg.onerror = tryNext;
+        };
+
+        tryNext();
+      };
+    });
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", fallbackVideoPosters);
+  } else {
+    fallbackVideoPosters();
+  }
+
 })();
