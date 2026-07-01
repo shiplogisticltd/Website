@@ -2730,6 +2730,9 @@ button,
 /* fab-stack style is defined globally at line 1665 */
 
 .wa-popup {
+  position: absolute;
+  bottom: 152px;
+  right: 0;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -2738,6 +2741,8 @@ button,
   pointer-events: none;
   transition: opacity 0.22s ease, transform 0.22s ease;
   transform-origin: bottom right;
+  z-index: 10000;
+  width: max-content;
 }
 
 .wa-popup.is-open {
@@ -3033,5 +3038,9 @@ button,
 @media (max-width: 480px) {
   .story__media .india-map-wrap {
     max-width: 320px;
+  }
+
+  .wa-popup {
+    bottom: 114px;
   }
 }
