@@ -638,16 +638,22 @@
         <div class="team-modal__backdrop"></div>
         <div class="team-modal__box">
           <button class="team-modal__close" aria-label="Close bio">&times;</button>
-          <div class="team-modal__photo">
-            <img id="teamModalPhoto" src="" alt="" width="120" height="120"
-              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-            <div class="team-card__avatar-placeholder team-modal__placeholder" style="display:none">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="60" height="60"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+          <div class="team-modal__content">
+            <div class="team-modal__left">
+              <div class="team-modal__photo">
+                <img id="teamModalPhoto" src="" alt="" width="120" height="120"
+                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="team-card__avatar-placeholder team-modal__placeholder" style="display:none">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="60" height="60"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+                </div>
+              </div>
+            </div>
+            <div class="team-modal__right">
+              <h2 id="teamModalName" class="team-modal__name"></h2>
+              <p id="teamModalTitle" class="team-modal__position"></p>
+              <p id="teamModalBio" class="team-modal__bio"></p>
             </div>
           </div>
-          <h2 id="teamModalName" class="team-modal__name"></h2>
-          <p id="teamModalTitle" class="team-modal__position"></p>
-          <p id="teamModalBio" class="team-modal__bio"></p>
         </div>`;
       document.body.appendChild(modal);
 
