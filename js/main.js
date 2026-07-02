@@ -789,6 +789,24 @@
       wa.setAttribute("aria-expanded", String(isOpen));
     });
 
+    // Play/Pause Krishna music
+    let audio = null;
+    if (krishna) {
+      krishna.addEventListener("click", () => {
+        if (!audio) {
+          audio = new Audio("assets/audio/krishna.mp3");
+        }
+        if (audio.paused) {
+          audio.play().catch((err) => console.log("Audio play blocked:", err));
+          krishna.classList.add("is-playing");
+        } else {
+          audio.pause();
+          audio.currentTime = 0;
+          krishna.classList.remove("is-playing");
+        }
+      });
+    }
+
     // Close when clicking outside
     document.addEventListener("click", (e) => {
       if (!popup.contains(e.target) && e.target !== wa) {
