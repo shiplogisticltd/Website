@@ -62,7 +62,7 @@
       "subtitle": "From single pallets to factory-scale truckloads, choose the service tier that matches your shipment.",
       "linkLabel": "View all services",
       "linkHref": "services.html",
-      "previewCodes": ["FTL", "CNT", "LTC"]
+      "previewCodes": ["FTL", "CNT", "LTL"]
     },
     "coverage": {
       "eyebrow": "Where we operate",
@@ -229,8 +229,8 @@
         "image": "assets/images/services/service-coldchain.webp"
       },
       {
-        "code": "LTC",
-        "title": "Part Truckload (LTC)",
+        "code": "LTL",
+        "title": "Part Truckload (LTL)",
         "summary": "Cost-efficient shared-vehicle shipping for smaller consignments without compromising on schedule.",
         "points": [
           "Consolidated loads on fixed-frequency routes",
@@ -363,7 +363,7 @@
           "Flatbed Transport (FBT)",
           "Over Dimensional Cargo (ODC)",
           "Multi-Axle Vehicle Reefer (MAVREFER)",
-          "Part Truckload (LTC)",
+          "Part Truckload (LTL)",
           "Express Delivery",
           "Container Movement"
         ],
@@ -406,7 +406,7 @@
       { "label": "Flatbed Transport", "href": "services.html#fbt" },
       { "label": "ODC Movement", "href": "services.html#odc" },
       { "label": "MAVREFER Cold Chain", "href": "services.html#mav" },
-      { "label": "Part Truckload (LTC)", "href": "services.html#ltc" },
+      { "label": "Part Truckload (LTL)", "href": "services.html#ltl" },
       { "label": "Container Movement", "href": "services.html#cnt" }
     ],
     "copyright": "© 2026 Shipmate Logistics. All rights reserved."
