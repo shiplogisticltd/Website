@@ -518,10 +518,17 @@
       if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = "Sending…"; }
 
       try {
-        const res = await fetch("https://formspree.io/f/mykalzow", {
+        const formData = new FormData(form);
+        // Web3Forms Access Key (base64 obfuscated to keep hidden)
+        formData.append("access_key", atob("NmQxNmIxOTQtMDBhZi00ZGNmLTlmN2UtYjIzM2NiNGYwYWZi"));
+
+        const res = await fetch("https://api.web3forms.com/submit", {
           method: "POST",
-          headers: { "Accept": "application/json" },
-          body: new FormData(form)
+          headers: { 
+            "Content-Type": "application/json",
+            "Accept": "application/json" 
+          },
+          body: JSON.stringify(Object.fromEntries(formData))
         });
 
         if (messageBox) {
@@ -529,13 +536,14 @@
           messageBox.setAttribute("role", "status");
         }
 
-        if (res.ok) {
+        const body = await res.json().catch(() => ({}));
+
+        if (res.ok && body.success) {
           if (messageBox) { messageBox.textContent = successMsg; messageBox.classList.add("is-success"); }
           form.reset();
         } else {
-          const body = await res.json().catch(() => ({}));
           if (messageBox) {
-            messageBox.textContent = (body && body.error) || "Something went wrong. Please try again or call us directly.";
+            messageBox.textContent = (body && body.message) || "Something went wrong. Please try again or call us directly.";
             messageBox.classList.add("is-error");
           }
         }
