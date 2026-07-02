@@ -1801,13 +1801,15 @@ h3 {
   position: relative;
   background: var(--navy-900);
   color: var(--white);
-  padding-top: calc(var(--header-h) + 16px);
-  padding-bottom: 36px;
+  padding-top: calc(var(--header-h) + 12px);
+  padding-bottom: 24px;
   overflow: hidden;
 }
 
 .page-hero h1 {
   color: var(--white);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  line-height: 1.2;
 }
 
 .page-hero__route {
@@ -1825,9 +1827,10 @@ h3 {
 }
 
 .page-hero p.lede {
-  margin-top: 1.2rem;
+  margin-top: 0.75rem;
   max-width: 600px;
   color: rgba(255, 255, 255, 0.85);
+  font-size: 0.95rem;
 }
 
 .breadcrumb {
@@ -1839,7 +1842,7 @@ h3 {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.45);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   background: rgba(255, 255, 255, 0.06);
   padding: 0.4rem 1rem;
   border-radius: 999px;
@@ -3021,12 +3024,22 @@ button,
     text-align: center;
   }
 
+  .team-modal__left,
+  .team-modal__right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .team-modal__photo {
     margin: 0 auto;
   }
 
   .team-modal__bio {
     text-align: left;
+    align-self: flex-start;
+    width: 100%;
   }
 
   .wa-popup__option {

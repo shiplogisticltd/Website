@@ -30,7 +30,7 @@
       "subtitle": "Shipmate Logistics moves full truckloads, part loads and temperature-controlled cargo across 650+ Pincode Served — tracked end-to-end, backed by a 99% on-time record.",
       "ctaPrimary": { "label": "Get a Freight Quote", "href": "contact.html" },
       "ctaSecondary": { "label": "Explore Our Fleet", "href": "fleet.html" },
-      "videoPoster": "assets/images/hero-poster.jpg",
+      "videoPoster": "assets/images/hero-poster.webp",
       "video": "assets/videos/hero-loop.mp4"
     },
     "trustStrip": {
@@ -87,19 +87,19 @@
           "quote": "We switched our entire North India distribution to Shipmate eighteen months ago. Our stock-out incidents dropped by a third within one quarter, simply because trucks stopped arriving late.",
           "name": "Rohan Mehta",
           "role": "Supply Chain Head, Vantage Steel",
-          "avatar": "assets/images/testimonials/testimonial-1.jpg"
+          "avatar": "assets/images/testimonials/testimonial-1.webp"
         },
         {
           "quote": "Cold chain compliance is non-negotiable for us. Shipmate's reefer fleet gives us live temperature logs on every trip, which has made our audits dramatically easier.",
           "name": "Dr. Anjali Rao",
           "role": "Logistics Manager, Northbridge Pharma",
-          "avatar": "assets/images/testimonials/testimonial-2.jpg"
+          "avatar": "assets/images/testimonials/testimonial-2.webp"
         },
         {
           "quote": "Their dispatch team treats every shipment like it's the only one on the road. Communication is proactive, not something we have to chase.",
           "name": "Suresh Iyer",
           "role": "Operations Director, Orchid Retail Group",
-          "avatar": "assets/images/testimonials/testimonial-3.jpg"
+          "avatar": "assets/images/testimonials/testimonial-3.webp"
         }
       ]
     },
@@ -126,7 +126,7 @@
         "At Shipmate Logistics, we measure our success by the success of our customers. Through proactive planning, transparent communication, and a commitment to operational excellence, we strive to eliminate common logistics challenges such as shipment delays, coordination gaps, and service uncertainty.",
         "As we continue to grow, our ambition remains clear—to become one of India's most trusted and respected logistics partners by delivering innovative, dependable, and value-driven transportation solutions."
       ],
-      "image": "assets/images/about-story.jpg"
+      "image": "assets/images/about-story.webp"
     },
     "leadership": {
       "eyebrow": "Solving logistics challenges with experience",
@@ -144,13 +144,13 @@
         {
           "name": "Mr. Mohit Sharma",
           "title": "Co-Founder & Managing Director",
-          "photo": "assets/images/team/mohit-sharma.jpg",
+          "photo": "assets/images/team/mohit-sharma.webp",
           "bio": "With over a decade of experience in the logistics and supply chain industry, Mr. Mohit Sharma is the driving force behind Shipmate Logistics Private Limited. His expertise spans transportation management, freight operations, supply chain optimization, business development, and customer relationship management.\n\nKnown for his strategic thinking and solution-oriented approach, he has successfully managed complex logistics operations while consistently improving efficiency, reducing operational costs, and delivering exceptional service standards. His deep understanding of the logistics ecosystem enables him to develop customized transportation solutions that meet the evolving needs of businesses across diverse industries.\n\nAs Director, Mr. Sharma is committed to building Shipmate Logistics into a trusted logistics partner by combining operational excellence, innovation, and a customer-first philosophy. His vision is to deliver reliable, transparent, and efficient logistics solutions that create long-term value for clients and business partners alike."
         },
         {
           "name": "Mr. Rahul Indora",
           "title": "Co-Founder & Operations Director",
-          "photo": "assets/images/team/rahul-indora.jpg",
+          "photo": "assets/images/team/rahul-indora.webp",
           "bio": "Mr. Rahul Indora is an experienced logistics professional with strong expertise in transportation operations, fleet management, route planning, logistics coordination, and branch administration. He possesses extensive practical knowledge of managing day-to-day transportation activities while ensuring timely deliveries, operational efficiency, and exceptional customer service. This profile is grounded in the responsibilities and experience reflected in his resume.\n\nWith a proactive and detail-oriented management style, he specializes in optimizing fleet utilization, coordinating transportation schedules, maintaining operational compliance, and strengthening client relationships. His ability to streamline logistics operations and lead teams effectively contributes to smooth, reliable, and cost-efficient service delivery.\n\nAs Branch Manager of Shipmate Logistics' Khopoli Branch, Mr. Indora oversees branch operations, transportation planning, customer support, and business development initiatives, ensuring every shipment is managed with professionalism, accountability, and operational excellence."
         }
       ]
@@ -193,7 +193,7 @@
           "Choice of 14ft to 40ft trailers and containers",
           "Ideal for factory-to-warehouse and bulk distribution"
         ],
-        "image": "assets/images/services/service-ftl.jpg"
+        "image": "assets/images/services/service-ftl.webp"
       },
       {
         "code": "FBT",
@@ -204,7 +204,7 @@
           "Suitable for steel coils, pipes, machinery and fabricated structures",
           "Lashing, strapping and load-securing included"
         ],
-        "image": "assets/images/services/service-project.jpg"
+        "image": "assets/images/services/service-project.webp"
       },
       {
         "code": "ODC",
@@ -226,7 +226,7 @@
           "Continuous temperature logging with client access",
           "High-capacity multi-axle for large cold-chain volumes"
         ],
-        "image": "assets/images/services/service-coldchain.jpg"
+        "image": "assets/images/services/service-coldchain.webp"
       },
       {
         "code": "LTC",
@@ -237,7 +237,7 @@
           "Pay only for the space your cargo occupies",
           "Daily departures on major industrial corridors"
         ],
-        "image": "assets/images/services/service-ltl.jpg"
+        "image": "assets/images/services/service-ltl.webp"
       },
       {
         "code": "EXP",
@@ -248,7 +248,7 @@
           "Real-time exception alerts to your operations team",
           "Available on all major metro-to-metro corridors"
         ],
-        "image": "assets/images/services/service-express.jpg"
+        "image": "assets/images/services/service-express.webp"
       },
       {
         "code": "CNT",
@@ -259,7 +259,7 @@
           "Port to warehouse and factory to port routes",
           "Suitable for export-ready and import cargo"
         ],
-        "image": "assets/images/services/service-container.jpg"
+        "image": "assets/images/services/service-container.webp"
       }
     ],
     "process": {
@@ -287,7 +287,7 @@
         "category": "FTL",
         "capacity": "9 tonnes / 680 cu.ft",
         "useCase": "FMCG, retail distribution, palletised cargo",
-        "image": "assets/images/fleet/fleet-container-32.jpg"
+        "image": "assets/images/fleet/fleet-container-32.webp"
       },
       {
         "code": "AWB-105",
@@ -295,7 +295,7 @@
         "category": "FTL",
         "capacity": "25 tonnes",
         "useCase": "Machinery, steel coils, oversized loads",
-        "image": "assets/images/fleet/fleet-flatbed.jpg"
+        "image": "assets/images/fleet/fleet-flatbed.webp"
       },
       {
         "code": "AWB-107",
@@ -303,7 +303,7 @@
         "category": "FTL",
         "capacity": "40+ tonnes",
         "useCase": "Over-dimensional cargo, heavy machinery, project lifts",
-        "image": "assets/images/fleet/fleet-flatbed.jpg"
+        "image": "assets/images/fleet/fleet-flatbed.webp"
       },
       {
         "code": "AWB-102",
@@ -311,7 +311,7 @@
         "category": "FTL",
         "capacity": "21 tonnes / 2,300 cu.ft",
         "useCase": "Bulk FTL, factory-to-warehouse transfers",
-        "image": "assets/images/fleet/fleet-container-40.jpg"
+        "image": "assets/images/fleet/fleet-container-40.webp"
       },
       {
         "code": "AWB-103",
@@ -319,7 +319,7 @@
         "category": "Cold Chain",
         "capacity": "7 tonnes / -20°C to +25°C",
         "useCase": "Pharmaceuticals, dairy, frozen goods",
-        "image": "assets/images/fleet/fleet-reefer.jpg"
+        "image": "assets/images/fleet/fleet-reefer.webp"
       },
       {
         "code": "AWB-104",
@@ -327,7 +327,7 @@
         "category": "LCV",
         "capacity": "3.5 tonnes / 350 cu.ft",
         "useCase": "Intra-city distribution, last-mile delivery",
-        "image": "assets/images/fleet/fleet-lcv.jpg"
+        "image": "assets/images/fleet/fleet-lcv.webp"
       }
     ],
     "standards": {
@@ -370,7 +370,7 @@
         "message": "Shipment details"
       },
       "submitLabel": "Send Request",
-      "successMessage": "Thank you. Your request has been received — our team will contact you within two working hours.",
+      "successMessage": "Thank you. Your request has been received — our team will contact you within one working hours.",
       "errorMessage": "Please fill in all required fields correctly before submitting."
     },
     "info": {
