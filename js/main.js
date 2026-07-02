@@ -525,10 +525,9 @@
         const res = await fetch("https://api.web3forms.com/submit", {
           method: "POST",
           headers: { 
-            "Content-Type": "application/json",
             "Accept": "application/json" 
           },
-          body: JSON.stringify(Object.fromEntries(formData))
+          body: formData
         });
 
         if (messageBox) {
