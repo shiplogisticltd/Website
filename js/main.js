@@ -76,8 +76,12 @@
     const header = $(".header");
     const toggle = $(".nav-toggle");
     const nav = $(".nav");
+    const page = currentPage();
 
     if (header) {
+      if (page !== "index.html" && page !== "") {
+        header.classList.add("is-solid");
+      }
       const onScroll = () => { header.classList.toggle("is-scrolled", window.scrollY > 12); };
       onScroll();
       window.addEventListener("scroll", onScroll, { passive: true });
@@ -109,7 +113,6 @@
     }
 
     // Mark active nav link
-    const page = currentPage();
     $$(".nav__link").forEach((link) => {
       const href = link.getAttribute("href");
       if (href === page || (page === "" && href === "index.html")) {
