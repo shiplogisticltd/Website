@@ -895,20 +895,18 @@ h3 {
   margin-top: 1rem;
   animation: trustMarquee 32s linear infinite;
   will-change: transform;
-}
-
-.trust:hover .trust__row,
-.trust:focus-within .trust__row {
-  animation-play-state: paused;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
 
 @keyframes trustMarquee {
   0% {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
 
   100% {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
