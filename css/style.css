@@ -2401,6 +2401,7 @@ h3 {
   width: auto;
   display: block;
   object-fit: contain;
+  transform: translateY(4px);
 }
 
 /* --- Mobile nav: handled in section 6 (single source of truth) --- */
