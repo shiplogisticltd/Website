@@ -916,6 +916,7 @@
 
     if (isIOS) {
       pwaPrompt.innerHTML = `
+        <button class="pwa-prompt__close" aria-label="Dismiss">&times;</button>
         <div class="pwa-prompt__content">
           <div class="pwa-prompt__info">
             <img class="pwa-prompt__logo" src="assets/images/logos/mainlogo.webp" alt="Shipmate Logo">
@@ -928,9 +929,11 @@
             Tap share <svg class="pwa-prompt__share-icon" viewBox="0 0 24 24"><path d="M16 5l-4-4-4 4h3v9h2V5h3zm2 5v9H6v-9H4v11h16V10h-2z" fill="currentColor"/></svg> and select "Add to Home Screen"
           </div>
         </div>
+        <div class="pwa-prompt__progress"></div>
       `;
     } else {
       pwaPrompt.innerHTML = `
+        <button class="pwa-prompt__close" aria-label="Dismiss">&times;</button>
         <div class="pwa-prompt__content">
           <div class="pwa-prompt__info">
             <img class="pwa-prompt__logo" src="assets/images/logos/mainlogo.webp" alt="Shipmate Logo">
@@ -941,12 +944,15 @@
           </div>
           <button class="btn btn--primary btn--sm pwa-prompt__btn">Install</button>
         </div>
+        <div class="pwa-prompt__progress"></div>
       `;
     }
 
     document.body.appendChild(pwaPrompt);
 
     let deferredPrompt;
+    let autoDismissTimer;
+
     window.addEventListener("beforeinstallprompt", (e) => {
       e.preventDefault();
       deferredPrompt = e;
@@ -960,15 +966,24 @@
     function showPrompt() {
       setTimeout(() => {
         pwaPrompt.classList.add("is-visible");
-        setTimeout(() => {
+        autoDismissTimer = setTimeout(() => {
           pwaPrompt.classList.remove("is-visible");
-        }, 4300);
+        }, 8500);
       }, 1000);
+    }
+
+    const closeBtn = pwaPrompt.querySelector(".pwa-prompt__close");
+    if (closeBtn) {
+      closeBtn.addEventListener("click", () => {
+        clearTimeout(autoDismissTimer);
+        pwaPrompt.classList.remove("is-visible");
+      });
     }
 
     const btn = pwaPrompt.querySelector(".pwa-prompt__btn");
     if (btn) {
       btn.addEventListener("click", () => {
+        clearTimeout(autoDismissTimer);
         if (!deferredPrompt) return;
         deferredPrompt.prompt();
         deferredPrompt.userChoice.then((choiceResult) => {
