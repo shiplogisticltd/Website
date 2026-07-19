@@ -2077,6 +2077,8 @@ h3 {
 .field input,
 .field select,
 .field textarea {
+  width: 100%;
+  max-width: 100%;
   font-family: var(--font-body);
   font-size: 0.96rem;
   padding: 0.85em 1em;

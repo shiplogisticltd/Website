@@ -549,6 +549,9 @@
     const logos = getPath(data, "home.trustStrip.logos") || [];
     const items = logos.map((l) => `<span class="trust__item">${l.name}</span>`).join("");
     wrap.innerHTML = items + items;
+    wrap.style.animation = "none";
+    void wrap.offsetHeight;
+    wrap.style.animation = "";
   }
 
   function renderTimeline(data) {
