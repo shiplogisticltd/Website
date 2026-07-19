@@ -1,16 +1,7 @@
-/* ==========================================================================
-   Shipmate LOGISTICS — Stylesheet
-   Design system: Navy / Amber / Cream
-   Display: Space Grotesk · Body: Inter · Data/Labels: JetBrains Mono
-   Signature element: "The Route Line" — dashed path motif used as
-   dividers, map connectors and progress indicators throughout.
-   ========================================================================== */
 
-/* --------------------------------------------------------------------------
-   1. Tokens
-   -------------------------------------------------------------------------- */
+
 :root {
-  /* Color */
+  
   --navy-950: #0a1726;
   --navy-900: #041629;
   --navy-800: #1f4068;
@@ -29,28 +20,22 @@
   --line-dark: rgba(255, 255, 255, 0.12);
   --white: #ffffff;
 
-  /* Type */
   --font-display: "Space Grotesk", "Inter", system-ui, Arial, sans-serif;
   --font-body: "Inter", system-ui, Arial, sans-serif;
   --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
 
-  /* Layout */
   --container: 1240px;
   --radius-sm: 6px;
   --radius-md: 12px;
   --radius-lg: 22px;
   --header-h: 84px;
 
-  /* Motion */
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
   --t-fast: 0.2s;
   --t-med: 0.5s;
   --t-slow: 0.9s;
 }
 
-/* --------------------------------------------------------------------------
-   2. Reset & base
-   -------------------------------------------------------------------------- */
 *,
 *::before,
 *::after {
@@ -75,9 +60,6 @@ body {
   transition: opacity 0.22s ease;
 }
 
-/* Page-transition fade: JS adds .is-leaving just before navigating away
-   so the old page fades to the brand navy instead of staying frozen
-   on screen during the load of the next page. */
 body.is-leaving {
   opacity: 0;
 }
@@ -151,9 +133,6 @@ p {
   }
 }
 
-/* --------------------------------------------------------------------------
-   3. Typography helpers
-   -------------------------------------------------------------------------- */
 .eyebrow {
   display: inline-flex;
   align-items: center;
@@ -229,9 +208,6 @@ h3 {
   color: rgba(255, 255, 255, 0.72);
 }
 
-/* --------------------------------------------------------------------------
-   4. Layout
-   -------------------------------------------------------------------------- */
 .container {
   width: 100%;
   max-width: var(--container);
@@ -303,9 +279,6 @@ h3 {
   }
 }
 
-/* --------------------------------------------------------------------------
-   5. Buttons
-   -------------------------------------------------------------------------- */
 .btn {
   --pad-y: 0.95rem;
   --pad-x: 1.9rem;
@@ -378,9 +351,6 @@ h3 {
   flex: none;
 }
 
-/* --------------------------------------------------------------------------
-   6. Header / Navigation
-   -------------------------------------------------------------------------- */
 .header {
   position: fixed;
   top: 0;
@@ -574,8 +544,7 @@ h3 {
     justify-content: center;
     padding: 0px 67px;
     overflow-y: auto;
-    
-    /* Animation states */
+
     opacity: 0;
     visibility: hidden;
     transform: translateY(-16px);
@@ -661,9 +630,6 @@ h3 {
   }
 }
 
-/* --------------------------------------------------------------------------
-   7. Hero
-   -------------------------------------------------------------------------- */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -828,7 +794,6 @@ h3 {
   }
 }
 
-/* Route-line SVG paths (used in hero & dividers) */
 .route-path {
   fill: none;
   stroke: var(--route);
@@ -849,7 +814,6 @@ h3 {
   }
 }
 
-/* Section divider with route line */
 .route-divider {
   width: 100%;
   height: 48px;
@@ -867,9 +831,6 @@ h3 {
   opacity: 0.3;
 }
 
-/* --------------------------------------------------------------------------
-   8. Trust strip
-   -------------------------------------------------------------------------- */
 .trust {
   border-top: 1px solid var(--line-light);
   border-bottom: 1px solid var(--line-light);
@@ -906,7 +867,7 @@ h3 {
   }
 
   100% {
-    transform: translate3d(-50%, 0, 0);
+    transform: translate3d(calc(-50% - 0.75rem), 0, 0);
   }
 }
 
@@ -927,9 +888,6 @@ h3 {
   color: var(--navy-700);
 }
 
-/* --------------------------------------------------------------------------
-   9. Stats
-   -------------------------------------------------------------------------- */
 .stats {
   position: relative;
 }
@@ -982,9 +940,6 @@ h3 {
   }
 }
 
-/* --------------------------------------------------------------------------
-   10. Cards: services
-   -------------------------------------------------------------------------- */
 .card {
   background: var(--white);
   border-radius: 16px;
@@ -1110,9 +1065,6 @@ h3 {
   justify-content: center;
 }
 
-/* --------------------------------------------------------------------------
-   11. Fleet gallery
-   -------------------------------------------------------------------------- */
 .fleet-filters {
   display: flex;
   gap: 10px;
@@ -1185,9 +1137,6 @@ h3 {
   display: none;
 }
 
-/* --------------------------------------------------------------------------
-   12. Coverage / network map
-   -------------------------------------------------------------------------- */
 .coverage {
   position: relative;
 }
@@ -1324,9 +1273,6 @@ h3 {
   border-top: 1.5px dashed var(--amber-dark);
 }
 
-/* --------------------------------------------------------------------------
-   13. Testimonials
-   -------------------------------------------------------------------------- */
 .testimonials__viewport {
   position: relative;
   overflow: hidden;
@@ -1335,6 +1281,7 @@ h3 {
 .testimonials__track {
   display: flex;
   transition: transform var(--t-med) var(--ease);
+  will-change: transform;
 }
 
 .testimonial {
@@ -1459,9 +1406,6 @@ h3 {
   transform: scale(1.2);
 }
 
-/* --------------------------------------------------------------------------
-   14. CTA banner
-   -------------------------------------------------------------------------- */
 .cta-banner {
   position: relative;
   background: linear-gradient(135deg, #0a1726 0%, #1a3050 100%);
@@ -1516,9 +1460,6 @@ h3 {
   box-shadow: 0 20px 40px rgba(242, 169, 59, 0.5);
 }
 
-/* --------------------------------------------------------------------------
-   15. Footer
-   -------------------------------------------------------------------------- */
 .footer {
   background: #0a1726;
   color: var(--white);
@@ -1667,14 +1608,6 @@ h3 {
   }
 }
 
-/* --------------------------------------------------------------------------
-   16. Floating buttons — WhatsApp + Krishna
-   Each button is fixed-positioned on its own (works even if JS hasn't
-   run yet / fails). JS additionally wraps them in .fab-stack for a
-   shared outer "pill" padding — when present, .fab-stack takes over
-   positioning and the buttons become relative children inside it.
-   -------------------------------------------------------------------------- */
-
 .whatsapp-fab {
   position: fixed;
   right: 20px;
@@ -1705,9 +1638,6 @@ h3 {
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* When JS has wrapped both buttons in .fab-stack, the stack becomes
-   the single fixed/positioned element and the buttons sit inside it
-   normally (no longer individually fixed). */
 .fab-stack {
   position: fixed;
   right: 12px;
@@ -1792,9 +1722,6 @@ h3 {
   }
 }
 
-/* --------------------------------------------------------------------------
-   17. Page heroes (sub-pages)
-   -------------------------------------------------------------------------- */
 .page-hero {
   position: relative;
   background: var(--navy-900);
@@ -1856,9 +1783,6 @@ h3 {
   color: #ffd166;
 }
 
-/* --------------------------------------------------------------------------
-   18. About page modules
-   -------------------------------------------------------------------------- */
 .story {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
@@ -1939,7 +1863,6 @@ h3 {
   font-size: 0.92rem;
 }
 
-/* Timeline */
 .timeline {
   position: relative;
   margin-top: 8px;
@@ -2009,9 +1932,6 @@ h3 {
   }
 }
 
-/* --------------------------------------------------------------------------
-   19. Services page — process steps
-   -------------------------------------------------------------------------- */
 .process {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -2065,9 +1985,6 @@ h3 {
   }
 }
 
-/* --------------------------------------------------------------------------
-   20. Fleet standards
-   -------------------------------------------------------------------------- */
 .standards-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -2102,9 +2019,6 @@ h3 {
   color: var(--slate);
 }
 
-/* --------------------------------------------------------------------------
-   21. Contact page
-   -------------------------------------------------------------------------- */
 .contact-layout {
   display: grid;
   grid-template-columns: 1.3fr 1fr;
@@ -2274,7 +2188,6 @@ h3 {
   filter: grayscale(0.3) contrast(1.05);
 }
 
-/* Hubs list */
 .hubs-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -2309,9 +2222,6 @@ h3 {
   color: var(--slate);
 }
 
-/* --------------------------------------------------------------------------
-   22. Scroll-reveal animation utility
-   -------------------------------------------------------------------------- */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -2367,9 +2277,6 @@ h3 {
   }
 }
 
-/* --------------------------------------------------------------------------
-   23. Misc
-   -------------------------------------------------------------------------- */
 .flex-between {
   display: flex;
   justify-content: space-between;
@@ -2395,7 +2302,6 @@ h3 {
   left: 0;
 }
 
-/* --- Brand logo --- */
 .brand__logo {
   height: 65px;
   width: auto;
@@ -2404,14 +2310,12 @@ h3 {
   transform: translateY(4px);
 }
 
-/* --- Mobile nav: handled in section 6 (single source of truth) --- */
 @media (max-width: 768px) {
   .grid-3 {
     grid-template-columns: 1fr !important;
   }
 }
 
-/* --- Krishna Button visuals (position handled in section 16) --- */
 .krishna-float img {
   width: 100%;
   height: 100%;
@@ -2466,16 +2370,6 @@ h3 {
   animation: krishnaPulse 1.2s ease-in-out infinite;
 }
 
-/* ==========================================================================
-   24. Performance & polish (deduped — replaces the old css-additions.css
-   block, which duplicated ~150 lines already defined above and silently
-   overrode the brand logo size, header layout, hero darkness and the
-   WhatsApp button position, causing it to overlap the Krishna button).
-   ========================================================================== */
-
-/* Slightly brighten the hero video without fully reverting the dark
-   overlay (kept as a single, intentional rule instead of two fighting
-   copies). */
 .hero__media {
   opacity: 0.85;
 }
@@ -2484,14 +2378,12 @@ h3 {
   opacity: 0.55;
 }
 
-/* WhatsApp icon, injected by js/main.js at runtime */
 .whatsapp-fab svg {
   width: 34px;
   height: 34px;
   display: block;
 }
 
-/* Trust strip marquee — fade the edges and style optional logo chips */
 .trust__row-wrap {
   overflow: hidden;
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
@@ -2513,7 +2405,6 @@ h3 {
   display: block;
 }
 
-/* Touch & scroll smoothness on mobile */
 html,
 body {
   -webkit-overflow-scrolling: touch;
@@ -2537,7 +2428,6 @@ button,
   min-height: 44px;
 }
 
-/* Compositor hints — only for continuously animating elements */
 .reveal,
 .reveal-stagger > * {
   will-change: transform, opacity;
@@ -2597,9 +2487,7 @@ button,
     justify-content: center;
   }
 }
-/* ==========================================================================
-   PAGE HERO — VIDEO BACKGROUND (all sub-pages)
-   ========================================================================== */
+
 .page-hero--video {
   position: relative;
   overflow: hidden;
@@ -2638,9 +2526,6 @@ button,
   z-index: 1;
 }
 
-/* ==========================================================================
-   INDIA ANIMATED MAP — About page
-   ========================================================================== */
 .india-map-wrap {
   width: 100%;
   max-width: 420px;
@@ -2726,11 +2611,6 @@ button,
   to { stroke-dashoffset: -28; }
 }
 
-/* ==========================================================================
-   WHATSAPP POPUP — call / chat options
-   ========================================================================== */
-/* fab-stack style is defined globally at line 1665 */
-
 .wa-popup {
   position: absolute;
   bottom: 152px;
@@ -2782,9 +2662,6 @@ button,
   line-height: 1;
 }
 
-/* ==========================================================================
-   TEAM CARDS — Leadership photo cards (About page)
-   ========================================================================== */
 .team-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -2869,9 +2746,6 @@ button,
   letter-spacing: 0.06em;
 }
 
-/* ==========================================================================
-   TEAM BIO MODAL
-   ========================================================================== */
 .team-modal {
   position: fixed;
   inset: 0;
@@ -2905,6 +2779,9 @@ button,
   padding: 2.5rem;
   max-width: 760px;
   width: 100%;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
   box-shadow: 0 32px 80px rgba(0,0,0,0.35);
   transform: translateY(20px) scale(0.96);
   transition: transform 0.25s ease;
@@ -2915,6 +2792,9 @@ button,
   gap: 2.5rem;
   align-items: flex-start;
   text-align: left;
+  overflow-y: auto;
+  max-height: calc(85vh - 5rem);
+  width: 100%;
 }
 
 .team-modal__left {
@@ -2995,9 +2875,6 @@ button,
   white-space: pre-wrap;
 }
 
-/* ==========================================================================
-   MOBILE RESPONSIVE — new components
-   ========================================================================== */
 @media (max-width: 768px) {
   .india-map-wrap { max-width: 100%; }
 
@@ -3013,7 +2890,8 @@ button,
   }
 
   .team-modal__box {
-    padding: 1.75rem 1.25rem;
+    padding: 2.5rem 1.25rem 1.75rem;
+    max-height: 90vh;
   }
 
   .team-modal__content {
@@ -3021,6 +2899,9 @@ button,
     align-items: center;
     gap: 1.25rem;
     text-align: center;
+    overflow-y: auto;
+    max-height: calc(90vh - 4.25rem);
+    width: 100%;
   }
 
   .team-modal__left,

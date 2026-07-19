@@ -1,18 +1,4 @@
-/* ==========================================================================
-   SHIPMATE LOGISTICS — main.js
-   Vanilla JS only. Handles:
-   - content.json loading & dynamic text/render
-   - header scroll state + mobile nav
-   - scroll-reveal animations (IntersectionObserver)
-   - animated stat counters
-   - testimonials carousel
-   - fleet filters
-   - contact form validation (client-side only)
-   - WhatsApp popup FAB (call / chat options)
-   - team member bio modal
-   - decorative "route line" SVG injection
-   - BFCache restoration fix
-   ========================================================================== */
+
 
 (function () {
   "use strict";
@@ -28,9 +14,6 @@
     return location.pathname.split("/").pop() || "index.html";
   }
 
-  /* ------------------------------------------------------------------
-     Content loader (cached result reused for BFCache restore)
-     ------------------------------------------------------------------ */
   let _cachedData = null;
 
   async function loadContent() {
@@ -46,9 +29,6 @@
     }
   }
 
-  /* ------------------------------------------------------------------
-     Apply simple text bindings: <el data-content="home.hero.title">
-     ------------------------------------------------------------------ */
   function applyTextBindings(data) {
     $$("[data-content]").forEach((el) => {
       const value = getPath(data, el.getAttribute("data-content"));
@@ -69,9 +49,6 @@
     });
   }
 
-  /* ------------------------------------------------------------------
-     Header: scroll state + mobile nav + active link
-     ------------------------------------------------------------------ */
   function setupHeader(data) {
     const header = $(".header");
     const toggle = $(".nav-toggle");
@@ -102,7 +79,6 @@
         });
       });
 
-      // Close nav when clicking outside
       document.addEventListener("click", (e) => {
         if (nav.classList.contains("is-open") && !nav.contains(e.target) && !toggle.contains(e.target)) {
           nav.classList.remove("is-open");
@@ -112,7 +88,6 @@
       });
     }
 
-    // Mark active nav link
     $$(".nav__link").forEach((link) => {
       const href = link.getAttribute("href");
       if (href === page || (page === "" && href === "index.html")) {
@@ -123,9 +98,6 @@
     });
   }
 
-  /* ------------------------------------------------------------------
-     Decorative route-line SVGs
-     ------------------------------------------------------------------ */
   function routeSVG({ withDot = false, viewBox = "0 0 1440 300", path, dotPath } = {}) {
     const d = path || "M-50,180 C 250,40 450,260 750,150 C 1050,40 1250,240 1500,120";
     const dot = dotPath ? `<circle class="route-dot" r="5"><animateMotion dur="18s" repeatCount="indefinite" path="${dotPath}" rotate="auto"/></circle>` : "";
@@ -170,9 +142,6 @@
     });
   }
 
-  /* ------------------------------------------------------------------
-     Scroll reveal animations — single shared observer
-     ------------------------------------------------------------------ */
   let _revealObserver = null;
 
   function getRevealObserver() {
@@ -206,9 +175,6 @@
     });
   }
 
-  /* ------------------------------------------------------------------
-     Stat counters
-     ------------------------------------------------------------------ */
   function renderStats(data) {
     const grid = $("#statsGrid");
     if (!grid || !data) return;
@@ -261,9 +227,6 @@
     items.forEach((el) => observer.observe(el));
   }
 
-  /* ------------------------------------------------------------------
-     Services rendering — NO Learn More button
-     ------------------------------------------------------------------ */
   function serviceCard(service, withPoints) {
     const points = withPoints
       ? `<ul class="card__points">${service.points.map((p) => `<li>${p}</li>`).join("")}</ul>`
@@ -290,7 +253,7 @@
 
     let list;
     if (previewCodes.length > 0) {
-      // Show specific services by code in the order specified
+      
       list = previewCodes
         .map((code) => allServices.find((s) => s.code === code))
         .filter(Boolean);
@@ -323,9 +286,6 @@
     setupReveal();
   }
 
-  /* ------------------------------------------------------------------
-     Fleet rendering + filters
-     ------------------------------------------------------------------ */
   function fleetCard(v) {
     return `
       <article class="card fleet-card reveal" data-category="${v.category}">
@@ -383,9 +343,6 @@
     setupReveal();
   }
 
-  /* ------------------------------------------------------------------
-     Testimonials carousel
-     ------------------------------------------------------------------ */
   function renderTestimonials(data) {
     const track = $("#testimonialsTrack");
     const dotsWrap = $("#testimonialsDots");
@@ -444,14 +401,35 @@
     const viewport = $("#testimonialsViewport");
     if (viewport) {
       viewport.addEventListener("mouseenter", () => clearInterval(timer));
-      viewport.addEventListener("mouseleave", () => (timer = setInterval(() => go(1), 7000)));
+      viewport.addEventListener("mouseleave", () => {
+        clearInterval(timer);
+        timer = setInterval(() => go(1), 7000);
+      });
+
+      let touchStartX = 0;
+      let touchEndX = 0;
+      viewport.addEventListener("touchstart", (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        clearInterval(timer);
+      }, { passive: true });
+
+      viewport.addEventListener("touchend", (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        const diff = touchStartX - touchEndX;
+        if (Math.abs(diff) > 50) {
+          if (diff > 0) {
+            go(1);
+          } else {
+            go(-1);
+          }
+        }
+        clearInterval(timer);
+        timer = setInterval(() => go(1), 7000);
+      }, { passive: true });
     }
     setupReveal();
   }
 
-  /* ------------------------------------------------------------------
-     Contact page: hubs + form
-     ------------------------------------------------------------------ */
   function renderHubs(data) {
     const grid = $("#hubsGrid");
     if (!grid || !data) return;
@@ -522,7 +500,7 @@
 
       try {
         const formData = new FormData(form);
-        // Web3Forms Access Key (base64 obfuscated to keep hidden)
+        
         formData.append("access_key", atob("NmQxNmIxOTQtMDBhZi00ZGNmLTlmN2UtYjIzM2NiNGYwYWZi"));
 
         const res = await fetch("https://api.web3forms.com/submit", {
@@ -565,9 +543,6 @@
     });
   }
 
-  /* ------------------------------------------------------------------
-     Trust strip + about pillars / values / timeline
-     ------------------------------------------------------------------ */
   function renderTrustStrip(data) {
     const wrap = $("#trustRow");
     if (!wrap || !data) return;
@@ -612,9 +587,6 @@
     setupReveal();
   }
 
-  /* ------------------------------------------------------------------
-     Team member cards + bio modal (About page)
-     ------------------------------------------------------------------ */
   function renderLeadershipTeam(data) {
     const wrap = $("#leadershipTeam");
     if (!wrap || !data) return;
@@ -637,7 +609,6 @@
         </div>
       </div>`).join("");
 
-    // Create modal overlay
     if (!$("#teamBioModal")) {
       const modal = document.createElement("div");
       modal.id = "teamBioModal";
@@ -677,7 +648,6 @@
       document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
     }
 
-    // Open modal on click/keypress
     wrap.addEventListener("click", (e) => {
       const card = e.target.closest(".team-card");
       if (!card) return;
@@ -708,9 +678,6 @@
     setupReveal();
   }
 
-  /* ------------------------------------------------------------------
-     Footer
-     ------------------------------------------------------------------ */
   function renderFooter(data) {
     if (!data) return;
     const servicesLinks = $("#footerServiceLinks");
@@ -726,9 +693,6 @@
     }
   }
 
-  /* ------------------------------------------------------------------
-     WhatsApp FAB — popup with "Phone Call" and "WhatsApp Text" options
-     ------------------------------------------------------------------ */
   function setupFABs(data) {
     const wa = document.querySelector(".whatsapp-fab");
     const krishna = document.querySelector(".krishna-float");
@@ -740,7 +704,6 @@
     const waMsg = data ? encodeURIComponent(data.site.whatsappMessage) : "";
     const waLink = `https://wa.me/${waNum}?text=${waMsg}`;
 
-    // Inject WhatsApp SVG icon
     if (!wa.querySelector("svg")) {
       wa.innerHTML = `<svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" style="width:30px;height:30px;">
         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
@@ -748,7 +711,6 @@
       </svg>`;
     }
 
-    // Create popup
     const popup = document.createElement("div");
     popup.className = "wa-popup";
     popup.setAttribute("role", "menu");
@@ -762,14 +724,12 @@
         <span>WhatsApp Text</span>
       </a>`;
 
-    // Convert FAB from <a> to <button>-like behaviour
     wa.removeAttribute("href");
     wa.removeAttribute("data-whatsapp-link");
     wa.setAttribute("role", "button");
     wa.setAttribute("aria-haspopup", "true");
     wa.setAttribute("aria-expanded", "false");
 
-    // Wrap in stack
     if (krishna && !document.querySelector(".fab-stack")) {
       const stack = document.createElement("div");
       stack.className = "fab-stack";
@@ -785,14 +745,12 @@
       stack.appendChild(wa);
     }
 
-    // Toggle popup
     wa.addEventListener("click", (e) => {
       e.stopPropagation();
       const isOpen = popup.classList.toggle("is-open");
       wa.setAttribute("aria-expanded", String(isOpen));
     });
 
-    // Play/Pause Krishna music
     let audio = null;
     if (krishna) {
       krishna.addEventListener("click", () => {
@@ -810,7 +768,6 @@
       });
     }
 
-    // Close when clicking outside
     document.addEventListener("click", (e) => {
       if (!popup.contains(e.target) && e.target !== wa) {
         popup.classList.remove("is-open");
@@ -819,9 +776,6 @@
     });
   }
 
-  /* ------------------------------------------------------------------
-     Main init
-     ------------------------------------------------------------------ */
   async function init() {
     injectRouteSVGs();
 
@@ -854,24 +808,16 @@
     setupReveal();
   }
 
-  /* ------------------------------------------------------------------
-     BFCache fix: re-render when page is restored from browser cache
-     (fixes blank page on back navigation)
-     ------------------------------------------------------------------ */
   document.addEventListener("DOMContentLoaded", init);
 
   window.addEventListener("pageshow", (e) => {
     if (e.persisted) {
-      // Page restored from back-forward cache — re-run full init
-      _revealObserver = null; // reset observer so elements re-animate
+      
+      _revealObserver = null; 
       init();
     }
   });
 
-  // ------------------------------------------------------------------
-  // Global Image & Video Poster Extension Fallbacks
-  // Supports dynamic uploads of webp, png, jpg, jpeg, etc.
-  // ------------------------------------------------------------------
   document.addEventListener("error", (e) => {
     if (!e.target || e.target.tagName !== "IMG") return;
     const img = e.target;
@@ -910,7 +856,6 @@
     tryNext();
   }, true);
 
-  // Fallback for video poster images
   const fallbackVideoPosters = () => {
     document.querySelectorAll("video[poster]").forEach((video) => {
       const poster = video.getAttribute("poster");
