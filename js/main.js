@@ -808,6 +808,7 @@
       setupContactForm(data);
     }
 
+    setupPWAInstall();
     setupReveal();
   }
 
@@ -900,6 +901,90 @@
     document.addEventListener("DOMContentLoaded", fallbackVideoPosters);
   } else {
     fallbackVideoPosters();
+  }
+
+  function setupPWAInstall() {
+    const isStandalone = window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
+    if (isStandalone) return;
+
+    const userAgent = window.navigator.userAgent.toLowerCase();
+    const isIOS = /iphone|ipad|ipod/.test(userAgent);
+    const isSafari = /safari/.test(userAgent) && !/crios|fxios|opera|opios/.test(userAgent);
+
+    const pwaPrompt = document.createElement("div");
+    pwaPrompt.className = "pwa-prompt";
+
+    if (isIOS) {
+      pwaPrompt.innerHTML = `
+        <div class="pwa-prompt__content">
+          <div class="pwa-prompt__info">
+            <img class="pwa-prompt__logo" src="assets/images/logos/mainlogo.webp" alt="Shipmate Logo">
+            <div>
+              <div class="pwa-prompt__title">Install Shipmate App</div>
+              <div class="pwa-prompt__desc">Add to Home Screen for fast offline access</div>
+            </div>
+          </div>
+          <div class="pwa-prompt__ios-instructions">
+            Tap share <svg class="pwa-prompt__share-icon" viewBox="0 0 24 24"><path d="M16 5l-4-4-4 4h3v9h2V5h3zm2 5v9H6v-9H4v11h16V10h-2z" fill="currentColor"/></svg> and select "Add to Home Screen"
+          </div>
+        </div>
+      `;
+    } else {
+      pwaPrompt.innerHTML = `
+        <div class="pwa-prompt__content">
+          <div class="pwa-prompt__info">
+            <img class="pwa-prompt__logo" src="assets/images/logos/mainlogo.webp" alt="Shipmate Logo">
+            <div>
+              <div class="pwa-prompt__title">Install Shipmate App</div>
+              <div class="pwa-prompt__desc">Fast load times and offline tracking</div>
+            </div>
+          </div>
+          <button class="btn btn--primary btn--sm pwa-prompt__btn">Install</button>
+        </div>
+      `;
+    }
+
+    document.body.appendChild(pwaPrompt);
+
+    let deferredPrompt;
+    window.addEventListener("beforeinstallprompt", (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      showPrompt();
+    });
+
+    if (isIOS && isSafari) {
+      showPrompt();
+    }
+
+    function showPrompt() {
+      setTimeout(() => {
+        pwaPrompt.classList.add("is-visible");
+        setTimeout(() => {
+          pwaPrompt.classList.remove("is-visible");
+        }, 4300);
+      }, 1000);
+    }
+
+    const btn = pwaPrompt.querySelector(".pwa-prompt__btn");
+    if (btn) {
+      btn.addEventListener("click", () => {
+        if (!deferredPrompt) return;
+        deferredPrompt.prompt();
+        deferredPrompt.userChoice.then((choiceResult) => {
+          if (choiceResult.outcome === "accepted") {
+            pwaPrompt.classList.remove("is-visible");
+          }
+          deferredPrompt = null;
+        });
+      });
+    }
+  }
+
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("sw.js").catch(() => {});
+    });
   }
 
 })();

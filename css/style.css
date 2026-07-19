@@ -2939,3 +2939,89 @@ button,
     bottom: 114px;
   }
 }
+
+.pwa-prompt {
+  position: fixed;
+  bottom: -160px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 32px);
+  max-width: 440px;
+  background: rgba(4, 22, 41, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 1.15rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+  z-index: 100000;
+  transition: bottom 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  color: #ffffff;
+}
+
+.pwa-prompt.is-visible {
+  bottom: 20px;
+}
+
+.pwa-prompt__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+}
+
+.pwa-prompt__info {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.pwa-prompt__logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pwa-prompt__title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.pwa-prompt__desc {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.25;
+}
+
+.pwa-prompt__btn {
+  white-space: nowrap;
+  font-size: 0.78rem;
+  padding: 0.5rem 0.9rem;
+  min-height: auto;
+  border-radius: 30px;
+}
+
+.pwa-prompt__ios-instructions {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.88);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  line-height: 1.4;
+}
+
+.pwa-prompt__share-icon {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  vertical-align: middle;
+  color: #f2a93b;
+  margin-inline: 1px;
+}
