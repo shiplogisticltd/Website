@@ -1,10 +1,8 @@
 backend:
   name: git-gateway
   branch: main
-
 media_folder: "assets/images"
 public_folder: "assets/images"
-
 collections:
   - name: "website_content"
     label: "Website Content & Media"
@@ -25,7 +23,6 @@ collections:
               - { label: "WhatsApp Preset Message", name: "whatsappMessage", widget: "string" }
               - { label: "Address", name: "address", widget: "text" }
               - { label: "Working Hours", name: "hours", widget: "string" }
-
           - label: "Home Page Settings"
             name: "home"
             widget: "object"
@@ -39,7 +36,6 @@ collections:
                   - { label: "Subtitle Text", name: "subtitle", widget: "text" }
                   - { label: "Hero Video Poster Image", name: "videoPoster", widget: "image" }
                   - { label: "Hero Background Video File", name: "video", widget: "file" }
-
               - label: "Trust Strip Logos"
                 name: "trustStrip"
                 widget: "object"
@@ -51,7 +47,6 @@ collections:
                     fields:
                       - { label: "Client Name", name: "name", widget: "string" }
                       - { label: "Logo Image", name: "image", widget: "image" }
-
           - label: "About Page"
             name: "about"
             widget: "object"
@@ -66,7 +61,6 @@ collections:
                     name: "paragraphs"
                     widget: "list"
                     field: { label: "Paragraph", name: "p", widget: "text" }
-
               - label: "Leadership Team"
                 name: "leadership"
                 widget: "object"
@@ -81,7 +75,6 @@ collections:
                       - { label: "Photo", name: "photo", widget: "image" }
                       - { label: "Bio Summary", name: "bio", widget: "text" }
                       - { label: "Full Detailed Bio", name: "fullBio", widget: "text" }
-
           - label: "Services Page"
             name: "services"
             widget: "object"
@@ -98,7 +91,6 @@ collections:
                     name: "points"
                     widget: "list"
                     field: { label: "Point", name: "p", widget: "string" }
-
           - label: "Fleet Page"
             name: "fleet"
             widget: "object"

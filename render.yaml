@@ -17,7 +17,6 @@ services:
       - type: redirect
         source: /contact.html
         destination: /contact
-
       - type: rewrite
         source: /about
         destination: /about.html
