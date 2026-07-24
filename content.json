@@ -16,11 +16,11 @@
       "facebook": "#"
     },
     "nav": [
-      { "label": "Home", "href": "index.html" },
-      { "label": "About", "href": "about.html" },
-      { "label": "Services", "href": "services.html" },
-      { "label": "Fleet", "href": "fleet.html" },
-      { "label": "Contact", "href": "contact.html" }
+      { "label": "Home", "href": "/" },
+      { "label": "About", "href": "/about" },
+      { "label": "Services", "href": "/services" },
+      { "label": "Fleet", "href": "/fleet" },
+      { "label": "Contact", "href": "/contact" }
     ]
   },
   "home": {

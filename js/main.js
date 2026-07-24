@@ -11,7 +11,10 @@
   }
 
   function currentPage() {
-    return location.pathname.split("/").pop() || "index.html";
+    let file = location.pathname.split("/").pop();
+    if (!file || file === "/") return "index.html";
+    if (!file.includes(".")) file += ".html";
+    return file;
   }
 
   let _cachedData = null;
@@ -89,8 +92,9 @@
     }
 
     $$(".nav__link").forEach((link) => {
-      const href = link.getAttribute("href");
-      if (href === page || (page === "" && href === "index.html")) {
+      const href = (link.getAttribute("href") || "").replace(/^\//, "").replace(/\.html$/, "") || "index";
+      const cleanPage = page.replace(/\.html$/, "") || "index";
+      if (href === cleanPage) {
         link.setAttribute("aria-current", "page");
       } else {
         link.removeAttribute("aria-current");
