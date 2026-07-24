@@ -291,7 +291,6 @@
       <article class="card fleet-card reveal" data-category="${v.category}">
         <div class="card__media">
           <img src="${v.image}" alt="${v.name}" loading="lazy" width="480" height="360">
-          <span class="card__tag">${v.code}</span>
         </div>
         <div class="card__body">
           <span class="fleet-card__category">${v.category}</span>
@@ -904,6 +903,10 @@
   }
 
   function setupPWAInstall() {
+    const page = currentPage();
+    if (page !== "index.html" && page !== "") return;
+    if (localStorage.getItem("shipmate_pwa_shown")) return;
+
     const isStandalone = window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
     if (isStandalone) return;
 
@@ -964,6 +967,7 @@
     }
 
     function showPrompt() {
+      localStorage.setItem("shipmate_pwa_shown", "true");
       setTimeout(() => {
         pwaPrompt.classList.add("is-visible");
         autoDismissTimer = setTimeout(() => {

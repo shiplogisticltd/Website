@@ -147,11 +147,7 @@ p {
 }
 
 .eyebrow::before {
-  content: "";
-  display: inline-block;
-  width: 28px;
-  height: 1px;
-  background: var(--amber);
+  display: none !important;
 }
 
 .on-dark .eyebrow {
@@ -686,7 +682,7 @@ h3 {
   color: #ffd166;
   background: rgba(10, 23, 38, 0.7);
   padding: 0.4rem 1.2rem;
-  border-radius: 999px;
+  border-radius: 6px;
   display: inline-flex;
   backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 209, 102, 0.2);
@@ -720,19 +716,7 @@ h3 {
 }
 
 .hero__scroll {
-  position: absolute;
-  left: 24px;
-  bottom: 28px;
-  z-index: 3;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.55);
-  animation: bounceScroll 2s ease-in-out infinite;
+  display: none !important;
 }
 
 @keyframes bounceScroll {
@@ -987,7 +971,7 @@ h3 {
   background: rgba(10, 23, 38, 0.85);
   color: var(--route);
   padding: 0.35em 0.75em;
-  border-radius: 999px;
+  border-radius: 6px;
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 209, 102, 0.3);
   font-weight: 600;
@@ -1078,7 +1062,7 @@ h3 {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   padding: 0.55em 1.2em;
-  border-radius: 999px;
+  border-radius: 6px;
   border: 1px solid var(--line-light);
   background: var(--white);
   color: var(--slate);
