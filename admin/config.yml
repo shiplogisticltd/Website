@@ -1,0 +1,115 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/images"
+public_folder: "assets/images"
+
+collections:
+  - name: "website_content"
+    label: "Website Content & Media"
+    files:
+      - file: "content.json"
+        label: "Edit All Photos, Videos & Text"
+        name: "content_data"
+        fields:
+          - label: "Company Information"
+            name: "site"
+            widget: "object"
+            fields:
+              - { label: "Company Name", name: "name", widget: "string" }
+              - { label: "Tagline", name: "tagline", widget: "string" }
+              - { label: "Phone Number", name: "phone", widget: "string" }
+              - { label: "Email Address", name: "email", widget: "string" }
+              - { label: "WhatsApp Number", name: "whatsappNumber", widget: "string" }
+              - { label: "WhatsApp Preset Message", name: "whatsappMessage", widget: "string" }
+              - { label: "Address", name: "address", widget: "text" }
+              - { label: "Working Hours", name: "hours", widget: "string" }
+
+          - label: "Home Page Settings"
+            name: "home"
+            widget: "object"
+            fields:
+              - label: "Hero Banner"
+                name: "hero"
+                widget: "object"
+                fields:
+                  - { label: "Eyebrow Badge Text", name: "eyebrow", widget: "string" }
+                  - { label: "Headline Title", name: "title", widget: "string" }
+                  - { label: "Subtitle Text", name: "subtitle", widget: "text" }
+                  - { label: "Hero Video Poster Image", name: "videoPoster", widget: "image" }
+                  - { label: "Hero Background Video File", name: "video", widget: "file" }
+
+              - label: "Trust Strip Logos"
+                name: "trustStrip"
+                widget: "object"
+                fields:
+                  - { label: "Section Title", name: "label", widget: "string" }
+                  - label: "Client Logos List"
+                    name: "logos"
+                    widget: "list"
+                    fields:
+                      - { label: "Client Name", name: "name", widget: "string" }
+                      - { label: "Logo Image", name: "image", widget: "image" }
+
+          - label: "About Page"
+            name: "about"
+            widget: "object"
+            fields:
+              - label: "Story Section"
+                name: "story"
+                widget: "object"
+                fields:
+                  - { label: "Section Title", name: "title", widget: "string" }
+                  - { label: "Story Image (White Trucks)", name: "image", widget: "image" }
+                  - label: "Paragraphs"
+                    name: "paragraphs"
+                    widget: "list"
+                    field: { label: "Paragraph", name: "p", widget: "text" }
+
+              - label: "Leadership Team"
+                name: "leadership"
+                widget: "object"
+                fields:
+                  - { label: "Section Title", name: "title", widget: "string" }
+                  - label: "Team Members"
+                    name: "members"
+                    widget: "list"
+                    fields:
+                      - { label: "Full Name", name: "name", widget: "string" }
+                      - { label: "Job Role", name: "role", widget: "string" }
+                      - { label: "Photo", name: "photo", widget: "image" }
+                      - { label: "Bio Summary", name: "bio", widget: "text" }
+                      - { label: "Full Detailed Bio", name: "fullBio", widget: "text" }
+
+          - label: "Services Page"
+            name: "services"
+            widget: "object"
+            fields:
+              - label: "Services Offered"
+                name: "list"
+                widget: "list"
+                fields:
+                  - { label: "Service Code (e.g. FTL, LTL)", name: "code", widget: "string" }
+                  - { label: "Service Title", name: "title", widget: "string" }
+                  - { label: "Summary", name: "summary", widget: "text" }
+                  - { label: "Service Image", name: "image", widget: "image" }
+                  - label: "Key Features / Points"
+                    name: "points"
+                    widget: "list"
+                    field: { label: "Point", name: "p", widget: "string" }
+
+          - label: "Fleet Page"
+            name: "fleet"
+            widget: "object"
+            fields:
+              - label: "Fleet Vehicles"
+                name: "vehicles"
+                widget: "list"
+                fields:
+                  - { label: "Vehicle Code", name: "code", widget: "string" }
+                  - { label: "Vehicle Name", name: "name", widget: "string" }
+                  - { label: "Category", name: "category", widget: "string" }
+                  - { label: "Carrying Capacity", name: "capacity", widget: "string" }
+                  - { label: "Primary Use Case", name: "useCase", widget: "text" }
+                  - { label: "Vehicle Photo", name: "image", widget: "image" }
