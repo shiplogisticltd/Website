@@ -1,4 +1,3 @@
-# Render.com Static Site & Clean URL Configuration
 services:
   - type: web
     name: shipmate-logistics
@@ -6,7 +5,6 @@ services:
     buildCommand: ""
     staticPublishPath: "."
     routes:
-      # 1. Permanent 301 Redirects from .html extensions to clean URLs
       - type: redirect
         source: /about.html
         destination: /about
@@ -20,7 +18,6 @@ services:
         source: /contact.html
         destination: /contact
 
-      # 2. Internal Rewrites to serve clean URLs
       - type: rewrite
         source: /about
         destination: /about.html

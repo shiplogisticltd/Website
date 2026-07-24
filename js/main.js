@@ -257,7 +257,7 @@
 
     let list;
     if (previewCodes.length > 0) {
-      
+
       list = previewCodes
         .map((code) => allServices.find((s) => s.code === code))
         .filter(Boolean);
@@ -503,13 +503,13 @@
 
       try {
         const formData = new FormData(form);
-        
+
         formData.append("access_key", atob("NmQxNmIxOTQtMDBhZi00ZGNmLTlmN2UtYjIzM2NiNGYwYWZi"));
 
         const res = await fetch("https://api.web3forms.com/submit", {
           method: "POST",
-          headers: { 
-            "Accept": "application/json" 
+          headers: {
+            "Accept": "application/json"
           },
           body: formData
         });
@@ -819,8 +819,8 @@
 
   window.addEventListener("pageshow", (e) => {
     if (e.persisted) {
-      
-      _revealObserver = null; 
+
+      _revealObserver = null;
       init();
     }
   });
