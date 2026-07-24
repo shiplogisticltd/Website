@@ -28,8 +28,8 @@
       "eyebrow": "Pan-India Freight Network",
       "title": "Freight that arrives on schedule, every time.",
       "subtitle": "Shipmate Logistics moves full truckloads, part loads and temperature-controlled cargo across 650+ Pincode Served — tracked end-to-end, backed by a 99% on-time record.",
-      "ctaPrimary": { "label": "Get a Freight Quote", "href": "contact.html" },
-      "ctaSecondary": { "label": "Explore Our Fleet", "href": "fleet.html" },
+      "ctaPrimary": { "label": "Get a Freight Quote", "href": "/contact" },
+      "ctaSecondary": { "label": "Explore Our Fleet", "href": "/fleet" },
       "videoPoster": "assets/images/hero-poster.webp",
       "video": "assets/videos/hero-loop.mp4"
     },
@@ -61,7 +61,7 @@
       "title": "Built for every kind of cargo",
       "subtitle": "From single pallets to factory-scale truckloads, choose the service tier that matches your shipment.",
       "linkLabel": "View all services",
-      "linkHref": "services.html",
+      "linkHref": "/services",
       "previewCodes": ["FTL", "CNT", "LTL"]
     },
     "coverage": {
@@ -107,7 +107,7 @@
       "title": "Ready to move your next consignment?",
       "subtitle": "Tell us your route and load type — our team responds with a quote within two working hours.",
       "ctaLabel": "Request a Quote",
-      "ctaHref": "contact.html"
+      "ctaHref": "/contact"
     }
   },
   "about": {
@@ -402,12 +402,12 @@
     "servicesTitle": "Services",
     "contactTitle": "Contact",
     "servicesLinks": [
-      { "label": "Full Truckload (FTL)", "href": "services.html#ftl" },
-      { "label": "Flatbed Transport", "href": "services.html#fbt" },
-      { "label": "ODC Movement", "href": "services.html#odc" },
-      { "label": "MAVREFER Cold Chain", "href": "services.html#mav" },
-      { "label": "Part Truckload (LTL)", "href": "services.html#ltl" },
-      { "label": "Container Movement", "href": "services.html#cnt" }
+      { "label": "Full Truckload (FTL)", "href": "/services#ftl" },
+      { "label": "Flatbed Transport", "href": "/services#fbt" },
+      { "label": "ODC Movement", "href": "/services#odc" },
+      { "label": "MAVREFER Cold Chain", "href": "/services#mav" },
+      { "label": "Part Truckload (LTL)", "href": "/services#ltl" },
+      { "label": "Container Movement", "href": "/services#cnt" }
     ],
     "copyright": "© 2026 Shipmate Logistics. All rights reserved."
   }

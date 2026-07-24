@@ -6,6 +6,21 @@ services:
     buildCommand: ""
     staticPublishPath: "."
     routes:
+      # 1. Permanent 301 Redirects from .html extensions to clean URLs
+      - type: redirect
+        source: /about.html
+        destination: /about
+      - type: redirect
+        source: /services.html
+        destination: /services
+      - type: redirect
+        source: /fleet.html
+        destination: /fleet
+      - type: redirect
+        source: /contact.html
+        destination: /contact
+
+      # 2. Internal Rewrites to serve clean URLs
       - type: rewrite
         source: /about
         destination: /about.html
