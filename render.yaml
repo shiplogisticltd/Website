@@ -1,0 +1,20 @@
+# Render.com Static Site & Clean URL Configuration
+services:
+  - type: web
+    name: shipmate-logistics
+    env: static
+    buildCommand: ""
+    staticPublishPath: "."
+    routes:
+      - type: rewrite
+        source: /about
+        destination: /about.html
+      - type: rewrite
+        source: /services
+        destination: /services.html
+      - type: rewrite
+        source: /fleet
+        destination: /fleet.html
+      - type: rewrite
+        source: /contact
+        destination: /contact.html
