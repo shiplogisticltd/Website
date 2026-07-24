@@ -11,10 +11,9 @@
   }
 
   function currentPage() {
-    let file = location.pathname.split("/").pop();
-    if (!file || file === "/") return "index.html";
-    if (!file.includes(".")) file += ".html";
-    return file;
+    const parts = location.pathname.split("/").filter(Boolean);
+    if (parts.length === 0) return "index";
+    return parts[0];
   }
 
   let _cachedData = null;
@@ -22,7 +21,7 @@
   async function loadContent() {
     if (_cachedData) return _cachedData;
     try {
-      const res = await fetch("content.json");
+      const res = await fetch("/content.json");
       if (!res.ok) throw new Error("content.json not found");
       _cachedData = await res.json();
       return _cachedData;
@@ -59,7 +58,7 @@
     const page = currentPage();
 
     if (header) {
-      if (page !== "index.html" && page !== "") {
+      if (page !== "index" && page !== "") {
         header.classList.add("is-solid");
       }
       const onScroll = () => { header.classList.toggle("is-scrolled", window.scrollY > 12); };
@@ -926,7 +925,7 @@
         <button class="pwa-prompt__close" aria-label="Dismiss">&times;</button>
         <div class="pwa-prompt__content">
           <div class="pwa-prompt__info">
-            <img class="pwa-prompt__logo" src="assets/images/logos/mainlogo.webp" alt="Shipmate Logo">
+            <img class="pwa-prompt__logo" src="/assets/images/logos/mainlogo.webp" alt="Shipmate Logo">
             <div>
               <div class="pwa-prompt__title">Install Shipmate App</div>
               <div class="pwa-prompt__desc">Add to Home Screen for fast offline access</div>
@@ -943,7 +942,7 @@
         <button class="pwa-prompt__close" aria-label="Dismiss">&times;</button>
         <div class="pwa-prompt__content">
           <div class="pwa-prompt__info">
-            <img class="pwa-prompt__logo" src="assets/images/logos/mainlogo.webp" alt="Shipmate Logo">
+            <img class="pwa-prompt__logo" src="/assets/images/logos/mainlogo.webp" alt="Shipmate Logo">
             <div>
               <div class="pwa-prompt__title">Install Shipmate App</div>
               <div class="pwa-prompt__desc">Fast load times and offline tracking</div>
