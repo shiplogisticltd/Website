@@ -907,7 +907,7 @@
 
   function setupPWAInstall() {
     const page = currentPage();
-    if (page !== "index.html" && page !== "") return;
+    if (page !== "index" && page !== "") return;
     if (localStorage.getItem("shipmate_pwa_shown")) return;
 
     const isStandalone = window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
