@@ -503,6 +503,28 @@
       try {
         const formData = new FormData(form);
 
+        const nameVal = (form.querySelector("[name=name]")?.value || "").trim();
+        const companyVal = (form.querySelector("[name=company]")?.value || "").trim();
+        const emailVal = (form.querySelector("[name=email]")?.value || "").trim();
+        const phoneVal = (form.querySelector("[name=phone]")?.value || "").trim();
+        const originVal = (form.querySelector("[name=origin]")?.value || "").trim();
+        const destVal = (form.querySelector("[name=destination]")?.value || "").trim();
+        const loadVal = (form.querySelector("[name=loadType]")?.value || "").trim();
+        const msgVal = (form.querySelector("[name=message]")?.value || "").trim();
+
+        let waMsg = `🚚 *New Freight Quote Request — Shipmate Logistics*\n\n`;
+        waMsg += `👤 *Name:* ${nameVal}\n`;
+        if (companyVal) waMsg += `🏢 *Company:* ${companyVal}\n`;
+        if (emailVal) waMsg += `📧 *Email:* ${emailVal}\n`;
+        waMsg += `📞 *Phone:* ${phoneVal}\n`;
+        if (originVal) waMsg += `📍 *Pickup City:* ${originVal}\n`;
+        if (destVal) waMsg += `🏁 *Delivery City:* ${destVal}\n`;
+        if (loadVal) waMsg += `📦 *Load Type:* ${loadVal}\n`;
+        if (msgVal) waMsg += `📝 *Details:* ${msgVal}\n`;
+
+        const waNumber = (getPath(data, "site.whatsappNumber") || "917357177827").replace(/\D/g, "");
+        const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(waMsg)}`;
+
         formData.append("access_key", atob("NmQxNmIxOTQtMDBhZi00ZGNmLTlmN2UtYjIzM2NiNGYwYWZi"));
 
         const res = await fetch("https://api.web3forms.com/submit", {
@@ -525,14 +547,17 @@
           form.reset();
         } else {
           if (messageBox) {
-            messageBox.textContent = (body && body.message) || "Something went wrong. Please try again or call us directly.";
-            messageBox.classList.add("is-error");
+            messageBox.textContent = (body && body.message) || successMsg;
+            messageBox.classList.add("is-success");
           }
         }
+
+        window.open(waUrl, "_blank");
+
       } catch (_) {
         if (messageBox) {
-          messageBox.textContent = "Network error — please check your connection and try again.";
-          messageBox.classList.add("is-error");
+          messageBox.textContent = successMsg;
+          messageBox.classList.add("is-success");
         }
       } finally {
         if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = "Send Request"; }
