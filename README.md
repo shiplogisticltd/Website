@@ -4,7 +4,7 @@ Welcome to the official website repository for **Shipmate Logistics**. This guid
 
 ---
 
-## 🌟 Website Overview
+## Website Overview
 
 Your website is built with a fast, modern design tailored for logistics and supply chain management:
 
@@ -15,13 +15,13 @@ Your website is built with a fast, modern design tailored for logistics and supp
 
 ---
 
-## ✏️ Managing Website Content & Media
+## Managing Website Content & Media
 
 You have two easy ways to update text, photos, and videos on your website:
 
 ### Option A: Content Manager Portal (No Coding Required)
 Visit your website's admin portal:
-👉 **`https://shipmatelogistics.in/admin/`**
+ **`https://shipmatelogistics.in/admin/`**
 
 1. Log in with your email and password.
 2. Select any section (**Hero Video**, **Services**, **Fleet Vehicles**, **About Story**, or **Contact Details**).
