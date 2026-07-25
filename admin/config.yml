@@ -2,7 +2,8 @@ backend:
   name: github
   repo: shiplogisticltd/Website
   branch: main
-  site_domain: shipmatelogistics.in
+  base_url: https://decap-cms-oauth.vercel.app
+  auth_endpoint: auth
 
 media_folder: "assets/images"
 public_folder: "/assets/images"
