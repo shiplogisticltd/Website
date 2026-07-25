@@ -31,6 +31,15 @@
     }
   }
 
+  function fixPath(val) {
+    if (typeof val === "string" && val.length > 0) {
+      if (!val.startsWith("/") && !val.startsWith("http://") && !val.startsWith("https://") && !val.startsWith("data:")) {
+        return "/" + val;
+      }
+    }
+    return val || "";
+  }
+
   function applyTextBindings(data) {
     $$("[data-content]").forEach((el) => {
       const value = getPath(data, el.getAttribute("data-content"));
@@ -45,8 +54,13 @@
     $$("[data-content-attr]").forEach((el) => {
       el.getAttribute("data-content-attr").split(";").forEach((pair) => {
         const [attr, path] = pair.split(":").map((s) => s.trim());
-        const value = getPath(data, path);
-        if (value !== undefined && value !== null) el.setAttribute(attr, value);
+        let value = getPath(data, path);
+        if (value !== undefined && value !== null) {
+          if (attr === "src" || attr === "poster" || attr === "href") {
+            value = fixPath(value);
+          }
+          el.setAttribute(attr, value);
+        }
       });
     });
   }
@@ -237,7 +251,7 @@
     return `
       <article class="card reveal" id="${service.code.toLowerCase()}">
         <div class="card__media">
-          <img src="${service.image}" alt="${service.title}" loading="lazy" width="480" height="360">
+          <img src="${fixPath(service.image)}" alt="${service.title}" loading="lazy" width="480" height="360">
           <span class="card__tag">${service.code}</span>
         </div>
         <div class="card__body">
@@ -293,7 +307,7 @@
     return `
       <article class="card fleet-card reveal" data-category="${v.category}">
         <div class="card__media">
-          <img src="${v.image}" alt="${v.name}" loading="lazy" width="480" height="360">
+          <img src="${fixPath(v.image)}" alt="${v.name}" loading="lazy" width="480" height="360">
         </div>
         <div class="card__body">
           <span class="fleet-card__category">${v.category}</span>
@@ -358,7 +372,7 @@
           <div>
             <p class="testimonial__quote">${t.quote}</p>
             <div class="testimonial__byline">
-              <img class="testimonial__avatar" src="${t.avatar}" alt="" loading="lazy" width="48" height="48">
+              <img class="testimonial__avatar" src="${fixPath(t.avatar)}" alt="" loading="lazy" width="48" height="48">
               <div>
                 <div class="testimonial__name">${t.name}</div>
                 <div class="testimonial__role">${t.role}</div>
@@ -638,7 +652,7 @@
     wrap.innerHTML = members.map((m, i) => `
       <div class="team-card reveal" data-member="${i}" role="button" tabindex="0" aria-label="View bio for ${m.name}">
         <div class="team-card__photo">
-          <img src="${m.photo}" alt="${m.name}" loading="lazy" width="200" height="200"
+          <img src="${fixPath(m.photo)}" alt="${m.name}" loading="lazy" width="200" height="200"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="team-card__avatar-placeholder" style="display:none">
             <svg viewBox="0 0 24 24" fill="currentColor" width="64" height="64"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
