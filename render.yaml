@@ -5,6 +5,7 @@ services:
     buildCommand: ""
     staticPublishPath: "."
     routes:
+      # Redirect old .html URLs to clean trailing slash URLs
       - type: redirect
         source: /about.html
         destination: /about/
@@ -17,15 +18,20 @@ services:
       - type: redirect
         source: /contact.html
         destination: /contact/
-      - type: rewrite
+      - type: redirect
+        source: /index.html
+        destination: /
+
+      # Redirect non-slash URLs to trailing slash URLs
+      - type: redirect
         source: /about
-        destination: /about/.html
-      - type: rewrite
+        destination: /about/
+      - type: redirect
         source: /services
-        destination: /services/.html
-      - type: rewrite
+        destination: /services/
+      - type: redirect
         source: /fleet
-        destination: /fleet/.html
-      - type: rewrite
+        destination: /fleet/
+      - type: redirect
         source: /contact
-        destination: /contact/.html
+        destination: /contact/

@@ -1,5 +1,9 @@
-# Clean URLs redirects for Netlify
-/about/     /about.html     200
-/services/  /services.html  200
-/fleet/     /fleet.html     200
-/contact/   /contact.html   200
+# Permanent 301 Redirects to clean trailing slash URLs
+/about.html    /about/    301
+/services.html /services/ 301
+/fleet.html    /fleet/    301
+/contact.html  /contact/  301
+/about         /about/    301
+/services      /services/ 301
+/fleet         /fleet/    301
+/contact       /contact/  301
