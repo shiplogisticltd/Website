@@ -7,25 +7,25 @@ services:
     routes:
       - type: redirect
         source: /about.html
-        destination: /about
+        destination: /about/
       - type: redirect
         source: /services.html
-        destination: /services
+        destination: /services/
       - type: redirect
         source: /fleet.html
-        destination: /fleet
+        destination: /fleet/
       - type: redirect
         source: /contact.html
-        destination: /contact
+        destination: /contact/
       - type: rewrite
         source: /about
-        destination: /about.html
+        destination: /about/.html
       - type: rewrite
         source: /services
-        destination: /services.html
+        destination: /services/.html
       - type: rewrite
         source: /fleet
-        destination: /fleet.html
+        destination: /fleet/.html
       - type: rewrite
         source: /contact
-        destination: /contact.html
+        destination: /contact/.html

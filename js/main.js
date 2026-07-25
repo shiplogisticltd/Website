@@ -91,8 +91,8 @@
     }
 
     $$(".nav__link").forEach((link) => {
-      const href = (link.getAttribute("href") || "").replace(/^\//, "").replace(/\.html$/, "") || "index";
-      const cleanPage = page.replace(/\.html$/, "") || "index";
+      const href = (link.getAttribute("href") || "").replace(/^\//, "").replace(/\/$/, "").replace(/\.html$/, "") || "index";
+      const cleanPage = page.replace(/\/$/, "").replace(/\.html$/, "") || "index";
       if (href === cleanPage) {
         link.setAttribute("aria-current", "page");
       } else {
