@@ -525,14 +525,26 @@
         const waNumber = (getPath(data, "site.whatsappNumber") || "917357177827").replace(/\D/g, "");
         const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(waMsg)}`;
 
-        formData.append("access_key", atob("NmQxNmIxOTQtMDBhZi00ZGNmLTlmN2UtYjIzM2NiNGYwYWZi"));
+        const payload = {
+          access_key: "6d16b194-00af-4dcf-9f7e-b233cb4f0afb",
+          subject: "New Freight Quote Request — Shipmate Logistics",
+          name: nameVal,
+          company: companyVal,
+          email: emailVal,
+          phone: phoneVal,
+          origin: originVal,
+          destination: destVal,
+          loadType: loadVal,
+          message: msgVal
+        };
 
         const res = await fetch("https://api.web3forms.com/submit", {
           method: "POST",
           headers: {
+            "Content-Type": "application/json",
             "Accept": "application/json"
           },
-          body: formData
+          body: JSON.stringify(payload)
         });
 
         if (messageBox) {
