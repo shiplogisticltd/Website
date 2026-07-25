@@ -512,15 +512,15 @@
         const loadVal = (form.querySelector("[name=loadType]")?.value || "").trim();
         const msgVal = (form.querySelector("[name=message]")?.value || "").trim();
 
-        let waMsg = `🚚 *New Freight Quote Request — Shipmate Logistics*\n\n`;
-        waMsg += `👤 *Name:* ${nameVal}\n`;
-        if (companyVal) waMsg += `🏢 *Company:* ${companyVal}\n`;
-        if (emailVal) waMsg += `📧 *Email:* ${emailVal}\n`;
-        waMsg += `📞 *Phone:* ${phoneVal}\n`;
-        if (originVal) waMsg += `📍 *Pickup City:* ${originVal}\n`;
-        if (destVal) waMsg += `🏁 *Delivery City:* ${destVal}\n`;
-        if (loadVal) waMsg += `📦 *Load Type:* ${loadVal}\n`;
-        if (msgVal) waMsg += `📝 *Details:* ${msgVal}\n`;
+        let waMsg = `*New Freight Quote Request — Shipmate Logistics*\n\n`;
+        waMsg += `*Name:* ${nameVal}\n`;
+        if (companyVal) waMsg += `*Company:* ${companyVal}\n`;
+        if (emailVal) waMsg += `*Email:* ${emailVal}\n`;
+        waMsg += `*Phone:* ${phoneVal}\n`;
+        if (originVal) waMsg += `*Pickup City:* ${originVal}\n`;
+        if (destVal) waMsg += `*Delivery City:* ${destVal}\n`;
+        if (loadVal) waMsg += `*Load Type:* ${loadVal}\n`;
+        if (msgVal) waMsg += `*Details:* ${msgVal}\n`;
 
         const waNumber = (getPath(data, "site.whatsappNumber") || "917357177827").replace(/\D/g, "");
         const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(waMsg)}`;
