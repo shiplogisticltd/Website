@@ -84,22 +84,34 @@
       "title": "What shippers say after the first delivery — and the hundredth",
       "items": [
         {
-          "quote": "We switched our entire North India distribution to Shipmate eighteen months ago. Our stock-out incidents dropped by a third within one quarter, simply because trucks stopped arriving late.",
+          "quote": "We switched our entire North India steel coil distribution to Shipmate eighteen months ago. Our factory-to-dealer delivery delays dropped to zero, and dispatch tracking is instant.",
           "name": "Rohan Mehta",
-          "role": "Supply Chain Head, Vantage Steel",
+          "role": "Supply Chain Head, Vantage Steel Industries",
           "avatar": "/assets/images/testimonials/testimonial-1.webp"
         },
         {
-          "quote": "Cold chain compliance is non-negotiable for us. Shipmate's reefer fleet gives us live temperature logs on every trip, which has made our audits dramatically easier.",
+          "quote": "Cold chain temperature integrity is non-negotiable for our vaccines. Shipmate's reefer trucks provide live GPS & thermal logger reports on every route, making our quality audits seamless.",
           "name": "Dr. Anjali Rao",
-          "role": "Logistics Manager, Northbridge Pharma",
+          "role": "Logistics Director, Northbridge Pharma",
           "avatar": "/assets/images/testimonials/testimonial-2.webp"
         },
         {
-          "quote": "Their dispatch team treats every shipment like it's the only one on the road. Communication is proactive, not something we have to chase.",
+          "quote": "Their multi-city container placement for our retail peak seasons is flawless. Communication from their central dispatch team is proactive and dependable every single day.",
           "name": "Suresh Iyer",
-          "role": "Operations Director, Orchid Retail Group",
+          "role": "Operations Vice President, Orchid Retail Group",
           "avatar": "/assets/images/testimonials/testimonial-3.webp"
+        },
+        {
+          "quote": "Moving Just-In-Time automotive sub-assemblies from Pune to Sanand requires zero transit breakdowns. Shipmate's well-maintained fleet has delivered 100% on-time for 14 straight months.",
+          "name": "Vikram Singh",
+          "role": "Plant Logistics Manager, AutoLogix Components",
+          "avatar": "/assets/images/testimonials/testimonial-4.webp"
+        },
+        {
+          "quote": "Shipmate handles our FMCG stock transfers across 650+ pincodes effortlessly. Damage claims have plummeted, and their vehicle turn-around times at hubs are unbeatable.",
+          "name": "Neha Sharma",
+          "role": "National Distribution Head, Apex Consumer Goods",
+          "avatar": "/assets/images/testimonials/testimonial-5.webp"
         }
       ]
     },
