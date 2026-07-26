@@ -2931,13 +2931,13 @@ button,
   transform: translateX(-50%);
   width: calc(100% - 32px);
   max-width: 420px;
-  background: linear-gradient(135deg, rgba(4, 22, 41, 0.98) 0%, rgba(10, 37, 64, 0.98) 100%);
+  background: linear-gradient(135deg, rgba(8, 22, 40, 0.96) 0%, rgba(16, 38, 66, 0.96) 100%);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(242, 169, 59, 0.25);
+  border: 1px solid rgba(242, 169, 59, 0.38);
   border-radius: 20px;
   padding: 1.25rem 2.5rem 1.25rem 1.25rem;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.6), 0 0 25px rgba(242, 169, 59, 0.15);
   z-index: 100000;
   transition: bottom 0.5s cubic-bezier(0.16, 1, 0.3, 1);
   color: #ffffff;
@@ -2950,9 +2950,8 @@ button,
 
 .pwa-prompt__content {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.25rem;
+  flex-direction: column;
+  gap: 0.85rem;
 }
 
 .pwa-prompt__info {
@@ -2961,13 +2960,23 @@ button,
   gap: 0.85rem;
 }
 
-.pwa-prompt__logo {
-  width: 44px;
-  height: 44px;
+.pwa-prompt__logo-box {
+  background: #ffffff;
+  padding: 4px;
   border-radius: 12px;
-  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
-  border: 2px solid rgba(242, 169, 59, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(242, 169, 59, 0.5);
+}
+
+.pwa-prompt__logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  object-fit: contain;
 }
 
 .pwa-prompt__title {
@@ -2976,36 +2985,55 @@ button,
   margin-bottom: 2px;
   color: #ffffff;
   line-height: 1.2;
+  display: flex;
+  align-items: center;
+}
+
+.pwa-prompt__badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #f2a93b, #d98e24);
+  color: #071524;
+  font-size: 0.6rem;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  margin-left: 8px;
 }
 
 .pwa-prompt__desc {
   font-size: 0.76rem;
-  color: rgba(255, 255, 255, 0.68);
+  color: rgba(255, 255, 255, 0.75);
   line-height: 1.25;
 }
 
 .pwa-prompt__btn {
   white-space: nowrap;
   font-size: 0.78rem;
-  padding: 0.5rem 0.9rem;
+  padding: 0.55rem 1.1rem;
   min-height: auto;
   border-radius: 30px;
-  background: var(--amber) !important;
-  color: var(--navy-900) !important;
+  background: linear-gradient(135deg, #f2a93b 0%, #e09627 100%) !important;
+  color: #071524 !important;
   font-weight: 700;
   border: none;
-  box-shadow: 0 4px 12px rgba(242, 169, 59, 0.25);
+  box-shadow: 0 4px 14px rgba(242, 169, 59, 0.35);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  align-self: flex-start;
 }
 
 .pwa-prompt__btn:hover {
   transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(242, 169, 59, 0.4);
+  box-shadow: 0 6px 18px rgba(242, 169, 59, 0.5);
 }
 
 .pwa-prompt__ios-instructions {
   font-size: 0.76rem;
-  color: rgba(255, 255, 255, 0.88);
+  color: #f8fafc;
+  background: rgba(242, 169, 59, 0.12);
+  border: 1px solid rgba(242, 169, 59, 0.3);
+  border-radius: 10px;
+  padding: 0.5rem 0.75rem;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -3014,26 +3042,26 @@ button,
 }
 
 .pwa-prompt__share-icon {
-  width: 15px;
-  height: 15px;
+  width: 16px;
+  height: 16px;
   display: inline-block;
   vertical-align: middle;
   color: #f2a93b;
-  margin-inline: 1px;
+  margin-inline: 2px;
 }
 
 .pwa-prompt__close {
   position: absolute;
   top: 0.75rem;
   right: 0.75rem;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.1);
   border: none;
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.7);
   font-size: 1.1rem;
-  line-height: 22px;
+  line-height: 24px;
   text-align: center;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -3044,7 +3072,7 @@ button,
 }
 
 .pwa-prompt__close:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.2);
   color: #ffffff;
 }
 
@@ -3053,7 +3081,7 @@ button,
   bottom: 0;
   left: 0;
   height: 3px;
-  background: var(--amber);
+  background: linear-gradient(90deg, #f2a93b, #ffd166, #ff9f1c);
   width: 100%;
   transform-origin: left;
 }

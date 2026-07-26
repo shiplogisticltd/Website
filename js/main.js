@@ -976,14 +976,16 @@
         <button class="pwa-prompt__close" aria-label="Dismiss">&times;</button>
         <div class="pwa-prompt__content">
           <div class="pwa-prompt__info">
-            <img class="pwa-prompt__logo" src="/assets/images/logos/mainlogo.webp" alt="Shipmate Logo">
+            <div class="pwa-prompt__logo-box">
+              <img class="pwa-prompt__logo" src="/assets/images/logos/mainlogo.webp" alt="Shipmate Logo">
+            </div>
             <div>
-              <div class="pwa-prompt__title">Install Shipmate App</div>
-              <div class="pwa-prompt__desc">Add to Home Screen for fast offline access</div>
+              <div class="pwa-prompt__title">Install Shipmate App <span class="pwa-prompt__badge">FAST</span></div>
+              <div class="pwa-prompt__desc">Add to Home Screen for instant access</div>
             </div>
           </div>
           <div class="pwa-prompt__ios-instructions">
-            Tap share <svg class="pwa-prompt__share-icon" viewBox="0 0 24 24"><path d="M16 5l-4-4-4 4h3v9h2V5h3zm2 5v9H6v-9H4v11h16V10h-2z" fill="currentColor"/></svg> and select "Add to Home Screen"
+            <span>Tap share</span> <svg class="pwa-prompt__share-icon" viewBox="0 0 24 24"><path d="M16 5l-4-4-4 4h3v9h2V5h3zm2 5v9H6v-9H4v11h16V10h-2z" fill="currentColor"/></svg> <span>and select "Add to Home Screen"</span>
           </div>
         </div>
         <div class="pwa-prompt__progress"></div>
@@ -993,13 +995,15 @@
         <button class="pwa-prompt__close" aria-label="Dismiss">&times;</button>
         <div class="pwa-prompt__content">
           <div class="pwa-prompt__info">
-            <img class="pwa-prompt__logo" src="/assets/images/logos/mainlogo.webp" alt="Shipmate Logo">
+            <div class="pwa-prompt__logo-box">
+              <img class="pwa-prompt__logo" src="/assets/images/logos/mainlogo.webp" alt="Shipmate Logo">
+            </div>
             <div>
-              <div class="pwa-prompt__title">Install Shipmate App</div>
-              <div class="pwa-prompt__desc">Fast load times and offline tracking</div>
+              <div class="pwa-prompt__title">Install Shipmate App <span class="pwa-prompt__badge">FAST</span></div>
+              <div class="pwa-prompt__desc">Fast load times & offline tracking</div>
             </div>
           </div>
-          <button class="btn btn--primary btn--sm pwa-prompt__btn">Install</button>
+          <button class="btn btn--primary btn--sm pwa-prompt__btn">Install App</button>
         </div>
         <div class="pwa-prompt__progress"></div>
       `;

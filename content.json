@@ -105,7 +105,7 @@
     },
     "ctaBanner": {
       "title": "Ready to move your next consignment?",
-      "subtitle": "Tell us your route and load type — our team responds with a quote within two working hours.",
+      "subtitle": "Tell us your route and load type — our team responds with a quote within one working hours.",
       "ctaLabel": "Request a Quote",
       "ctaHref": "/contact/"
     }
@@ -267,7 +267,7 @@
       "title": "From quote to delivery in five steps",
       "steps": [
         { "title": "Share your shipment details", "text": "Tell us your origin, destination, load type and timeline through our contact form or dispatch line." },
-        { "title": "Receive a quote", "text": "Our team responds with a rate and vehicle recommendation, usually within two working hours." },
+        { "title": "Receive a quote", "text": "Our team responds with a rate and vehicle recommendation, usually within one working hours." },
         { "title": "Confirm and schedule", "text": "Once confirmed, we assign a vehicle and driver and share the pickup window." },
         { "title": "Track in real time", "text": "Follow your shipment's live location and status from pickup to delivery." },
         { "title": "Receive e-POD", "text": "A digital proof of delivery is shared the moment your cargo is signed for." }
