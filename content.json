@@ -421,6 +421,7 @@
       { "label": "Part Truckload (LTL)", "href": "/services/#ltl" },
       { "label": "Container Movement", "href": "/services/#cnt" }
     ],
-    "copyright": "© 2026 Shipmate Logistics. All rights reserved."
+    "copyright": "© 2026 Shipmate Logistics. All rights reserved.",
+    "developedBy": "Developed by Orange Future Tech"
   }
 }
