@@ -1,10 +1,12 @@
-const CACHE_NAME = 'shipmate-cache-v2';
+const CACHE_NAME = 'shipmate-cache-v3';
 const ASSETS = [
   '/',
   '/about/',
   '/services/',
   '/fleet/',
   '/contact/',
+  '/privacy/',
+  '/terms/',
   '/css/style.css',
   '/js/main.js',
   '/content.json',

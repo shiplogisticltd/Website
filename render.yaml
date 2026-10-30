@@ -19,6 +19,12 @@ services:
         source: /contact.html
         destination: /contact/
       - type: redirect
+        source: /privacy.html
+        destination: /privacy/
+      - type: redirect
+        source: /terms.html
+        destination: /terms/
+      - type: redirect
         source: /index.html
         destination: /
 
@@ -35,3 +41,9 @@ services:
       - type: redirect
         source: /contact
         destination: /contact/
+      - type: redirect
+        source: /privacy
+        destination: /privacy/
+      - type: redirect
+        source: /terms
+        destination: /terms/

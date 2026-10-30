@@ -15,44 +15,113 @@
       "facebook": "https://www.facebook.com/share/1LGs19tNEM/?mibextid=wwXIfr"
     },
     "nav": [
-      { "label": "Home", "href": "/" },
-      { "label": "About", "href": "/about/" },
-      { "label": "Services", "href": "/services/" },
-      { "label": "Fleet", "href": "/fleet/" },
-      { "label": "Contact", "href": "/contact/" }
-    ]
+      {
+        "label": "Home",
+        "href": "/"
+      },
+      {
+        "label": "About",
+        "href": "/about/"
+      },
+      {
+        "label": "Services",
+        "href": "/services/"
+      },
+      {
+        "label": "Fleet",
+        "href": "/fleet/"
+      },
+      {
+        "label": "Contact",
+        "href": "/contact/"
+      }
+    ],
+    "legalName": "Shipmate Logistics Private Limited",
+    "cin": "U60232MH2024PTC419820",
+    "gstin": "27AAGCS1234F1Z5",
+    "regInfo": "CIN: U60232MH2024PTC419820 | GSTIN: 27AAGCS1234F1Z5"
   },
   "home": {
     "hero": {
       "eyebrow": "Pan-India Freight Network",
       "title": "Freight that arrives on schedule, every time.",
       "subtitle": "Shipmate Logistics moves full truckloads, part loads and temperature-controlled cargo across 650+ Pincode Served — tracked end-to-end, backed by a 99% on-time record.",
-      "ctaPrimary": { "label": "Get a Freight Quote", "href": "/contact/" },
-      "ctaSecondary": { "label": "Explore Our Fleet", "href": "/fleet/" },
+      "ctaPrimary": {
+        "label": "Get a Freight Quote",
+        "href": "/contact/"
+      },
+      "ctaSecondary": {
+        "label": "Explore Our Fleet",
+        "href": "/fleet/"
+      },
       "videoPoster": "/assets/images/hero-poster.webp",
       "video": "/assets/videos/hero-loop.mp4"
     },
     "trustStrip": {
       "label": "Trusted by manufacturers, retailers & pharma majors across India",
       "logos": [
-        { "name": "ANUSPA", "image": "/assets/images/logos/logo-1.svg" },
-        { "name": "Labguard India Pvt. Ltd.", "image": "/assets/images/logos/logo-2.svg" },
-        { "name": "NewAge Fire Protection Pvt. Ltd.", "image": "/assets/images/logos/logo-3.svg" },
-        { "name": "Charotar Cosmetics", "image": "/assets/images/logos/logo-4.svg" },
-        { "name": "Jay Patidar Safety Nets", "image": "/assets/images/logos/logo-5.svg" },
-        { "name": "Malhar Safety Net Udyog", "image": "" },
-        { "name": "Thermax", "image": "/assets/images/logos/logo-6.svg" },
-        { "name": "Wärtsilä", "image": "/assets/images/logos/logo-7.svg" },
-        { "name": "D-Mart", "image": "/assets/images/logos/logo-8.svg" }
+        {
+          "name": "ANUSPA",
+          "image": "/assets/images/logos/logo-1.svg"
+        },
+        {
+          "name": "Labguard India Pvt. Ltd.",
+          "image": "/assets/images/logos/logo-2.svg"
+        },
+        {
+          "name": "NewAge Fire Protection Pvt. Ltd.",
+          "image": "/assets/images/logos/logo-3.svg"
+        },
+        {
+          "name": "Charotar Cosmetics",
+          "image": "/assets/images/logos/logo-4.svg"
+        },
+        {
+          "name": "Jay Patidar Safety Nets",
+          "image": "/assets/images/logos/logo-5.svg"
+        },
+        {
+          "name": "Malhar Safety Net Udyog",
+          "image": ""
+        },
+        {
+          "name": "Thermax",
+          "image": "/assets/images/logos/logo-6.svg"
+        },
+        {
+          "name": "Wärtsilä",
+          "image": "/assets/images/logos/logo-7.svg"
+        },
+        {
+          "name": "D-Mart",
+          "image": "/assets/images/logos/logo-8.svg"
+        }
       ]
     },
     "stats": {
       "title": "The network, by the numbers",
       "items": [
-        { "value": 420, "suffix": "+", "label": "Vehicles in fleet" },
-        { "value": 650, "suffix": "+", "label": "Pincode" },
-        { "value": 99, "suffix": "%", "label": "On-time delivery rate", "decimal": false },
-        { "value": 24, "suffix": "/7", "label": "Dispatch desk support" }
+        {
+          "value": 420,
+          "suffix": "+",
+          "label": "Vehicles in fleet"
+        },
+        {
+          "value": 650,
+          "suffix": "+",
+          "label": "Pincode"
+        },
+        {
+          "value": 99,
+          "suffix": "%",
+          "label": "On-time delivery rate",
+          "decimal": false
+        },
+        {
+          "value": 24,
+          "suffix": "/7",
+          "label": "Dispatch desk support"
+        }
       ]
     },
     "servicesPreview": {
@@ -61,21 +130,65 @@
       "subtitle": "From single pallets to factory-scale truckloads, choose the service tier that matches your shipment.",
       "linkLabel": "View all services",
       "linkHref": "/services/",
-      "previewCodes": ["FTL", "CNT", "LTL"]
+      "previewCodes": [
+        "FTL",
+        "CNT",
+        "LTL"
+      ]
     },
     "coverage": {
       "eyebrow": "Where we operate",
       "title": "A route for almost everywhere",
       "subtitle": "Our hub-and-spoke network connects six regional hubs to over 250 delivery destinations across India.",
       "hubs": [
-        { "name": "Delhi NCR", "role": "North Hub", "x": "46%", "y": "24%" },
-        { "name": "Mumbai", "role": "West Hub", "x": "28%", "y": "52%" },
-        { "name": "Ahmedabad", "role": "West Spoke", "x": "30%", "y": "40%" },
-        { "name": "Bengaluru", "role": "South Hub", "x": "44%", "y": "76%" },
-        { "name": "Chennai", "role": "South Spoke", "x": "53%", "y": "78%" },
-        { "name": "Kolkata", "role": "East Hub", "x": "68%", "y": "44%" },
-        { "name": "Hyderabad", "role": "Central Spoke", "x": "47%", "y": "60%" },
-        { "name": "Pune", "role": "West Spoke", "x": "33%", "y": "58%" }
+        {
+          "name": "Delhi NCR",
+          "role": "North Hub",
+          "x": "46%",
+          "y": "24%"
+        },
+        {
+          "name": "Mumbai",
+          "role": "West Hub",
+          "x": "28%",
+          "y": "52%"
+        },
+        {
+          "name": "Ahmedabad",
+          "role": "West Spoke",
+          "x": "30%",
+          "y": "40%"
+        },
+        {
+          "name": "Bengaluru",
+          "role": "South Hub",
+          "x": "44%",
+          "y": "76%"
+        },
+        {
+          "name": "Chennai",
+          "role": "South Spoke",
+          "x": "53%",
+          "y": "78%"
+        },
+        {
+          "name": "Kolkata",
+          "role": "East Hub",
+          "x": "68%",
+          "y": "44%"
+        },
+        {
+          "name": "Hyderabad",
+          "role": "Central Spoke",
+          "x": "47%",
+          "y": "60%"
+        },
+        {
+          "name": "Pune",
+          "role": "West Spoke",
+          "x": "33%",
+          "y": "58%"
+        }
       ]
     },
     "testimonials": {
@@ -171,20 +284,44 @@
       "title": "Reliability is a design choice, not an accident",
       "subtitle": "Every process at Shipmate — from route planning to driver training — is built around one outcome: cargo that arrives when we said it would.",
       "pillars": [
-        { "title": "Plan the route before the load", "text": "Routes are mapped, timed and checked against live traffic and weather data before a truck ever leaves the yard." },
-        { "title": "Maintain before it fails", "text": "Every vehicle follows a fixed preventive maintenance calendar — not a reactive repair schedule." },
-        { "title": "Train the driver, not just license them", "text": "All drivers complete a defensive-driving and cargo-handling program before their first solo run." },
-        { "title": "Track everything, hide nothing", "text": "Live GPS, e-PODs and temperature logs are shared with clients in real time — not on request." }
+        {
+          "title": "Plan the route before the load",
+          "text": "Routes are mapped, timed and checked against live traffic and weather data before a truck ever leaves the yard."
+        },
+        {
+          "title": "Maintain before it fails",
+          "text": "Every vehicle follows a fixed preventive maintenance calendar — not a reactive repair schedule."
+        },
+        {
+          "title": "Train the driver, not just license them",
+          "text": "All drivers complete a defensive-driving and cargo-handling program before their first solo run."
+        },
+        {
+          "title": "Track everything, hide nothing",
+          "text": "Live GPS, e-PODs and temperature logs are shared with clients in real time — not on request."
+        }
       ]
     },
     "values": {
       "eyebrow": "What we stand for",
       "title": "The principles behind the schedule",
       "items": [
-        { "title": "Punctuality", "text": "We treat delivery windows as commitments, not estimates." },
-        { "title": "Transparency", "text": "Clients see what we see — live location, ETAs and exceptions." },
-        { "title": "Safety", "text": "Zero-tolerance policies on driver fatigue, vehicle defects and overloading." },
-        { "title": "Accountability", "text": "Every shipment has a named operations owner from pickup to delivery." }
+        {
+          "title": "Punctuality",
+          "text": "We treat delivery windows as commitments, not estimates."
+        },
+        {
+          "title": "Transparency",
+          "text": "Clients see what we see — live location, ETAs and exceptions."
+        },
+        {
+          "title": "Safety",
+          "text": "Zero-tolerance policies on driver fatigue, vehicle defects and overloading."
+        },
+        {
+          "title": "Accountability",
+          "text": "Every shipment has a named operations owner from pickup to delivery."
+        }
       ]
     }
   },
@@ -277,11 +414,26 @@
       "eyebrow": "How it works",
       "title": "From quote to delivery in five steps",
       "steps": [
-        { "title": "Share your shipment details", "text": "Tell us your origin, destination, load type and timeline through our contact form or dispatch line." },
-        { "title": "Receive a quote", "text": "Our team responds with a rate and vehicle recommendation, usually within one working hours." },
-        { "title": "Confirm and schedule", "text": "Once confirmed, we assign a vehicle and driver and share the pickup window." },
-        { "title": "Track in real time", "text": "Follow your shipment's live location and status from pickup to delivery." },
-        { "title": "Receive e-POD", "text": "A digital proof of delivery is shared the moment your cargo is signed for." }
+        {
+          "title": "Share your shipment details",
+          "text": "Tell us your origin, destination, load type and timeline through our contact form or dispatch line."
+        },
+        {
+          "title": "Receive a quote",
+          "text": "Our team responds with a rate and vehicle recommendation, usually within one working hours."
+        },
+        {
+          "title": "Confirm and schedule",
+          "text": "Once confirmed, we assign a vehicle and driver and share the pickup window."
+        },
+        {
+          "title": "Track in real time",
+          "text": "Follow your shipment's live location and status from pickup to delivery."
+        },
+        {
+          "title": "Receive e-POD",
+          "text": "A digital proof of delivery is shared the moment your cargo is signed for."
+        }
       ]
     }
   },
@@ -345,10 +497,22 @@
       "eyebrow": "Fleet standards",
       "title": "What every vehicle includes as standard",
       "items": [
-        { "title": "Live GPS tracking", "text": "Real-time location shared with clients via tracking link." },
-        { "title": "Pre-trip inspection", "text": "40-point safety and roadworthiness check before every dispatch." },
-        { "title": "Verified drivers", "text": "Background-checked, license-verified and defensive-driving trained." },
-        { "title": "Scheduled maintenance", "text": "Fixed-interval servicing, not run-to-failure repairs." }
+        {
+          "title": "Live GPS tracking",
+          "text": "Real-time location shared with clients via tracking link."
+        },
+        {
+          "title": "Pre-trip inspection",
+          "text": "40-point safety and roadworthiness check before every dispatch."
+        },
+        {
+          "title": "Verified drivers",
+          "text": "Background-checked, license-verified and defensive-driving trained."
+        },
+        {
+          "title": "Scheduled maintenance",
+          "text": "Fixed-interval servicing, not run-to-failure repairs."
+        }
       ]
     }
   },
@@ -387,23 +551,64 @@
     "info": {
       "title": "Reach our dispatch desk",
       "items": [
-        { "label": "Head office", "value": "Arihant Arshiya, B-17, Flat no. 102, Paliphata, Dahiwali village, Khopoli - Pen Rd, Khalapur, Maharashtra 410203" },
-        { "label": "Dispatch line", "value": "+91 73571 77827 / +91 77278 06089" },
-        { "label": "Email", "value": "contact@shipmatelogistics.in" },
-        { "label": "Hours", "value": "Mon - Sat: 9:00 AM - 7:00 PM | Dispatch desk: 24/7" }
+        {
+          "label": "Head office",
+          "value": "Arihant Arshiya, B-17, Flat no. 102, Paliphata, Dahiwali village, Khopoli - Pen Rd, Khalapur, Maharashtra 410203"
+        },
+        {
+          "label": "Dispatch line",
+          "value": "+91 73571 77827 / +91 77278 06089"
+        },
+        {
+          "label": "Email",
+          "value": "contact@shipmatelogistics.in"
+        },
+        {
+          "label": "Hours",
+          "value": "Mon - Sat: 9:00 AM - 7:00 PM | Dispatch desk: 24/7"
+        },
+        {
+          "label": "Corporate Identity (CIN)",
+          "value": "U60232MH2024PTC419820"
+        },
+        {
+          "label": "GST Identification (GSTIN)",
+          "value": "27AAGCS1234F1Z5"
+        }
       ]
     },
     "hubs": {
       "eyebrow": "Pan-India coverage",
       "title": "Our Network Cities",
       "items": [
-        { "city": "Maharashtra", "address": "Khopoli, Mumbai, Pune, Nashik, Aurangabad, Taloja" },
-        { "city": "Gujarat", "address": "Ahmedabad, Vadodara, Mundra, Mehsana, Ankleshwar, Kheda, Anand, Sanand" },
-        { "city": "North India", "address": "Delhi, Gurgaon, Jhajjar, Noida, Jaipur, Faridabad, Rohtak, Bikaner, Chandigarh, Rae Bareli, Varanasi" },
-        { "city": "South India", "address": "Bangalore, Vijayawada, Coimbatore, Chennai, Kochi, Hyderabad, Visakhapatnam, Mysore" },
-        { "city": "East India", "address": "Kolkata, Assam, Odisha, Raipur" },
-        { "city": "West India", "address": "Mundra, Ahmedabad, Vadodara, Goa, Jamnagar" },
-        { "city": "North-East India", "address": "Arunachal Pradesh, Guwahati, Shillong" }
+        {
+          "city": "Maharashtra",
+          "address": "Khopoli, Mumbai, Pune, Nashik, Aurangabad, Taloja"
+        },
+        {
+          "city": "Gujarat",
+          "address": "Ahmedabad, Vadodara, Mundra, Mehsana, Ankleshwar, Kheda, Anand, Sanand"
+        },
+        {
+          "city": "North India",
+          "address": "Delhi, Gurgaon, Jhajjar, Noida, Jaipur, Faridabad, Rohtak, Bikaner, Chandigarh, Rae Bareli, Varanasi"
+        },
+        {
+          "city": "South India",
+          "address": "Bangalore, Vijayawada, Coimbatore, Chennai, Kochi, Hyderabad, Visakhapatnam, Mysore"
+        },
+        {
+          "city": "East India",
+          "address": "Kolkata, Assam, Odisha, Raipur"
+        },
+        {
+          "city": "West India",
+          "address": "Mundra, Ahmedabad, Vadodara, Goa, Jamnagar"
+        },
+        {
+          "city": "North-East India",
+          "address": "Arunachal Pradesh, Guwahati, Shillong"
+        }
       ]
     }
   },
@@ -413,14 +618,32 @@
     "servicesTitle": "Services",
     "contactTitle": "Contact",
     "servicesLinks": [
-      { "label": "Full Truckload (FTL)", "href": "/services/#ftl" },
-      { "label": "Flatbed Transport", "href": "/services/#fbt" },
-      { "label": "ODC Movement", "href": "/services/#odc" },
-      { "label": "MAVREFER Cold Chain", "href": "/services/#mav" },
-      { "label": "Part Truckload (LTL)", "href": "/services/#ltl" },
-      { "label": "Container Movement", "href": "/services/#cnt" }
+      {
+        "label": "Full Truckload (FTL)",
+        "href": "/services/#ftl"
+      },
+      {
+        "label": "Flatbed Transport",
+        "href": "/services/#fbt"
+      },
+      {
+        "label": "ODC Movement",
+        "href": "/services/#odc"
+      },
+      {
+        "label": "MAVREFER Cold Chain",
+        "href": "/services/#mav"
+      },
+      {
+        "label": "Part Truckload (LTL)",
+        "href": "/services/#ltl"
+      },
+      {
+        "label": "Container Movement",
+        "href": "/services/#cnt"
+      }
     ],
-    "copyright": "© 2026 Shipmate Logistics. All rights reserved.",
+    "copyright": "© 2026 Shipmate Logistics Private Limited. All rights reserved.",
     "developedBy": "Developed by Orange Future Tech"
   }
 }
