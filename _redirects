@@ -5,6 +5,11 @@
 /contact.html  /contact/  301
 /privacy.html  /privacy/  301
 /terms.html    /terms/    301
+/privacy-policy.html /privacy/ 301
+/privacy-policy /privacy/  301
+/privacy-policy/ /privacy/ 301
+/terms-of-service /terms/  301
+/terms-of-service/ /terms/ 301
 /about         /about/    301
 /services      /services/ 301
 /fleet         /fleet/    301

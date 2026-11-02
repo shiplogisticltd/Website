@@ -2,8 +2,8 @@
   "site": {
     "name": "Shipmate Logistics",
     "tagline": "Every Mile, Mastered.",
-    "phone": "+91 73571 77827 / +91 77278 06089",
-    "phoneHref": "+917357177827",
+    "phone": "+91 77278 06089 / +91 73571 77827",
+    "phoneHref": "+917727806089",
     "email": "contact@shipmatelogistics.in",
     "whatsappNumber": "917357177827",
     "whatsappMessage": "Hello Shipmate Logistics, I'd like to get a freight quote.",
@@ -37,9 +37,9 @@
       }
     ],
     "legalName": "Shipmate Logistics Private Limited",
-    "cin": "U60232MH2024PTC419820",
+    "cin": "U52290MH2025PTC453719",
     "gstin": "27AAGCS1234F1Z5",
-    "regInfo": "CIN: U60232MH2024PTC419820 | GSTIN: 27AAGCS1234F1Z5"
+    "regInfo": "CIN: U52290MH2025PTC453719"
   },
   "home": {
     "hero": {
@@ -557,7 +557,7 @@
         },
         {
           "label": "Dispatch line",
-          "value": "+91 73571 77827 / +91 77278 06089"
+          "value": "+91 77278 06089 / +91 73571 77827"
         },
         {
           "label": "Email",
@@ -569,7 +569,7 @@
         },
         {
           "label": "Corporate Identity (CIN)",
-          "value": "U60232MH2024PTC419820"
+          "value": "U52290MH2025PTC453719"
         },
         {
           "label": "GST Identification (GSTIN)",

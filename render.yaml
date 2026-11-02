@@ -45,5 +45,17 @@ services:
         source: /privacy
         destination: /privacy/
       - type: redirect
+        source: /privacy-policy
+        destination: /privacy/
+      - type: redirect
+        source: /privacy-policy/
+        destination: /privacy/
+      - type: redirect
         source: /terms
+        destination: /terms/
+      - type: redirect
+        source: /terms-of-service
+        destination: /terms/
+      - type: redirect
+        source: /terms-of-service/
         destination: /terms/
