@@ -1,4 +1,4 @@
-const CACHE_NAME = 'shipmate-cache-v3';
+const CACHE_NAME = 'shipmate-cache-v4';
 const ASSETS = [
   '/',
   '/about/',

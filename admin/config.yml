@@ -70,20 +70,11 @@ collections:
                     widget: "list"
                     field: { label: "Paragraph", name: "p", widget: "text" }
 
-              - label: "Leadership Team"
+              - label: "Leadership Section"
                 name: "leadership"
                 widget: "object"
                 fields:
                   - { label: "Section Title", name: "title", widget: "string" }
-                  - label: "Team Members"
-                    name: "members"
-                    widget: "list"
-                    fields:
-                      - { label: "Full Name", name: "name", widget: "string" }
-                      - { label: "Job Role", name: "role", widget: "string" }
-                      - { label: "Photo", name: "photo", widget: "image" }
-                      - { label: "Bio Summary", name: "bio", widget: "text" }
-                      - { label: "Full Detailed Bio", name: "fullBio", widget: "text" }
 
           - label: "Services Page"
             name: "services"

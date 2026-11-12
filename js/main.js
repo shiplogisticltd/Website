@@ -643,97 +643,6 @@
     setupReveal();
   }
 
-  function renderLeadershipTeam(data) {
-    const wrap = $("#leadershipTeam");
-    if (!wrap || !data) return;
-    const members = getPath(data, "about.leadership.members") || [];
-    if (members.length === 0) return;
-
-    wrap.innerHTML = members.map((m, i) => `
-      <div class="team-card reveal" data-member="${i}" role="button" tabindex="0" aria-label="View bio for ${m.name}">
-        <div class="team-card__photo">
-          <img src="${fixPath(m.photo)}" alt="${m.name}" loading="lazy" width="200" height="200"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="team-card__avatar-placeholder" style="display:none">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="64" height="64"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
-          </div>
-        </div>
-        <div class="team-card__info">
-          <h3 class="team-card__name">${m.name}</h3>
-          <p class="team-card__title">${m.title}</p>
-          <span class="team-card__cta">View Bio →</span>
-        </div>
-      </div>`).join("");
-
-    if (!$("#teamBioModal")) {
-      const modal = document.createElement("div");
-      modal.id = "teamBioModal";
-      modal.className = "team-modal";
-      modal.setAttribute("role", "dialog");
-      modal.setAttribute("aria-modal", "true");
-      modal.innerHTML = `
-        <div class="team-modal__backdrop"></div>
-        <div class="team-modal__box">
-          <button class="team-modal__close" aria-label="Close bio">&times;</button>
-          <div class="team-modal__content">
-            <div class="team-modal__left">
-              <div class="team-modal__photo">
-                <img id="teamModalPhoto" src="" alt="" width="120" height="120"
-                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-                <div class="team-card__avatar-placeholder team-modal__placeholder" style="display:none">
-                  <svg viewBox="0 0 24 24" fill="currentColor" width="60" height="60"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
-                </div>
-              </div>
-            </div>
-            <div class="team-modal__right">
-              <h2 id="teamModalName" class="team-modal__name"></h2>
-              <p id="teamModalTitle" class="team-modal__position"></p>
-              <p id="teamModalBio" class="team-modal__bio"></p>
-            </div>
-          </div>
-        </div>`;
-      document.body.appendChild(modal);
-
-      const closeModal = () => {
-        modal.classList.remove("is-open");
-        document.body.style.overflow = "";
-      };
-
-      modal.querySelector(".team-modal__backdrop").addEventListener("click", closeModal);
-      modal.querySelector(".team-modal__close").addEventListener("click", closeModal);
-      document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
-    }
-
-    wrap.addEventListener("click", (e) => {
-      const card = e.target.closest(".team-card");
-      if (!card) return;
-      const idx = parseInt(card.getAttribute("data-member"), 10);
-      const m = members[idx];
-      if (!m) return;
-
-      const modal = $("#teamBioModal");
-      const photo = modal.querySelector("#teamModalPhoto");
-      photo.src = m.photo;
-      photo.alt = m.name;
-      photo.style.display = "";
-      photo.nextElementSibling.style.display = "none";
-      modal.querySelector("#teamModalName").textContent = m.name;
-      modal.querySelector("#teamModalTitle").textContent = m.title;
-      modal.querySelector("#teamModalBio").textContent = m.bio;
-      modal.classList.add("is-open");
-      document.body.style.overflow = "hidden";
-    });
-
-    wrap.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        e.target.closest(".team-card")?.click();
-      }
-    });
-
-    setupReveal();
-  }
-
   function renderFooter(data) {
     if (!data) return;
     const servicesLinks = $("#footerServiceLinks");
@@ -856,7 +765,6 @@
       renderTimeline(data);
       renderPillars(data);
       renderValues(data);
-      renderLeadershipTeam(data);
       renderFooter(data);
       setupContactForm(data);
     }

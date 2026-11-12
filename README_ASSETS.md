@@ -32,9 +32,6 @@ assets/
 │   │   ├── fleet-flatbed.webp      <-- Flatbed Trailer Truck
 │   │   ├── fleet-reefer.webp       <-- Refrigerated Reefer Truck
 │   │   └── fleet-lcv.webp          <-- LCV 19ft Box Truck
-│   └── team/
-│       ├── mohit-sharma.webp       <-- Director Bio Photo
-│       └── rahul-indora.webp       <-- Branch Manager Bio Photo
 └── videos/
     ├── hero-loop.mp4               <-- Main Hero Background Video (MP4)
     └── hero-loop.webm              <-- Main Hero Background Video (WebM)
@@ -91,16 +88,6 @@ Location: `assets/images/fleet/`
 | **Flatbed Trailer** | `fleet-flatbed.webp` | `4:3` | `800 x 600` |
 | **Refrigerated Reefer Truck** | `fleet-reefer.webp` | `4:3` | `800 x 600` |
 | **LCV 19ft Box Truck** | `fleet-lcv.webp` | `4:3` | `800 x 600` |
-
----
-
-### 6. Leadership Team Bio Photos
-Location: `assets/images/team/`
-
-- **Director (Mr. Mohit Sharma)**: `mohit-sharma.webp`
-- **Branch Manager (Mr. Rahul Indora)**: `rahul-indora.webp`
-- **Recommended Ratio**: `1:1` (Square)
-- **Recommended Resolution**: `400 x 400` pixels
 
 ---
 
