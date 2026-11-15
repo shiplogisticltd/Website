@@ -38,8 +38,8 @@
     ],
     "legalName": "Shipmate Logistics Private Limited",
     "cin": "U52290MH2025PTC453719",
-    "gstin": "27AAGCS1234F1Z5",
-    "regInfo": "CIN: U52290MH2025PTC453719"
+    "gstin": "27ABQCS9025B1Z5",
+    "regInfo": "CIN: U52290MH2025PTC453719 | GSTIN: 27ABQCS9025B1Z5"
   },
   "home": {
     "hero": {
@@ -559,7 +559,7 @@
         },
         {
           "label": "GST Identification (GSTIN)",
-          "value": "27AAGCS1234F1Z5"
+          "value": "27ABQCS9025B1Z5"
         }
       ]
     },
